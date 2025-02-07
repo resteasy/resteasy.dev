@@ -1,4 +1,4 @@
-= gRPC Bridge Project
+= gRPC Bridge Project: User Guide
 :page-layout: default
 :page-permalink: /docs/grpc/
 :toc:
