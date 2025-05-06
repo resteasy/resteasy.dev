@@ -6,7 +6,7 @@
 
 
 The RESTEasy *gRPC Bridge Project* (aka *resteasy-grpc*) project
-(https://github.com/resteasy/resteasy-grpc) has been developed to
+(https://github.com/resteasy/resteasy-grpc ) has been developed to
 enable communication between gRPC clients and Jakarta REST servers. The
 classes in resteasy-grpc's *grpc-bridge* module are able to scan a
 directory tree of Jakarta REST resource classes and generate classes
@@ -14,7 +14,7 @@ that form an intermediary layer between the gRPC runtime and a Jakarta
 REST server. Those generated classes are supported by the
 *grpc-bridge-runtime* module. The process of generating the files is
 facilitated by the maven archetype
-https://github.com/resteasy/gRPCtoJakartaREST-archetype.
+https://github.com/resteasy/gRPCtoJakartaREST-archetype .
 
 == protobuf and gRPC
 
@@ -98,7 +98,7 @@ example,
        string s = 1;
     }
 
-    message gString {string value = 2;}
+    message gString {string value = 1;}
 
     service GreetService {
        rpc greet (gString) returns (Greeting);
@@ -169,8 +169,8 @@ The gRPC plugin also generates the inner class
 `GreetServiceGrpc.GreetServiceImplBase`, which has a default method for
 each rpc entry in the IDL file. The default method will indicate that
 the method is not implemented. The idea is that the developer should
-create a class extending `GreetServiceImplBase` with implementing
-methods. A simple example is
+create a class extending `GreetServiceImplBase` with implementing methods.
+A simple example is
 
 ----
     @Override
@@ -197,7 +197,7 @@ The definition of `Any` is
 
 The `value` field has built-in type `bytes`, which "May contain any
 arbitrary sequence of bytes no longer than 2^32", according to
-https://developers.google.com/protocol-buffers/docs/proto3. The type
+https://developers.google.com/protocol-buffers/docs/proto3 . The type
 of the message stored in the `value` is described by the URL in the
 `type_url` field. Consider, for example,
 
@@ -216,8 +216,8 @@ The output is
 
 The string "\272\001\003abc" is the internal representation of a
 `gString`, the details of which are beyond the scope of this discussion.
-See https://developers.google.com/protocol-buffers/docs/encoding for
-details. The URL is "type.googleapis.com/org.greet.gString", where the
+See https://developers.google.com/protocol-buffers/docs/encoding
+for details. The URL is "type.googleapis.com/org.greet.gString", where the
 path "org.greet.gString" gives the type of the object represented in
 the `value` field.
 
@@ -267,7 +267,7 @@ resteasy-grpc's grpc-bridge module automates the process.
 The class
 `dev.resteasy.grpc.bridge.generator.protobuf.JavaToProtobufGenerator`
 traverses, with the help of the Java parser
-https://github.com/javaparser/javaparser, a set of Jakarta REST
+https://github.com/javaparser/javaparser , a set of Jakarta REST
 resource classes. For each class that appears as an entity type or a
 return type of a resource method or resource locator,
 `JavaToProtobufGenerator` generates a protobuf message. For each
@@ -569,13 +569,16 @@ lacking in Jakarta REST annotations, it's not a resource method.
 
 === Generic types
 
-Another semantic gap is the lack of *type variables* and *generic types*. resteasy-grp
-uses two devices to bridge the gap.
+Another semantic gap is the lack of *wildcards*, *type variables*, and *generic types*.
+We will call a generic type with one or more wildcards or type variables an *open type*, and
+a generic type with no wildcards or type variables a *closed type*. resteasy-grp
+uses two devices to bridge the gap:
 
-. Type wildcards and open type variables are replaced by `java.lang.Object`
-. Each generic type is associated with a distinct protobuf message definition.
+. Every open type is mapped to a *normalized* closed type which will represent it in the 
+  protobuf world.
+. Each normalized type is associated with a distinct protobuf message definition.
 
-For example, consider
+Unbounded wildcards and type variables are mapped to `java.lang.Object`. For example, consider
 
 ----
     package x.y;
@@ -658,22 +661,45 @@ and `x.y.Grimble<java.lang.Integer>`.
 . The comments on the rpc definitions of `gr_wildcard()` and `gr_variable()`
 indicate that both take input parameters `x_y_Grimble18`, which is the generated
 protobuf representation of `x.y.Grimble<java.lang.Object>`. This convergence follows 
-from the fact that the wildcard and the type variable are both represented by
-`java.lang.Object`.
+from the fact that `x.y.Grimble<?>` and `x.y.Grimble<T>` are both normalized to
+`x.y.Grimble<java.lang.Object>`.
 . The definition of `x_y___Grimble18`, which represents `x.y.Grimble<java.lang.Object>`,
 has a single element of type `google.protobuf.Any`, which, as discussed above,
 represents an arbitrary type, which makes it an appropriate translation of
 `java.lang.Object`.
 
-=== Lists and sets
+In most cases, bounded wildcards and type variables are also mapped to `java.lang.Object`. The
+one exception is a generic class with an upper bounded type variable. For example,
+
+----
+public class TestClass { ... }
+
+public class BoundedClass<T extends TestClass> { ... }
+----
+
+turns into something like
+
+----
+// Type: x.y.BoundedClass<x.y.TestClass>
+message x_y___BoundedClass17 {
+  x_y___TestClass t = 1;
+}
+----
+
+*Note:* The definition of `BoundedClass` requires that the variable be replaced by a subclass of 
+`TestClass`. `BoundedClass<Object>` would be rejected by the compiler.
+
+=== Collections and maps
 
 Given their fundamental usefulness, resteasy-grpc gives special attention to
-implementations of `java.util.List` and `java.util.Set`. However, rather than
+implementations of `java.util.List`, `java.util.Set`, `java.util.Map`,
+and `jakarta.ws.rs.core.MultivaluedMap`. However, rather than
 attempt to support all idiosyncratic features of arbitrary implementations, 
 resteasy-grpc treats them in a simplified manner. In particular, an implementation
-of a `List` is considered to be an ordered sequence of elements, and an
+of a `List` is considered to be an ordered sequence of elements, an
 implementation of a `Set` is considered to be an unordered collection of
-elements. One reason for this simplification is the inherent complexity of
+elements, and `Maps` and `MultivaluedMap` are sets of pairs.
+One reason for this simplification is the inherent complexity of
 some implementations. For example, `java.util.HashMap`, which is used in the
 standard implementation of `java.util.HashSet`, has the non-static inner
 class `KeySet`, but non-static inner classes are not currently supported by
@@ -728,7 +754,7 @@ message java_util___List30 {
 ----
 
 Everything discussed in the section about generic types applies to variants of
-`List` and `Set`. For example,
+`List`, `Set`, `Map`, and `MultivaluedMap`. For example,
 ----
     package x.y;
     
@@ -803,8 +829,161 @@ message java_util___ArrayList {
 
 === Arrays
 
-resteasy-grpc has a treatment for arbitrarily nested arrays,
-but it is currently under reconsideration. Stay tuned for further discussion.
+Protobuf supports simple arrays with the keyword "repeated". For example,
+
+----
+message intArray {
+   repeated sfixed32 int_field = 1;
+}
+----
+
+represents a message with an array of integers, i.e., `int[]` in Java. However, there is no
+built-in support for multidimensional arrays like `int[][]`, so we have to implement
+support explicitly.
+
+In fact, the treatment of arrays faces two challenges:
+
+. multidimensional arrays, and
+. arrays with null elements.
+
+We undertake the multidimensional challenge with a provisional protobuf definition of  `dev_resteasy_grpc_arrays___ArrayHolder`:
+
+----
+message dev_resteasy_grpc_arrays___Any___Array {
+   repeated dev_resteasy_grpc_arrays___Any any_field = 1;
+}
+...
+message dev_resteasy_grpc_arrays___Boolean___Array {
+   repeated bool boolean_field = 1;
+}
+...
+message dev_resteasy_grpc_arrays___Integer___Array {
+   repeated sfixed32 int_field = 1;
+}
+...
+message dev_resteasy_grpc_arrays___ArrayHolder___Array {
+   repeated dev_resteasy_grpc_arrays___ArrayHolder arrayHolder_field = 1;
+}
+...
+message dev_resteasy_grpc_arrays___ArrayHolder {
+   oneof messageType {
+      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Any___Array dev_resteasy_grpc_arrays___Any___Array_field = 1;
+      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___Array dev_resteasy_grpc_arrays___Boolean___Array_field = 2;
+ ...
+      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Integer___Array dev_resteasy_grpc_arrays___Integer___Array_field = 12;
+...
+      dev_resteasy_grpc_arrays___ArrayHolder___Array dev_resteasy_grpc_arrays___ArrayHolder___Array_field = 21;
+... 
+}
+----
+
+It has
+
+    * an array definition for each primitive Java type, e.g. `+dev_resteasy_grpc_arrays___Boolean___Array+`
+    * an array definition of arbitrary objects: `+dev_resteasy_grpc_arrays___Any___Array_field+`
+    * a recursive field of `+dev_resteasy_grpc_arrays___ArrayHolder+`'s
+
+Now, consider
+
+----
+public class ArrayStuff {
+   ...
+   int[] is;
+   int[][] iss;
+}
+----
+
+That can be represented in protobuf as
+
+----
+message dev_resteasy_grpc_arrays___ArrayStuff {
+   ...
+   repeated int32 is___1 = 1;
+   dev_resteasy_grpc_arrays___ArrayHolder___Array iss = 2;
+   ...
+}  
+----
+
+That is, `int[][]` is represented as `+dev_resteasy_grpc_arrays___ArrayHolder___Array+`.
+
+*Note.* The arrays.proto file, included by gRPCtoJakartaREST-archetype, has all of the non primitive
+array definitions. 
+
+Now, consider the array `Integer[]` compared to `int[]`.  An instance of the latter could be defined
+
+----
+   int[] is = new int[] {3, 5, 7};
+----
+
+but
+
+----
+   int[] is = new int[] {3, null, 7};
+----
+
+is syntactically incorrect. On the other hand,
+
+----
+   Integer[] Is = new Integer[] {3, null, 7};
+----
+
+is just fine. The point is that an array of any non primitive types can hold nulls,
+which is another semantic difference between Java and protobuf. One solution is to
+define, for each non primitve type, a "nullable" variant; for example,
+
+----
+message dev_resteasy_grpc_arrays___NONE {
+   bool boolean_field = 1;
+}
+
+message dev_resteasy_grpc_arrays___Boolean___wrapper {
+   oneof type {
+      dev_resteasy_grpc_arrays___NONE none_field = 1;
+      bool boolean_field = 2;
+   }
+}
+
+message dev_resteasy_grpc_arrays___Boolean___WArray {
+   repeated dev_resteasy_grpc_arrays___Boolean___wrapper wrapper_field = 1;
+}
+----
+
+Here, `+dev_resteasy_grpc_arrays___Boolean___wrapper+` can be either a 
+`+dev_resteasy_grpc_arrays___NONE+`,
+which represents a null value, or a `bool`, and the *wrapper array*
+`+dev_resteasy_grpc_arrays___Boolean___WArray+`
+is a variant of `+dev_resteasy_grpc_arrays___Boolean___Array+` except it can hold null
+values.
+
+
+Now, the provisional treatment defined earlier can be updated with the use of wrapper arrays.
+For example,
+
+----
+message dev_resteasy_grpc_arrays___ArrayHolder___wrapper {
+   oneof type {
+      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___NONE none_field = 1;
+      dev_resteasy_grpc_arrays___ArrayHolder dev_resteasy_grpc_arrays___ArrayHolder_field = 2;
+   }
+}
+
+message dev_resteasy_grpc_arrays___ArrayHolder___WArray {
+   string componentType = 1;
+   repeated dev_resteasy_grpc_arrays___ArrayHolder___wrapper wrapper___field = 2;
+}
+
+message dev_resteasy_grpc_arrays___ArrayHolder {
+   oneof messageType {
+      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Any___WArray dev_resteasy_grpc_arrays___Any___WArray_field = 1;
+      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___Array dev_resteasy_grpc_arrays___Boolean___Array_field = 2;
+      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___WArray dev_resteasy_grpc_arrays___Boolean___WArray_field = 3;
+      ...
+      dev_resteasy_grpc_arrays___ArrayHolder___WArray dev_resteasy_grpc_arrays___ArrayHolder___WArray_field = 21;
+      ...
+   }
+----
+
+*Note*. arrays.proto also includes wrapper arrays for primitive types.
 
 === Other uses of `google.protobuf.Any`
 
@@ -814,7 +993,7 @@ Consider
 ----
     @GET
     @Path("list/string")
-    List<String> listTest(List<String l) {
+    List<String> listTest(List<String> l) {
         ...
     }
 ----
@@ -1128,7 +1307,7 @@ A. Create it directly using the appropriate `Builder`, or
 B. create a Java entity and translate it to javabuf with the `JavabufTranslator`.
 
 For example, to create an instance of `java_util___HashSet3`, defined in
-<<Lists and sets>>, one option would be
+<<Collections and maps>>, one option would be
 ----
 java.util.HashSet<java.lang.String> set = new java.util.HashSet<java.lang.String>();
 set.add("abc");
@@ -1143,7 +1322,7 @@ builder.addData("abc");
 java_util___HashSet3 hashSet3 = builder.build();
 ----
 
-*Note.* How did we know which javabuf type to use for a given invocation?
+*Note.* How did we know which generic type and which javabuf type to use for a given invocation?
 It's easy. First, look at the resource method. Suppose we're going to call
 ----
     @Path("hashset/string")
@@ -1193,6 +1372,9 @@ java_util___HashSet3 response = grm.getJavaUtilHashSet3Field();
 ----
 HashSet<String> result  = (org.greet.Greeting) translator.translateFromJavabuf(response);
 ----
+
+*Note.* If the type on the resource method is open (has a wildcard or uninstantiated type variable),
+the normalized version of the type is the one to use.
 
 A variation of the client code occurs when the entity and/or result type is
 an interface, since they need to be transmitted as `Any` messages. For example,
