@@ -1,0 +1,22 @@
+      <div id="wrapper-2">
+         <div id="wrap-content">
+            <div id="wrapper-3">
+               <div id="main-wrapper">
+                  <div id="main">
+                     <div id="breadcrumb">
+                       <span>
+                              <a href="{site.url('/').absolute}">RESTEasy</a>
+                                &gt;
+                              <a href="{site.url('/blogs').absolute}">Blogs</a>
+                               <a href="/feed.xml"><image src="/img/blog/feed-icon.png"/></a>
+                                &gt;
+                              <a href="#">{page.title}</a>
+                       </span>
+                     </div><!-- end breadcrumb -->
+                     <h3>{page.title}</h3>
+                     <h5>By {page.data.author ?: "The RESTEasy Team"} | {page.date.format("MMMM dd, YYYY")} {#include partials/share-page.html /}</h5>
+                     <p></p>
+                     {#insert /}
+
+                  </div><!-- end main -->
+               </div>

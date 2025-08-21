@@ -1,0 +1,29 @@
+<div class="grid-wrapper news-list-blocks">
+    <div class="grid__item width-12-12">
+        <h3>Latest News</h3>
+    </div>
+    {#for post in site.collections.posts.subList(0,10)}
+    <div class="grid__item width-3-12">
+        <div class="grid__item">
+            <h4>
+                <a href="{post.data.link ?: post.url}" {#if post.data.link}target="_blank" {/if}>
+                {post.title}
+                </a>
+            </h4>
+        </div>
+        <p class="byline">
+            By {post.data.author ?: "The RESTEasy Team"} | {post.date.format("MMMM dd, YYYY")}
+        </p>
+        <p>
+            {#if post.data.containsKey('synopsis')}
+            {post.data.synopsis.stripHtml()}
+            {#else}
+            {site.pageContent(post).stripHtml.wordLimit(75).raw}
+        </p>
+        {/if}
+        <a href="{post.data.link.or(post.url)}" {#if post.data.link}target="_blank" {/if}>
+        {#if post.data.link.contains("youtube")}Watch Video >{#else}Read More >{/if}
+        </a>
+    </div>
+    {/for}
+</div>

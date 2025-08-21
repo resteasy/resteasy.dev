@@ -1,0 +1,34 @@
+---
+layout: default
+title: Blogs
+#link: blogs
+paginate:
+    collection: posts
+    size: 15
+    link: blogs/page:page
+---
+
+{#for post in site.collections.posts.paginated(page.paginator)}
+<div class="post-preview">
+    <a href="{post.url.absolute}">
+        <h3 class="post-title">{post.title}</h3>
+        {#if post.data.containsKey('subtitle')}
+        <h5 class="post-subtitle">{post.data.subtitle}</h5>
+        {/if}
+    </a>
+    <p class="post-meta">Posted by {post.data.author ?: "The RESTEasy Team"} on {post.date.format("MMMM dd, YYYY")}</p>
+</div>
+<hr>
+{/for}
+
+<!-- Pager -->
+<p align="center">
+{#if page.paginator.total > 1}
+    {#if page.paginator.previous}
+        <a href="{page.paginator.previous}">&larr; Newer Posts</a>
+    {/if}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {#if page.paginator.next}
+        <a href="{page.paginator.next}">Older Posts &rarr;</a>
+    {/if}
+{/if}
