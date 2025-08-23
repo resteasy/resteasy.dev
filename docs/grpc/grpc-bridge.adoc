@@ -5,7 +5,7 @@
 :sectanchors:
 
 
-The RESTEasy *gRPC Bridge Project* (aka *resteasy-grpc*) project
+The RESTEasy *gRPC Bridge Project* (aka *resteasy-grpc*)
 (https://github.com/resteasy/resteasy-grpc ) has been developed to
 enable communication between gRPC clients and Jakarta REST servers. The
 classes in resteasy-grpc's *grpc-bridge* module are able to scan a
@@ -824,6 +824,37 @@ message java_util___ArrayList {
   string classname = 1;
   //java.lang.Object
   repeated google.protobuf.Any data = 2;
+}
+----
+
+=== Records
+
+Given that Java records are a specialized kind of type, it's not surprising that resteasy-grpc
+handles records. In fact, any semantic construct applicable to records and supported for classes,
+e.g., generic types, is also supported for records.
+
+However, since they have specialized semantics, records are handled somewhat differently internally.
+As noted above, protobuf messages derived from classes other than collections and maps are 
+labeled as Types, as in, for example,
+----
+// Type: dev.resteasy.example.grpc.greet.Greeting
+message org_greet___Greeting {
+  string s = 1;
+}
+----
+In order to distinguish between arbitrary classes and records, records are labeled differently. For example,
+
+----
+public record Person(String name) {
+}
+----
+
+would be represented as
+
+----
+// Record: dev.resteasy.grpc.example.Person
+message dev_resteasy_grpc_example___Person {
+  string name = 1;
 }
 ----
 
