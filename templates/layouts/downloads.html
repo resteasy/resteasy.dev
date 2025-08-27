@@ -22,8 +22,7 @@ selflink:   "downloads"
     <tbody>
     {#for detail in release.detail}
     {#if detail.downloadLink}
-    {! % capture rowClass %}{% cycle 'oddRow', '' %}{% endcapture % !}
-    <tr class="{{ rowClass }}">
+    <tr>
         <td id="{detail.version.replace('.', '').toLowerCase()}">{detail.version}</td>
         <td>{#if detail.source}<a href="{detail.source}">Source Code</a>{/if}</td>
         <td>{detail.size}</td>

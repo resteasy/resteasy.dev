@@ -288,12 +288,12 @@ Content Specific Styles: These are styles the affect the content of the pages.
 	text-align:left;
 }
 
-.simpletablestyle .oddRow {
+.simpletablestyle tbody tr:nth-child(even) {
     background-color: #f4f3f3;
 	padding-left: 6px;
 }
 
-.simpletablestyle .evenRow {
+.simpletablestyle tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
 
