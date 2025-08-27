@@ -1,0 +1,64 @@
+---
+layout: default
+title: Documentation
+selflink: docs
+link: /docs/
+---
+<h3>RESTEasy Documentation (Latest)</h3>
+
+
+<div class="release-container" id="documentation">
+    {#for release in cdi:releases.list}
+    {#if release.supported}
+    {#let detail = release.detail[0]}
+    <div class="release">
+        <div class="release-body">
+            <h4 class="release-title">RESTEasy {detail.version} <small>({detail.date})</small></h4>
+            {#if detail.spec}
+            <div class="spec">
+                <strong>Implements</strong> <a href="{detail.spec.link}" target="_blank">Jakarta REST {detail.spec.version}</a>
+                <span><a href="{detail.spec.javadoc}" target="_blank">(JavaDoc)</a> </span>
+            </div>
+            {/if}
+            <ul>
+                {#if detail.documentation.link}
+                <li><a href="{detail.documentation.link}" target="_blank">Documentation</a></li>
+                {/if}
+                {#if detail.documentation.javadoc}
+                <li><a href="{detail.documentation.javadoc}" target="_blank">JavaDoc</a></li>
+                {/if}
+                {#if detail.downloadLink}
+                <li><a href="{detail.downloadLink}" target="_blank">Download</a></li>
+                {/if}
+                {#if detail.releaseNotes}
+                <li><a href="{detail.releaseNotes}" target="_blank">Release Notes</a></li>
+                {/if}
+            </ul>
+        </div>
+        <div>
+            <a href="{site.url('docs/all')}#{detail.version.replace('.','')}">Older Releases</a>
+        </div>
+    </div>
+    {/if}
+    {/for}
+
+    {#for release in cdi:grpcreleases.list}
+    {#if release.supported}
+    {#let detail = release.detail[0]}
+    <div class="release">
+        <div class="release-body">
+            <h4 class="release-title">RESTEasy gRPC {detail.version} <small>({detail.date})</small></h4>
+            <ul>
+                <li><a href="{site.url(detail.documentation.link)}">Documentation</a></li>
+                {#if detail.downloadLink}
+                <li><a href="{detail.downloadLink}">Download</a></li>
+                {/if}
+                {#if detail.releaseNotes}
+                <li><a href="{detail.releaseNotes}">Release Notes</a></li>
+                {/if}
+            </ul>
+        </div>
+    </div>
+    {/if}
+    {/for}
+</div>

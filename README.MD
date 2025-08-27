@@ -6,7 +6,7 @@ These instructions will get you a copy of the RESTEasy website up and running on
 
 ### Installation
 
-Follow this instructions from [github-pages](https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
+Follow these instructions from [github-pages](https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
 to start local server and test your change before submit
 
 ## Writing blog
@@ -21,7 +21,7 @@ Add a blog entry:
 layout:    post
 title:     "Blog Title"
 subtitle:  ""
-date:      2019-10-30 8:07:00
+date:           2019-10-30 08:07:00
 author:    "Java Robot"
 ---
 Blog content line 1
@@ -33,7 +33,3 @@ To announce a release you may need update these content:
 
 - Add news update in [index.md](https://github.com/jimma/resteasy-website/blob/master/index.md)
 - Link the download in [downloads.html](https://github.com/jimma/resteasy-website/blob/master/downloads.html) and documentation in [docs.html](https://github.com/jimma/resteasy-website/blob/master/docs.html)
-
-
-
-

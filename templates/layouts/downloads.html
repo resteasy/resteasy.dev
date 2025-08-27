@@ -1,0 +1,44 @@
+---
+layout: default
+title:      "Downloads"
+selflink:   "downloads"
+---
+
+{#for release in cdi:releases.list}
+{#if release.detail and release.detail[0].downloadLink}
+<h3 id="{release.group.replace('.', '').toLowerCase()}">RESTEasy {release.group}</h3>
+<table align="left" border="0" cellpadding="0" cellspacing="1" class="simpletablestyle" width="100%">
+    <thead>
+    <tr class="header">
+        <th>Name</th>
+        <th>Source Code</th>
+        <th>Size</th>
+        <th>Release date</th>
+        <th>License</th>
+        <th>Release notes</th>
+        <th>Download</th>
+    </tr>
+    </thead>
+    <tbody>
+    {#for detail in release.detail}
+    {#if detail.downloadLink}
+    {! % capture rowClass %}{% cycle 'oddRow', '' %}{% endcapture % !}
+    <tr class="{{ rowClass }}">
+        <td id="{detail.version.replace('.', '').toLowerCase()}">{detail.version}</td>
+        <td>{#if detail.source}<a href="{detail.source}">Source Code</a>{/if}</td>
+        <td>{detail.size}</td>
+        <td>{detail.date}</td>
+        <td>{detail.license}</td>
+        <td>
+            {#if detail.releaseNotes}<a class="td-download" href="{detail.releaseNotes}">Release Notes</a>{/if}
+        </td>
+        <td>
+            {#if detail.downloadLink}<a class="td-download" href="{detail.downloadLink}">{detail.downloadText}</a>{/if}
+        </td>
+    </tr>
+    {/if}
+    {/for}
+    </tbody>
+</table>
+{/if}
+{/for}

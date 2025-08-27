@@ -1,0 +1,41 @@
+---
+layout: default
+title:      "Documentation"
+selflink:   "docs"
+---
+
+<h3>RESTEasy Documentation</h3>
+
+<p>The documentation below is a combination of DocBook and Javadoc.&nbsp; The docbook is a Maven
+    module in our source tree.&nbsp; If you download or check out our source code from GitHub, you
+    will find it under the 'docbook' directory.&nbsp; Javadocs are generated automatically from the
+    maven build.</p>
+<p>In release 3.1.0.Final, most of the classes deprecated in the 3.0.x generation of releases are
+    deleted or moved to an optional module. For some guidance in upgrading, see <a
+            href="https://docs.jboss.org/resteasy/docs/resteasy-upgrade-guide-en-US.pdf">Upgrading from&nbsp;RESTEasy
+        2 to RESTEasy 3</a>.</p>
+<table class="simpletablestyle" width="100%" cellspacing="1" cellpadding="0" border="0">
+    <tbody>
+    <tr class="header">
+        <th colspan="6">Version</th>
+    </tr>
+    {#for release in cdi:releases.list}
+    {#for detail in release.detail}
+    {#if detail.documentation}
+    {! % capture rowClass %}{% cycle 'oddRow', '' %}{% endcapture % !}
+    <tr id="{detail.version.replace('.','')}" class="{{ rowClass }}">
+        <td>
+            <p><strong>{detail.version}</strong></p>
+        </td>
+        <td class="rowline">{#if detail.documentation.examples} <a href="{detail.documentation.examples}">examples</a>{/if}</td>
+        <td>{#if detail.documentation.singlePage}<a href="{detail.documentation.singlePage}" target="_blank">HTML
+            (single page)</a>{/if}</td>
+        <td>{#if detail.documentation.link}<a href="{detail.documentation.link}" target="_blank">HTML</a>{/if}</td>
+        <td>{#if detail.documentation.pdf}<a href="{detail.documentation.pdf}" target="_blank">PDF</a>{/if}</td>
+        <td>{#if detail.documentation.javadoc}<a href="{detail.documentation.javadoc}" target="_blank">Javadocs</a>{/if}</td>
+    </tr>
+    {/if}
+    {/for}
+    {/for}
+    </tbody>
+</table>
