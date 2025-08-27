@@ -1,4 +1,3 @@
 ---
 layout: main
-title: RESTEasy
 ---
