@@ -3,10 +3,7 @@ title: "gRPC Bridge Project: User Guide"
 layout: default
 link: /docs/grpc
 ---
-:toc:
-:sectanchors:
 
-{|
 The RESTEasy *gRPC Bridge Project* (aka *resteasy-grpc*) project
 (https://github.com/resteasy/resteasy-grpc) has been developed to
 enable communication between gRPC clients and Jakarta REST servers. The
@@ -1774,4 +1771,4 @@ by the client. On the other hand, the information in
 
 which would normally come from the network connection, must be supplied
 explicitly as part of the invocation.
-|}
+
