@@ -591,7 +591,7 @@ lacking in Jakarta REST annotations, it's not a resource method.
 
 Another semantic gap is the lack of *wildcards*, *type variables*, and *generic types*.
 We will call a generic type with one or more wildcards or type variables an *open type*, and
-a generic type with no wildcards or type variables a *closed type*. resteasy-grp
+a generic type with no wildcards or type variables a *closed type*. resteasy-grpc
 uses two devices to bridge the gap:
 
 . Every open type is mapped to a *normalized* closed type which will represent it in the 
