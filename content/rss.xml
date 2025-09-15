@@ -1,0 +1,5 @@
+---
+aliases: [feed.xml]
+---
+
+{#include fm/rss.html}
