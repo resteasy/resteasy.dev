@@ -1,9 +1,7 @@
 <head>
-    <META HTTP-EQUIV='Content-Security-Policy'
-          CONTENT="default-src 'none'; font-src 'none'; object-src 'none'; script-src 'self'; img-src 'self' https://static.jboss.org https://user-images.githubusercontent.com https://raw.githubusercontent.com; style-src 'self' https://static.jboss.org; base-uri 'none'; form-action 'none'; frame-ancestors 'none' "/>
-    <!--   <META HTTP-EQUIV='X-Frame-Options' CONTENT="DENY"> -->
-    <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
-    <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
+    <meta http-equiv='X-XSS-Protection' content="1; mode=block">
+    <meta http-equiv='X-Content-Type-Options' content="nosniff">
+    {#bundle /}
     {#seo page site /}
     {#rss site /}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -20,5 +18,4 @@
     <link rel="stylesheet" type="text/css" href="{site.url('/css/wide.css').absolute}" media="only screen and (min-width: 1200px)"/>
     <link rel="stylesheet" type="text/css" href="{site.url('/css/jbossdeveloper-thin.css').absolute}" media="screen, projection"/>
     <link rel="stylesheet" type="text/css" href="{site.url('/css/rhbar.css').absolute}" media="screen, projection"/>
-
 </head>

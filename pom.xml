@@ -34,6 +34,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.quarkiverse.roq</groupId>
             <artifactId>quarkus-roq</artifactId>
             <version>${version.quarkus-roq}</version>
@@ -58,11 +62,12 @@
             <artifactId>quarkus-roq-plugin-tagging</artifactId>
             <version>${version.quarkus-roq}</version>
         </dependency>
-
         <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-arc</artifactId>
+            <groupId>io.quarkiverse.roq</groupId>
+            <artifactId>quarkus-roq-plugin-sitemap</artifactId>
+            <version>${version.quarkus-roq}</version>
         </dependency>
+
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
@@ -71,12 +76,13 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>io.quarkiverse.roq</groupId>
-            <artifactId>quarkus-roq-plugin-sitemap</artifactId>
-            <version>${version.quarkus-roq}</version>
+            <groupId>org.mvnpm</groupId>
+            <artifactId>highlight.js</artifactId>
+            <version>11.11.1</version>
+            <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>

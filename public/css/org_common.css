@@ -94,6 +94,14 @@ These are the common css styles for the JBoss.org site.
 
 /* = Common tags and elements  */
 
+pre:has(code) {
+	margin: 0px;
+	max-height: max-content;
+	width: auto;
+	padding: 0px;
+	border: none;
+}
+
 pre {
   margin: 0px;
   padding: 10px;

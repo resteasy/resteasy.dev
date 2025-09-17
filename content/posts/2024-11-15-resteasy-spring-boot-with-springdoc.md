@@ -20,7 +20,7 @@ The [WildFly](https://github.com/wildfly/wildfly) and [Quarkus](https://github.c
 
 - [Using MicroProfile OpenAPI With RESTEasy](https://resteasy.dev/2023/02/20/resteasy-microprofile-openapi/)
 
-For Quarkus,  here is a blog post that shows the usage of the built-in MicroProfile OpenAPI in Quarkus:
+For Quarkus, here is a blog post that shows the usage of the built-in MicroProfile OpenAPI in Quarkus:
 
 - [MicroProfile OpenAPI for everyone](https://quarkus.io/blog/openapi-for-everyone/)
 
