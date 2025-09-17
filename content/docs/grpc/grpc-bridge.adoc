@@ -36,14 +36,13 @@ defined wire format. For example,
 
 [source,protobuf]
 ----
-    syntax = "proto3";
-    package org.greet;
-    option java_package = "org.greet";
-    option java_outer_classname = "Greet_proto";
-
-    message Greeting {
-      string s = 1;
-    }
+syntax = "proto3";
+package org.greet;
+option java_package = "org.greet";
+option java_outer_classname = "Greet_proto";
+ message Greeting {
+  string s = 1;
+}
 ----
 
 is a protobuf IDL file that defines a data type called `Greeting` with a
@@ -54,35 +53,30 @@ the output is a several hundred line class called `org.greet.Greet_proto`:
 
 [source,java]
 ----
-    package org.greet;
-
-    public final class Greet_proto {
-
-       public static final class Greeting extends
-             com.google.protobuf.GeneratedMessageV3 implements GreetingOrBuilder {
-
-          public java.lang.String getS() {
-             ...
-          }
-
-          public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                org.jboss.greeting.Greeting_proto.GreetingOrBuilder {
-
-             public Builder setS() {
-                ...
-             }
-          }
-       }
-    }
+package org.greet;
+ public final class Greet_proto {
+    public static final class Greeting extends
+         com.google.protobuf.GeneratedMessageV3 implements GreetingOrBuilder {
+       public java.lang.String getS() {
+         ...
+      }
+       public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            org.jboss.greeting.Greeting_proto.GreetingOrBuilder {
+          public Builder setS() {
+            ...
+         }
+      }
+   }
+}
 ----
 
 The `Builder` class supports creating a `Greeting`
 
 [source,java]
 ----
-    org.greet.Greet_proto.Greeting.Builder builder = org.greet.Greet_proto.Greeting.newBuilder();
-    Greeting greeting = builder.setS("foo").build();
+org.greet.Greet_proto.Greeting.Builder builder = org.greet.Greet_proto.Greeting.newBuilder();
+Greeting greeting = builder.setS("foo").build();
 ----
 
 and the `getS()` method supports retrieving the contents of the `Greeting`.
@@ -92,20 +86,17 @@ example,
 
 [source,protobuf]
 ----
-    syntax = "proto3";
-    package org.greet;
-    option java_package = "org.greet";
-    option java_outer_classname = "Greet_proto";
-
-    message Greeting {
-       string s = 1;
-    }
-
-    message gString {string value = 1;}
-
-    service GreetService {
-       rpc greet (gString) returns (Greeting);
-    }
+syntax = "proto3";
+package org.greet;
+option java_package = "org.greet";
+option java_outer_classname = "Greet_proto";
+ message Greeting {
+   string s = 1;
+}
+ message gString {string value = 1;}
+ service GreetService {
+   rpc greet (gString) returns (Greeting);
+}
 ----
 
 adds the `greet` remote call. Note that it also adds a `gString` type
@@ -116,25 +107,25 @@ addition to `org.greet.Greet_proto`, is the class
 
 [source,java]
 ----
-    public final class GreetServiceGrpc {
-       ...
-       public static final class GreetServiceBlockingStub extends
-             io.grpc.stub.AbstractBlockingStub<GreetServiceBlockingStub> {
-          ...
-          public org.greet.Greet_proto.Greeting greet(org.greet.Greet_proto.gString request) {
-             ...
-          }
-       }
-       ...
-       public static final class GreetServiceStub extends
-             io.grpc.stub.AbstractAsyncStub<GreetServiceStub> {
-          ...
-          public void greet(org.greet.Greet_proto.gString request,
-             io.grpc.stub.StreamObserver<org.greet.Greet_proto.gString> responseObserver) {
-             ...
-          }
-       }
-    }
+public final class GreetServiceGrpc {
+   ...
+   public static final class GreetServiceBlockingStub extends
+         io.grpc.stub.AbstractBlockingStub<GreetServiceBlockingStub> {
+      ...
+      public org.greet.Greet_proto.Greeting greet(org.greet.Greet_proto.gString request) {
+         ...
+      }
+   }
+   ...
+   public static final class GreetServiceStub extends
+         io.grpc.stub.AbstractAsyncStub<GreetServiceStub> {
+      ...
+      public void greet(org.greet.Greet_proto.gString request,
+         io.grpc.stub.StreamObserver<org.greet.Greet_proto.gString> responseObserver) {
+         ...
+      }
+   }
+}
 ----
 
 === Client stubs
@@ -146,21 +137,19 @@ something like:
 
 [source,java]
 ----
-    private static String target = "localhost:8082";
-    private static ManagedChannel channel;
-    private static GreetServiceBlockingStub blockingStub;
-
-    public static void setup() throws Exception {
-       channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
-       blockingStub = GreetServiceGrpc.newBlockingStub(channel);
-    }
-
-    public void test() throws Exception {
-       org.greet.Greet_proto.gString gs = org.greet.Greet_proto.gString.newBuilder().setS("foo").build();
-       org.greet.Greet_proto.Greeting response = blockingStub.greet(gs);
-       String s = response.getS();
-       ...
-    }
+private static String target = "localhost:8082";
+private static ManagedChannel channel;
+private static GreetServiceBlockingStub blockingStub;
+ public static void setup() throws Exception {
+   channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
+   blockingStub = GreetServiceGrpc.newBlockingStub(channel);
+}
+ public void test() throws Exception {
+   org.greet.Greet_proto.gString gs = org.greet.Greet_proto.gString.newBuilder().setS("foo").build();
+   org.greet.Greet_proto.Greeting response = blockingStub.greet(gs);
+   String s = response.getS();
+   ...
+}
 ----
 
 There are also
@@ -179,12 +168,12 @@ A simple example is
 
 [source,java]
 ----
-    @Override
-    public void greet(org.greet.Greet_proto.gString request, StreamObserver<org.greet.Greet_proto.Greeting> responseObserver) {
-       String name = request.getValue();
-       org.greet.Greet_proto.Greeting greeting = org.greet.Greet_proto.Greeting.newBuilder().setS("hello, " + name).build();
-       responseObserver.onNext(greeting);
-    }
+@Override
+public void greet(org.greet.Greet_proto.gString request, StreamObserver<org.greet.Greet_proto.Greeting> responseObserver) {
+   String name = request.getValue();
+   org.greet.Greet_proto.Greeting greeting = org.greet.Greet_proto.Greeting.newBuilder().setS("hello, " + name).build();
+   responseObserver.onNext(greeting);
+}
 ----
 
 === google.protobuf.Any
@@ -196,10 +185,10 @@ The definition of `Any` is
 
 [source,protobuf]
 ----
-    message Any {
-       string type_url = 1;
-       bytes value = 2;
-    }
+message Any {
+   string type_url = 1;
+   bytes value = 2;
+}
 ----
 
 The `value` field has built-in type `bytes`, which "May contain any
@@ -210,17 +199,17 @@ of the message stored in the `value` is described by the URL in the
 
 [source,java]
 ----
-    gString gs = gString.newBuilder().setValue("abc").build();
-    Message m = Any.pack(gs);
-    System.out.println(m);
+gString gs = gString.newBuilder().setValue("abc").build();
+Message m = Any.pack(gs);
+System.out.println(m);
 ----
 
 The output is
 
 [source,protobuf]
 ----
-    type_url: "type.googleapis.com/org.greet.gString"
-    value: "\272\001\003abc"
+type_url: "type.googleapis.com/org.greet.gString"
+value: "\272\001\003abc"
 ----
 
 The string "\272\001\003abc" is the internal representation of a
@@ -235,29 +224,29 @@ the value of the `Any`. Consider, for example, the code
 
 [source,java]
 ----
-    Any any = null;
-    if (/* some predicate */) {
-       gString gs = gString.newBuilder().setValue("abc").build();
-       any = Any.pack(gs);
-    } else {
-       gInteger gi = gInteger.newBuilder().setValue(7).build();
-       any = Any.pack(gi);
-    }
-    /* send any */
+Any any = null;
+if (/* some predicate */) {
+   gString gs = gString.newBuilder().setValue("abc").build();
+   any = Any.pack(gs);
+} else {
+   gInteger gi = gInteger.newBuilder().setValue(7).build();
+   any = Any.pack(gi);
+}
+/* send any */
 ----
 
 Then, the `Any` can be unpacked as follows:
 
 [source,java]
 ----
-    /* get any */
-    if (any.getTypeUrl().endsWith("org.greet.gString")) {
-       gString gs = any.unpack(gString.class);
-       System.out.println("gs: " + gs);
-    } else if (any.getTypeUrl().endsWith("org.greet.gInteger")) {
-       gInteger gi = any.unpack(gInteger.class);
-       System.out.println("gi: " + gi);
-    }
+/* get any */
+if (any.getTypeUrl().endsWith("org.greet.gString")) {
+   gString gs = any.unpack(gString.class);
+   System.out.println("gs: " + gs);
+} else if (any.getTypeUrl().endsWith("org.greet.gInteger")) {
+   gInteger gi = any.unpack(gInteger.class);
+   System.out.println("gi: " + gi);
+}
 ----
 
 == Connecting a gRPC client to a Jakarta REST server: Semantic issues
@@ -295,136 +284,118 @@ Given `org.greet.Greeting`
 
 [source,java]
 ----
-    package org.greet;
-
-    public class Greeting {
-       private String s;
-
-       public Greeting(String s) {
-          this.s = s;
-       }
-    }
+package org.greet;
+ public class Greeting {
+   private String s;
+    public Greeting(String s) {
+      this.s = s;
+   }
+}
 ----
 
 and `org.greet.Greeter`
 
 [source,java]
 ----
-    package org.greet;
-
-    import jakarta.ws.rs.GET;
-    import jakarta.ws.rs.Path;
-
-    @Path("")
-    public class Greeter {
-
-       @GET
-       @Path("greet")
-       public Greeting greet(String s) {
-          return new Greeting("hello, " + s);
-       }
-    }
+package org.greet;
+ import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+ @Path("")
+public class Greeter {
+    @GET
+   @Path("greet")
+   public Greeting greet(String s) {
+      return new Greeting("hello, " + s);
+   }
+}
 ----
 
 `JavaToProtobufGenerator` will generate the IDL file Greet.proto:
 
 [source,protobuf]
 ----
-    syntax = "proto3";
-    package org.greet;
-    import "google/protobuf/any.proto";
-    import "google/protobuf/timestamp.proto";
-    option java_package = "org.greet";
-    option java_outer_classname = "Greet_proto";
-
-    service GreetService {
-    // /greet gString org_greet___Greeting GET sync
-      rpc greet (GeneralEntityMessage) returns (GeneralReturnMessage);
-    }
-
-    // Type: dev.resteasy.example.grpc.greet.Greeting
-    message org_greet___Greeting {
-      string s = 1;
-    }
-
-    message gInteger   {int32  value = 1;}
-    message gFloat     {float  value = 1;}
-    message gCharacter {string value = 1;}
-    message gByte      {int32  value = 1;}
-    message gLong      {int64  value = 1;}
-    message gString    {string value = 1;}
-    message gBoolean   {bool   value = 1;}
-    message gDouble    {double value = 1;}
-    message gShort     {int32  value = 1;}
-
-    message gHeader {
-       repeated string values = 1;
-    }
-
-    message gCookie {
-       string name = 1;
-       string value = 2;
-       int32  version = 3;
-       string path = 4;
-       string domain = 5;
-    }
-
-    message gNewCookie {
-       string name = 1;
-       string value = 2;
-       int32  version = 3;
-       string path = 4;
-       string domain = 5;
-       string comment = 6;
-       int32 maxAge = 7;
-       google.protobuf.Timestamp expiry = 8;
-       bool secure = 9;
-       bool httpOnly = 10;
-
-       enum SameSite {
-          NONE   = 0;
-          LAX    = 1;
-          STRICT = 2;
-       }
-
-       SameSite sameSite = 11;
-    }
-
-    message ServletInfo {
-       string characterEncoding = 1;
-       string clientAddress = 2;
-       string clientHost = 3;
-       int32  clientPort = 4;
-    }
-
-    message FormValues {
-       repeated string formValues_field = 1;
-    }
-
-    message FormMap {
-       map<string, FormValues> formMap_field = 1;
-    }
-
-    message GeneralEntityMessage {
-       ServletInfo servletInfo = 1;
-       string URL = 2;
-       map<string, gHeader> headers = 3;
-       repeated gCookie cookies = 4;
-       string httpMethod = 5;
-       oneof messageType {
-          gString gString_field = 6;
-          FormMap form_field = 7;
-       }
-    }
-
-    message GeneralReturnMessage {
-       map<string, gHeader> headers = 1;
-       repeated gNewCookie cookies = 2;
-       gInteger status = 3;
-       oneof messageType {
-          org_greet___Greeting org_greet___Greeting_field = 4;
-       }
-    }
+syntax = "proto3";
+package org.greet;
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+option java_package = "org.greet";
+option java_outer_classname = "Greet_proto";
+ service GreetService {
+// /greet gString org_greet___Greeting GET sync
+  rpc greet (GeneralEntityMessage) returns (GeneralReturnMessage);
+}
+ // Type: dev.resteasy.example.grpc.greet.Greeting
+message org_greet___Greeting {
+  string s = 1;
+}
+ message gInteger   {int32  value = 1;}
+message gFloat     {float  value = 1;}
+message gCharacter {string value = 1;}
+message gByte      {int32  value = 1;}
+message gLong      {int64  value = 1;}
+message gString    {string value = 1;}
+message gBoolean   {bool   value = 1;}
+message gDouble    {double value = 1;}
+message gShort     {int32  value = 1;}
+ message gHeader {
+   repeated string values = 1;
+}
+ message gCookie {
+   string name = 1;
+   string value = 2;
+   int32  version = 3;
+   string path = 4;
+   string domain = 5;
+}
+ message gNewCookie {
+   string name = 1;
+   string value = 2;
+   int32  version = 3;
+   string path = 4;
+   string domain = 5;
+   string comment = 6;
+   int32 maxAge = 7;
+   google.protobuf.Timestamp expiry = 8;
+   bool secure = 9;
+   bool httpOnly = 10;
+    enum SameSite {
+      NONE   = 0;
+      LAX    = 1;
+      STRICT = 2;
+   }
+    SameSite sameSite = 11;
+}
+ message ServletInfo {
+   string characterEncoding = 1;
+   string clientAddress = 2;
+   string clientHost = 3;
+   int32  clientPort = 4;
+}
+ message FormValues {
+   repeated string formValues_field = 1;
+}
+ message FormMap {
+   map<string, FormValues> formMap_field = 1;
+}
+ message GeneralEntityMessage {
+   ServletInfo servletInfo = 1;
+   string URL = 2;
+   map<string, gHeader> headers = 3;
+   repeated gCookie cookies = 4;
+   string httpMethod = 5;
+   oneof messageType {
+      gString gString_field = 6;
+      FormMap form_field = 7;
+   }
+}
+ message GeneralReturnMessage {
+   map<string, gHeader> headers = 1;
+   repeated gNewCookie cookies = 2;
+   gInteger status = 3;
+   oneof messageType {
+      org_greet___Greeting org_greet___Greeting_field = 4;
+   }
+}
 ----
 
 Clearly, the generated IDL file is more complicated than the one
@@ -453,8 +424,8 @@ can accomodate all of those. Also, consider the element
 [source,protobuf]
 ----
    oneof messageType {
-      gString gString_field = 5;
-      FormMap form_field = 6;
+  gString gString_field = 5;
+  FormMap form_field = 6;
    }
 ----
 
@@ -473,10 +444,10 @@ Then the `oneof` field would look like
 
 [source,protobuf]
 ----
-    oneof messageType {
-      gString gString_field = 5;
-      gFloat gFloat_field = 6;
-      FormMap form_field = 7;
+oneof messageType {
+  gString gString_field = 5;
+  gFloat gFloat_field = 6;
+  FormMap form_field = 7;
    }
 ----
 
@@ -509,36 +480,32 @@ accumulating the fields in a single class. Let's define the class
 
 [source,java]
 ----
-    package org.greet;
-
-    public class GeneralGreeting extends Greeting {
-       private String salute;
-
-       public GeneralGreeting(String salute, String s) {
-          super(s);
-          this.salute = salute;
-       }
-    }
+package org.greet;
+ public class GeneralGreeting extends Greeting {
+   private String salute;
+    public GeneralGreeting(String salute, String s) {
+      super(s);
+      this.salute = salute;
+   }
+}
 ----
 
 and extend `Greeter`:
 
 [source,java]
 ----
-    @Path("")
-    public class Greeter {
-        ...
-
-        @GET
-        @Path("salute")
-        public GeneralGreeting generalGreet(@QueryParam("salute") String salute, String s) {
-            return getGeneralGreeting(salute, s);
-        }
-
-        private GeneralGreeting getGeneralGreeting(String salute, String name) {
-            return new GeneralGreeting(salute, name);
-        }
+@Path("")
+public class Greeter {
+    ...
+     @GET
+    @Path("salute")
+    public GeneralGreeting generalGreet(@QueryParam("salute") String salute, String s) {
+        return getGeneralGreeting(salute, s);
     }
+     private GeneralGreeting getGeneralGreeting(String salute, String name) {
+        return new GeneralGreeting(salute, name);
+    }
+}
 ----
 
 Then `JavaToProtobufGenerator` will make the following adjustments to
@@ -546,36 +513,34 @@ Greet.proto:
 
 [source,protobuf]
 ----
-    ...
-    service GreetService {
-    // /greet gString org_greet___Greeting GET sync
-      rpc greet (GeneralEntityMessage) returns (GeneralReturnMessage);
+...
+service GreetService {
+// /greet gString org_greet___Greeting GET sync
+  rpc greet (GeneralEntityMessage) returns (GeneralReturnMessage);
+ // /salute gString org_greet___GeneralGreeting GET sync
+  rpc generalGreet (GeneralEntityMessage) returns (GeneralReturnMessage); // 1
+}
+...
 
-    // /salute gString org_greet___GeneralGreeting GET sync
-      rpc generalGreet (GeneralEntityMessage) returns (GeneralReturnMessage); // 1
-    }
-    ...
-    
-    // Type: dev.resteasy.example.grpc.greet.Greeting
-    message dev_resteasy_example_grpc_greet___Greeting {
-        string s = 1;
-    }
-
-    // Type: dev.resteasy.example.grpc.greet.GeneralGreeting
-    message dev_resteasy_example_grpc_greet___GeneralGreeting { // 2
-        string s = 1;
-        string salute = 2;
-    }
-    ...
-    message GeneralReturnMessage {
-       map<string, gHeader> headers = 1;
-       repeated gNewCookie cookies = 2;
-       int32 status = 3;
-       oneof messageType { // 3
-          org_greet___Greeting org_greet___Greeting_field = 4;
-          org_greet___GeneralGreeting org_greet___GeneralGreeting_field = 5;
-       }
-    }
+// Type: dev.resteasy.example.grpc.greet.Greeting
+message dev_resteasy_example_grpc_greet___Greeting {
+    string s = 1;
+}
+ // Type: dev.resteasy.example.grpc.greet.GeneralGreeting
+message dev_resteasy_example_grpc_greet___GeneralGreeting { // 2
+    string s = 1;
+    string salute = 2;
+}
+...
+message GeneralReturnMessage {
+   map<string, gHeader> headers = 1;
+   repeated gNewCookie cookies = 2;
+   int32 status = 3;
+   oneof messageType { // 3
+      org_greet___Greeting org_greet___Greeting_field = 4;
+      org_greet___GeneralGreeting org_greet___GeneralGreeting_field = 5;
+   }
+}
 ----
 
 Note the following:
@@ -602,41 +567,36 @@ Unbounded wildcards and type variables are mapped to `java.lang.Object`. For exa
 
 [source,java]
 ----
-    package x.y;
-
-    @GET
-    @Path("grimble/raw")
-    public void gr_raw(Grimble g1) {
-    }
-
-    @GET
-    @Path("grimble/wildcard")
-    public void gr_wildcard(Grimble<?> g1) {
-    }
-
-    @GET
-    @Path("grimble/variable")
-    public <T> void gr_variable(Grimble<T> g1) {
-    }
-
-    @GET
-    @Path("grimble/string")
-    public void gr_string(Grimble<String> g1) {
-    }
-
-    @GET
-    @Path("grimble/integer")
-    public void gr_integer(Grimble<Integer> g1) {
-    }
+package x.y;
+ @GET
+@Path("grimble/raw")
+public void gr_raw(Grimble g1) {
+}
+ @GET
+@Path("grimble/wildcard")
+public void gr_wildcard(Grimble<?> g1) {
+}
+ @GET
+@Path("grimble/variable")
+public <T> void gr_variable(Grimble<T> g1) {
+}
+ @GET
+@Path("grimble/string")
+public void gr_string(Grimble<String> g1) {
+}
+ @GET
+@Path("grimble/integer")
+public void gr_integer(Grimble<Integer> g1) {
+}
 ----
 
 where `x.y.Grimble` is
 
 [source,java]
 ----
-    public class Grimble<T> {
-        T t;
-    }
+public class Grimble<T> {
+    T t;
+}
 ----
 This leads to the following elements in the .proto file:
 
@@ -786,37 +746,33 @@ message java_util___List30 {
 Everything discussed in the section about generic types applies to variants of
 `List`, `Set`, `Map`, and `MultivaluedMap`. For example,
 ----
-    package x.y;
-    
-    @Path("arraylist/variable")
-    @POST
-    public <T> ArrayList<T> arrayListTest1(ArrayList<T> l) {
-        return l;
-    }
+package x.y;
 
-    @Path("arraylist/wildcard")
-    @POST
-    public ArrayList<?> arrayListTest2(ArrayList<?> l) {
-        return l;
-    }
-
-    @Path("arraylist/string")
-    @POST
-    public ArrayList<String> arrayListTest3(ArrayList<String> l) {
-        return l;
-    }
-
-    @Path("arraylist/object")
-    @POST
-    public ArrayList<Object> arrayListTest4(ArrayList<Object> l) {
-        return l;
-    }
-
-    @Path("arraylist/notype")
-    @POST
-    public ArrayList arrayListTest5(ArrayList l) {
-        return l;
-    }
+@Path("arraylist/variable")
+@POST
+public <T> ArrayList<T> arrayListTest1(ArrayList<T> l) {
+    return l;
+}
+ @Path("arraylist/wildcard")
+@POST
+public ArrayList<?> arrayListTest2(ArrayList<?> l) {
+    return l;
+}
+ @Path("arraylist/string")
+@POST
+public ArrayList<String> arrayListTest3(ArrayList<String> l) {
+    return l;
+}
+ @Path("arraylist/object")
+@POST
+public ArrayList<Object> arrayListTest4(ArrayList<Object> l) {
+    return l;
+}
+ @Path("arraylist/notype")
+@POST
+public ArrayList arrayListTest5(ArrayList l) {
+    return l;
+}
 ----
 turns into
 
@@ -930,21 +886,20 @@ message dev_resteasy_grpc_arrays___ArrayHolder___Array {
 ...
 message dev_resteasy_grpc_arrays___ArrayHolder {
    oneof messageType {
-      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Any___Array dev_resteasy_grpc_arrays___Any___Array_field = 1;
-      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___Array dev_resteasy_grpc_arrays___Boolean___Array_field = 2;
+  dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Any___Array dev_resteasy_grpc_arrays___Any___Array_field = 1;
+  dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___Array dev_resteasy_grpc_arrays___Boolean___Array_field = 2;
  ...
-      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Integer___Array dev_resteasy_grpc_arrays___Integer___Array_field = 12;
+  dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Integer___Array dev_resteasy_grpc_arrays___Integer___Array_field = 12;
 ...
-      dev_resteasy_grpc_arrays___ArrayHolder___Array dev_resteasy_grpc_arrays___ArrayHolder___Array_field = 21;
+  dev_resteasy_grpc_arrays___ArrayHolder___Array dev_resteasy_grpc_arrays___ArrayHolder___Array_field = 21;
 ... 
 }
 ----
 
 It has
-
-    * an array definition for each primitive Java type, e.g. `+dev_resteasy_grpc_arrays___Boolean___Array+`
-    * an array definition of arbitrary objects: `+dev_resteasy_grpc_arrays___Any___Array_field+`
-    * a recursive field of `+dev_resteasy_grpc_arrays___ArrayHolder+`'s
+ * an array definition for each primitive Java type, e.g. `+dev_resteasy_grpc_arrays___Boolean___Array+`
+* an array definition of arbitrary objects: `+dev_resteasy_grpc_arrays___Any___Array_field+`
+* a recursive field of `+dev_resteasy_grpc_arrays___ArrayHolder+`'s
 
 Now, consider
 
@@ -1001,8 +956,8 @@ message dev_resteasy_grpc_arrays___NONE {
 
 message dev_resteasy_grpc_arrays___Boolean___wrapper {
    oneof type {
-      dev_resteasy_grpc_arrays___NONE none_field = 1;
-      bool boolean_field = 2;
+  dev_resteasy_grpc_arrays___NONE none_field = 1;
+  bool boolean_field = 2;
    }
 }
 
@@ -1025,8 +980,8 @@ For example,
 ----
 message dev_resteasy_grpc_arrays___ArrayHolder___wrapper {
    oneof type {
-      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___NONE none_field = 1;
-      dev_resteasy_grpc_arrays___ArrayHolder dev_resteasy_grpc_arrays___ArrayHolder_field = 2;
+  dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___NONE none_field = 1;
+  dev_resteasy_grpc_arrays___ArrayHolder dev_resteasy_grpc_arrays___ArrayHolder_field = 2;
    }
 }
 
@@ -1037,12 +992,12 @@ message dev_resteasy_grpc_arrays___ArrayHolder___WArray {
 
 message dev_resteasy_grpc_arrays___ArrayHolder {
    oneof messageType {
-      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Any___WArray dev_resteasy_grpc_arrays___Any___WArray_field = 1;
-      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___Array dev_resteasy_grpc_arrays___Boolean___Array_field = 2;
-      dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___WArray dev_resteasy_grpc_arrays___Boolean___WArray_field = 3;
-      ...
-      dev_resteasy_grpc_arrays___ArrayHolder___WArray dev_resteasy_grpc_arrays___ArrayHolder___WArray_field = 21;
-      ...
+  dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Any___WArray dev_resteasy_grpc_arrays___Any___WArray_field = 1;
+  dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___Array dev_resteasy_grpc_arrays___Boolean___Array_field = 2;
+  dev.resteasy.grpc.arrays.dev_resteasy_grpc_arrays___Boolean___WArray dev_resteasy_grpc_arrays___Boolean___WArray_field = 3;
+  ...
+  dev_resteasy_grpc_arrays___ArrayHolder___WArray dev_resteasy_grpc_arrays___ArrayHolder___WArray_field = 21;
+  ...
    }
 ----
 
@@ -1056,11 +1011,11 @@ Consider
 
 [source,java]
 ----
-    @GET
-    @Path("list/string")
-    List<String> listTest(List<String> l) {
-        ...
-    }
+@GET
+@Path("list/string")
+List<String> listTest(List<String> l) {
+    ...
+}
 ----
 
 Given that actual types of the entity `l` or the return value cannot be determined until runtime, 
@@ -1078,22 +1033,22 @@ Consider the resource method
 
 [source,java]
 ----
-    public Response m() {
-       if (test()) {
-          return Response.ok(new X()).build();
-       } else {
-          return Response.ok(new Y()).build();
-       }
-    }
+public Response m() {
+   if (test()) {
+      return Response.ok(new X()).build();
+   } else {
+      return Response.ok(new Y()).build();
+   }
+}
 ----
 
 Will it return an `X` or a `Y`? If `test()` is
 
 [source,java]
 ----
-    public boolean test() {
-       return true;
-    }
+public boolean test() {
+   return true;
+}
 ----
 
 it's clear that `m()` will return an `X`, and, moreover, that can be
@@ -1110,11 +1065,11 @@ Suppose we add the resource method
 
 [source,java]
 ----
-    @GET
-    @Path("greet/response")
-    public Response response(String name) {
-       return Response.ok("hello " + name).build();
-    }
+@GET
+@Path("greet/response")
+public Response response(String name) {
+   return Response.ok("hello " + name).build();
+}
 ----
 
 to `org.greet.Greeter`. Then there is a new rpc entry
@@ -1129,11 +1084,11 @@ and the oneof field of `GeneralReturnMessage` becomes
 
 [source,protobuf]
 ----
-    oneof messageType {
-        org_greet___Greeting org_greet___Greeting_field = 4;
-        org_greet___GeneralGreeting org_greet___GeneralGreeting_field = 5;
-        google.protobuf.Any google_protobuf_Any_field = 6;
-    }
+oneof messageType {
+    org_greet___Greeting org_greet___Greeting_field = 4;
+    org_greet___GeneralGreeting org_greet___GeneralGreeting_field = 5;
+    google.protobuf.Any google_protobuf_Any_field = 6;
+}
 ----
 
 augmented by the `google_protobuf_Any_field` field.
@@ -1146,21 +1101,21 @@ Consider the following method:
 
 [source,java]
 ----
-    @GET
-    @Path("suspend")
-    public void suspend(@Suspended final AsyncResponse response) {
-       Thread t = new Thread() {
-       @Override
-          public void run() {
-             try {
-                response.resume("suspend");
-             } catch (Exception e) {
-                response.resume(e);
-             }
-          }
-       };
-       t.start();
-    }
+@GET
+@Path("suspend")
+public void suspend(@Suspended final AsyncResponse response) {
+   Thread t = new Thread() {
+   @Override
+      public void run() {
+         try {
+            response.resume("suspend");
+         } catch (Exception e) {
+            response.resume(e);
+         }
+      }
+   };
+   t.start();
+}
 ----
 
 This results in the rpc
@@ -1195,7 +1150,7 @@ methods in `GreetServiceGrpc` that need to be overridden. For example,
 
 [source,java]
 ----
-    public void greet(org.greet.Greet_proto.GeneralEntityMessage param, StreamObserver<org.greet.Greet_proto.GeneralReturnMessage> responseObserver);
+public void greet(org.greet.Greet_proto.GeneralEntityMessage param, StreamObserver<org.greet.Greet_proto.GeneralReturnMessage> responseObserver);
 ----
 
 will be overridden by
@@ -1206,29 +1161,29 @@ will be overridden by
 public void greet(org.greet.Greet_proto.GeneralEntityMessage param, StreamObserver<org.greet.Greet_proto.GeneralReturnMessage> responseObserver) {
    HttpServletRequest request = null;
    try {
-      HttpServletResponseImpl response = new HttpServletResponseImpl("org_greet___Greeting", "sync", Greet_Server.getContext(), builder, fd); // 1
-      GeneratedMessageV3 actualParam = param.getGStringField();
-      request = getHttpServletRequest(param, actualParam, "//greet", response, "GET", "org_greet___Greeting"); // 2
-      HttpServletDispatcher servlet = getServlet(); // 3
-      activateRequestContext(); // 4
-      servlet.service(request.getMethod(), request, response); // 5
-      MockServletOutputStream msos = (MockServletOutputStream) response.getOutputStream();
-      ByteArrayOutputStream baos = msos.getDelegate();
-      ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-      org_greet___Greeting reply = org_greet___Greeting.parseFrom(bais); // 6
-      org.greet.Greet_proto.GeneralReturnMessage.Builder grmb = createGeneralReturnMessageBuilder(response);
-      grmb.setOrgGreetGreetingField(reply);
-      responseObserver.onNext(grmb.build()); // 7
+  HttpServletResponseImpl response = new HttpServletResponseImpl("org_greet___Greeting", "sync", Greet_Server.getContext(), builder, fd); // 1
+  GeneratedMessageV3 actualParam = param.getGStringField();
+  request = getHttpServletRequest(param, actualParam, "//greet", response, "GET", "org_greet___Greeting"); // 2
+  HttpServletDispatcher servlet = getServlet(); // 3
+  activateRequestContext(); // 4
+  servlet.service(request.getMethod(), request, response); // 5
+  MockServletOutputStream msos = (MockServletOutputStream) response.getOutputStream();
+  ByteArrayOutputStream baos = msos.getDelegate();
+  ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+  org_greet___Greeting reply = org_greet___Greeting.parseFrom(bais); // 6
+  org.greet.Greet_proto.GeneralReturnMessage.Builder grmb = createGeneralReturnMessageBuilder(response);
+  grmb.setOrgGreetGreetingField(reply);
+  responseObserver.onNext(grmb.build()); // 7
    } catch (Exception e) {
-      responseObserver.onError(e);
+  responseObserver.onError(e);
    } finally {
-      responseObserver.onCompleted();
-      if (requestContextController != null) {
-         requestContextController.deactivate();
-      }
-      if (tccl != null) {
-         Thread.currentThread().setContextClassLoader(tccl);
-      }
+  responseObserver.onCompleted();
+  if (requestContextController != null) {
+     requestContextController.deactivate();
+  }
+  if (tccl != null) {
+     Thread.currentThread().setContextClassLoader(tccl);
+  }
    }
 }
 ----
@@ -1251,11 +1206,11 @@ Note that the sequence
 
 [source]
 ----
-              org.greet.Greeting (Java class)
-                      -> (translated by JavaToProtobufGenerator) ->
-                      -> org_greet___Greeting (protobuf message)
-                      -> (compiled by protoc) ->
-                      -> org.greet.Greet_proto.org_greet___Greeting (Java class)
+          org.greet.Greeting (Java class)
+                  -> (translated by JavaToProtobufGenerator) ->
+                  -> org_greet___Greeting (protobuf message)
+                  -> (compiled by protoc) ->
+                  -> org.greet.Greet_proto.org_greet___Greeting (Java class)
 ----
 
 turns the Java class `org.greet.Greeting` into a second Java class
@@ -1272,9 +1227,9 @@ prefix will change), which has three methods
 
 [source,java]
 ----
-    Message translateToJavabuf(Object o);
-    Message translateToJavabuf(Object o, GenericType genericType);
-    Object translateFromJavabuf(Message message);
+Message translateToJavabuf(Object o);
+Message translateToJavabuf(Object o, GenericType genericType);
+Object translateFromJavabuf(Message message);
 ----
 
 which do the translations. Without going too deeply into
@@ -1283,8 +1238,8 @@ type; for example,
 
 [source,java]
 ----
-    static class org_greet___Greeting_ToJavabuf implements TranslateToJavabuf { ... }
-    static class org_greet___Greeting_FromJavabuf implements TranslateFromJavabuf { ... }
+static class org_greet___Greeting_ToJavabuf implements TranslateToJavabuf { ... }
+static class org_greet___Greeting_FromJavabuf implements TranslateFromJavabuf { ... }
 ----
 
 Each class has a list of lambdas, each lambda being responsible for
@@ -1311,61 +1266,57 @@ example, that can be accomplished in a web.xml file as follows:
 
 [source,xml]
 ----
-    <servlet>
-       <servlet-name>GreetServlet</servlet-name>
-       <servlet-class>
-          dev.resteasy.grpc.bridge.runtime.servlet.GrpcHttpServletDispatcher
-       </servlet-class>
-    </servlet>
-
-    <!--
-       The intention is that GreetMessageBodyReaderWriter (with the help of GreetJavabufTranslator)
-       will handle all reading and writing of data objects. Therefore, we
-
-       1. eliminate all builtin providers, and then
-       2. add back builtin providers other than MessageBodyReaders and MessageBodyWriters.
-
-     -->
-    <context-param>
-        <param-name>resteasy.use.builtin.providers</param-name>
-        <param-value>false</param-value>
-    </context-param>
-    <context-param>
-        <param-name>resteasy.servlet.mapping.prefix</param-name>
-        <param-value>/grpcToJakartaRest</param-value>
-    </context-param>
-    ...
-     <context-param>
-       <param-name>resteasy.providers</param-name>
-       <param-value>
-          org.jboss.resteasy.client.jaxrs.internal.CompletionStageRxInvokerProvider,
-          org.jboss.resteasy.plugins.interceptors.CacheControlFeature,
-          org.jboss.resteasy.plugins.interceptors.ClientContentEncodingAnnotationFeature,
-          org.jboss.resteasy.plugins.interceptors.MessageSanitizerContainerResponseFilter,
-          org.jboss.resteasy.plugins.interceptors.ServerContentEncodingAnnotationFeature,
-          org.jboss.resteasy.plugins.providers.AsyncStreamingOutputProvider,
-          org.jboss.resteasy.plugins.providers.CompletionStageProvider,
-          org.jboss.resteasy.plugins.providers.jackson.PatchMethodFilter,
-          org.jboss.resteasy.plugins.providers.jackson.UnrecognizedPropertyExceptionHandler,
-          org.jboss.resteasy.plugins.providers.jaxb.XmlJAXBContextFinder,
-          org.jboss.resteasy.plugins.providers.jsonp.JsonpPatchMethodFilter,
-          org.jboss.resteasy.plugins.providers.ReactiveStreamProvider,
-          org.jboss.resteasy.plugins.validation.ResteasyViolationExceptionMapper,
-          org.jboss.resteasy.plugins.validation.ValidatorContextResolver,
-          org.jboss.resteasy.plugins.validation.ValidatorContextResolverCDI,
-          org.jboss.resteasy.security.doseta.ClientDigitalSigningHeaderDecoratorFeature,
-          org.jboss.resteasy.security.doseta.ClientDigitalVerificationHeaderDecoratorFeature,
-          org.jboss.resteasy.security.doseta.DigitalSigningInterceptor,
-          org.jboss.resteasy.security.doseta.DigitalVerificationInterceptor,
-          org.jboss.resteasy.security.doseta.ServerDigitalSigningHeaderDecoratorFeature,
-          org.jboss.resteasy.security.doseta.ServerDigitalVerificationHeaderDecoratorFeature
-       </param-value>
-    </context-param>
-
-    <servlet-mapping>
-       <servlet-name>GreetServlet</servlet-name>
-       <url-pattern>/grpcToJakartaRest/*</url-pattern>
-    </servlet-mapping>
+<servlet>
+   <servlet-name>GreetServlet</servlet-name>
+   <servlet-class>
+      dev.resteasy.grpc.bridge.runtime.servlet.GrpcHttpServletDispatcher
+   </servlet-class>
+</servlet>
+ <!--
+   The intention is that GreetMessageBodyReaderWriter (with the help of GreetJavabufTranslator)
+   will handle all reading and writing of data objects. Therefore, we
+    1. eliminate all builtin providers, and then
+   2. add back builtin providers other than MessageBodyReaders and MessageBodyWriters.
+  -->
+<context-param>
+    <param-name>resteasy.use.builtin.providers</param-name>
+    <param-value>false</param-value>
+</context-param>
+<context-param>
+    <param-name>resteasy.servlet.mapping.prefix</param-name>
+    <param-value>/grpcToJakartaRest</param-value>
+</context-param>
+...
+ <context-param>
+   <param-name>resteasy.providers</param-name>
+   <param-value>
+      org.jboss.resteasy.client.jaxrs.internal.CompletionStageRxInvokerProvider,
+      org.jboss.resteasy.plugins.interceptors.CacheControlFeature,
+      org.jboss.resteasy.plugins.interceptors.ClientContentEncodingAnnotationFeature,
+      org.jboss.resteasy.plugins.interceptors.MessageSanitizerContainerResponseFilter,
+      org.jboss.resteasy.plugins.interceptors.ServerContentEncodingAnnotationFeature,
+      org.jboss.resteasy.plugins.providers.AsyncStreamingOutputProvider,
+      org.jboss.resteasy.plugins.providers.CompletionStageProvider,
+      org.jboss.resteasy.plugins.providers.jackson.PatchMethodFilter,
+      org.jboss.resteasy.plugins.providers.jackson.UnrecognizedPropertyExceptionHandler,
+      org.jboss.resteasy.plugins.providers.jaxb.XmlJAXBContextFinder,
+      org.jboss.resteasy.plugins.providers.jsonp.JsonpPatchMethodFilter,
+      org.jboss.resteasy.plugins.providers.ReactiveStreamProvider,
+      org.jboss.resteasy.plugins.validation.ResteasyViolationExceptionMapper,
+      org.jboss.resteasy.plugins.validation.ValidatorContextResolver,
+      org.jboss.resteasy.plugins.validation.ValidatorContextResolverCDI,
+      org.jboss.resteasy.security.doseta.ClientDigitalSigningHeaderDecoratorFeature,
+      org.jboss.resteasy.security.doseta.ClientDigitalVerificationHeaderDecoratorFeature,
+      org.jboss.resteasy.security.doseta.DigitalSigningInterceptor,
+      org.jboss.resteasy.security.doseta.DigitalVerificationInterceptor,
+      org.jboss.resteasy.security.doseta.ServerDigitalSigningHeaderDecoratorFeature,
+      org.jboss.resteasy.security.doseta.ServerDigitalVerificationHeaderDecoratorFeature
+   </param-value>
+</context-param>
+ <servlet-mapping>
+   <servlet-name>GreetServlet</servlet-name>
+   <url-pattern>/grpcToJakartaRest/*</url-pattern>
+</servlet-mapping>
 ----
 
 Of course, the list of providers can be reduced to those that are
@@ -1392,7 +1343,7 @@ For example, to create an instance of `java_util___HashSet3`, defined in
 java.util.HashSet<java.lang.String> set = new java.util.HashSet<java.lang.String>();
 set.add("abc");
 GenericType<java.util.HashSet<java.lang.String>> type
-    = new GenericType<java.util.HashSet<java.lang.String>>() { };
+= new GenericType<java.util.HashSet<java.lang.String>>() { };
 java_util___HashSet3 hashSet3 = (java_util___HashSet3) translator.translateToJavabuf(set, type);
 ----
 and the other would be
@@ -1409,11 +1360,11 @@ It's easy. First, look at the resource method. Suppose we're going to call
 
 [source,java]
 ----
-    @Path("hashset/string")
-    @POST
-    public HashSet<String> hashSetTest3(HashSet<String> l) {
-        return l;
-    }
+@Path("hashset/string")
+@POST
+public HashSet<String> hashSetTest3(HashSet<String> l) {
+    return l;
+}
 ----
 It's expecting an instance of `HashSet<String>`. Now, we have to figure out
 which javabuf type represents `HashSet<String>`. Go to `Greet.proto` and search
@@ -1502,24 +1453,23 @@ A few changes are necessary to support SSE streaming. Suppose
 
 [source,java]
 ----
-    private ArrayList<String> names = new ArrayList<String>();
-
-    @GET
-    @Path("stream")
-    @Produces(MediaType.SERVER_SENT_EVENTS)
-    public void sseGreet(@Context SseEventSink eventSink, @Context Sse sse) {
-       ExecutorService executor = Executors.newFixedThreadPool(3);
-       final Map<Class<?>, Object> map = ResteasyContext.getContextDataMap();
-       executor.execute(() -> {
-          ResteasyContext.addCloseableContextDataLevel(map);
-          try (SseEventSink sink = eventSink) {
-             Iterator<String> it = names.iterator();
-             while (it.hasNext()) {
-                eventSink.send(sse.newEvent("hello, " + it.next()));
-             }
-          }
-       });
-    }
+private ArrayList<String> names = new ArrayList<String>();
+ @GET
+@Path("stream")
+@Produces(MediaType.SERVER_SENT_EVENTS)
+public void sseGreet(@Context SseEventSink eventSink, @Context Sse sse) {
+   ExecutorService executor = Executors.newFixedThreadPool(3);
+   final Map<Class<?>, Object> map = ResteasyContext.getContextDataMap();
+   executor.execute(() -> {
+      ResteasyContext.addCloseableContextDataLevel(map);
+      try (SseEventSink sink = eventSink) {
+         Iterator<String> it = names.iterator();
+         while (it.hasNext()) {
+            eventSink.send(sse.newEvent("hello, " + it.next()));
+         }
+      }
+   });
+}
 ----
 
 A couple of additions appear in Greet.proto:
@@ -1553,48 +1503,48 @@ multiple return messages:
 
 [source,java]
 ----
-    @java.lang.Override
-    public void sseGreet(org.greet.Greet_proto.GeneralEntityMessage param, StreamObserver<org.greet.Greet_proto.org_jboss_resteasy_grpc_runtime_sse___SseEvent> responseObserver) {
-        HttpServletRequest request = null;
-        try {
-            HttpServletResponseImpl response = new HttpServletResponseImpl("org_jboss_resteasy_grpc_sse_runtime___SseEvent", "sse", Greet_Server.getContext(), builder, fd);
-            GeneratedMessageV3 actualParam = param.getGEmptyField();
-            request = getHttpServletRequest(param, actualParam, "/stream", response, "GET", "org_jboss_resteasy_grpc_sse_runtime___SseEvent");
-            HttpServletDispatcher servlet = getServlet();
-            activateRequestContext();
-            servlet.service(request.getMethod(), request, response);
-            AsyncMockServletOutputStream amsos = (AsyncMockServletOutputStream) response.getOutputStream();
-            while (true) {
-                if (amsos.isClosed()) {
-                    break;
-                }
-                ByteArrayOutputStream baos = amsos.await();
-                if (amsos.isClosed()) {
-                    break;
-                }
-                byte[] bytes = baos.toByteArray();
-                if (bytes.length == 2 && bytes[0] == 10 && bytes[1] == 10) {
-                    continue;
-                }
-                try {
-                    org_jboss_resteasy_grpc_runtime_sse___SseEvent sseEvent = org_jboss_resteasy_grpc_runtime_sse___SseEvent.parseFrom(bytes);
-                    responseObserver.onNext(sseEvent);
-                } catch (Exception e) {
-                    continue;
-                }
+@java.lang.Override
+public void sseGreet(org.greet.Greet_proto.GeneralEntityMessage param, StreamObserver<org.greet.Greet_proto.org_jboss_resteasy_grpc_runtime_sse___SseEvent> responseObserver) {
+    HttpServletRequest request = null;
+    try {
+        HttpServletResponseImpl response = new HttpServletResponseImpl("org_jboss_resteasy_grpc_sse_runtime___SseEvent", "sse", Greet_Server.getContext(), builder, fd);
+        GeneratedMessageV3 actualParam = param.getGEmptyField();
+        request = getHttpServletRequest(param, actualParam, "/stream", response, "GET", "org_jboss_resteasy_grpc_sse_runtime___SseEvent");
+        HttpServletDispatcher servlet = getServlet();
+        activateRequestContext();
+        servlet.service(request.getMethod(), request, response);
+        AsyncMockServletOutputStream amsos = (AsyncMockServletOutputStream) response.getOutputStream();
+        while (true) {
+            if (amsos.isClosed()) {
+                break;
             }
-        } catch (Exception e) {
-            responseObserver.onError(e);
-        } finally {
-            responseObserver.onCompleted();
-            if (requestContextController != null) {
-                requestContextController.deactivate();
+            ByteArrayOutputStream baos = amsos.await();
+            if (amsos.isClosed()) {
+                break;
             }
-            if (tccl != null) {
-                Thread.currentThread().setContextClassLoader(tccl);
+            byte[] bytes = baos.toByteArray();
+            if (bytes.length == 2 && bytes[0] == 10 && bytes[1] == 10) {
+                continue;
+            }
+            try {
+                org_jboss_resteasy_grpc_runtime_sse___SseEvent sseEvent = org_jboss_resteasy_grpc_runtime_sse___SseEvent.parseFrom(bytes);
+                responseObserver.onNext(sseEvent);
+            } catch (Exception e) {
+                continue;
             }
         }
+    } catch (Exception e) {
+        responseObserver.onError(e);
+    } finally {
+        responseObserver.onCompleted();
+        if (requestContextController != null) {
+            requestContextController.deactivate();
+        }
+        if (tccl != null) {
+            Thread.currentThread().setContextClassLoader(tccl);
+        }
     }
+}
 ----
 
 These changes are generated automatically, so no intervention is
@@ -1603,13 +1553,13 @@ adjusted. It could look, for example, something like this:
 
 [source,java]
 ----
-    Iterator<org_jboss_resteasy_grpc_runtime_sse___SseEvent> response = blockingStub.sseGreet(gem);
-    while (response.hasNext()) {
-       org_jboss_resteasy_grpc_runtime_sse___SseEvent sseEvent = response.next();
-       Any any = sseEvent.getData();
-       gString gString = any.unpack(gString.class);
-       System.out.println(gString.getValue());
-    }
+Iterator<org_jboss_resteasy_grpc_runtime_sse___SseEvent> response = blockingStub.sseGreet(gem);
+while (response.hasNext()) {
+   org_jboss_resteasy_grpc_runtime_sse___SseEvent sseEvent = response.next();
+   Any any = sseEvent.getData();
+   gString gString = any.unpack(gString.class);
+   System.out.println(gString.getValue());
+}
 ----
 
 Note, in particular, the treatment of the `data` field. The class
@@ -1621,7 +1571,7 @@ Note, in particular, the treatment of the `data` field. The class
 
 [source,java]
 ----
-    public static <T extends com.google.protobuf.Message> Any pack(T message, java.lang.String typeUrlPrefix);
+public static <T extends com.google.protobuf.Message> Any pack(T message, java.lang.String typeUrlPrefix);
 ----
 
 so we have to translate the `Object` into a `Message`; The translation
@@ -1657,17 +1607,17 @@ generate the initial state of the bridge project, run
 
 [source,bash]
 ----
-    mvn archetype:generate -B \
-       -DarchetypeGroupId=dev.resteasy.grpc \
-       -DarchetypeArtifactId=gRPCtoJakartaREST-archetype \
-       -DarchetypeVersion=${archetype.version} \
-       -DgroupId=org.greet \
-       -DartifactId=greet \
-       -Dversion=0.0.1 \
-       -Dgenerate-prefix=Greet \
-       -Dgenerate-package=org.greet \
-       -Dresteasy-version=${resteasy.version} \
-       -Dgrpc-bridge-version=${resteasy.grpc.version}
+mvn archetype:generate -B \
+   -DarchetypeGroupId=dev.resteasy.grpc \
+   -DarchetypeArtifactId=gRPCtoJakartaREST-archetype \
+   -DarchetypeVersion=${archetype.version} \
+   -DgroupId=org.greet \
+   -DartifactId=greet \
+   -Dversion=0.0.1 \
+   -Dgenerate-prefix=Greet \
+   -Dgenerate-package=org.greet \
+   -Dresteasy-version=${resteasy.version} \
+   -Dgrpc-bridge-version=${resteasy.grpc.version}
 ----
 
 The following parameters need to be supplied:
@@ -1691,15 +1641,15 @@ new project is
 
 [source]
 ----
-    +- pom.xml
-    +- src/main/webapp
-    |  +- META-INF
-    |  |  +- beans.xml
-    |  +- WEB-INF
-    |     +- web.xml
-    +- src/main/resources
-    |  +- buildjar
-    |  +- deployjar
++- pom.xml
++- src/main/webapp
+|  +- META-INF
+|  |  +- beans.xml
+|  +- WEB-INF
+|     +- web.xml
++- src/main/resources
+|  +- buildjar
+|  +- deployjar
 ----
 
 The most important file is pom.xml, which describes the sequence of
@@ -1719,7 +1669,7 @@ classes:
 
 [source,bash]
 ----
-    mvn clean install
+mvn clean install
 ----
 
 There are also some optional parameters:
@@ -1734,7 +1684,7 @@ The syntax for the "classes" parameter is
 
 [source]
 ----
-          (DIR ":" CLASSNAME) ("," DIR ":" CLASSNAME)*
+      (DIR ":" CLASSNAME) ("," DIR ":" CLASSNAME)*
 ----
 
 where
@@ -1746,43 +1696,43 @@ For example,
 
 [source,bash]
 ----
-    mvn -Dclasses=/home/bob/greet/src/java/main:org.greet.Extra clean install
+mvn -Dclasses=/home/bob/greet/src/java/main:org.greet.Extra clean install
 ----
 
 When the project is built, the layout is as follows:
 
 [source]
 ----
-    +- pom.xml
-    +- src/main/java
-    |  +- org.greet
-    |     +- GeneralGreeting.java
-    |     +  Greeter.java
-    |     +  Greeting.java
-    +- src/main/proto
-    |  +- Greet.proto
-    +- src/main/webapp
-    |  +- META-INF
-    |  |  +- beans.xml
-    |  +- WEB-INF
-    |     +- web.xml
-    +- src/main/resources
-    |  +- buildjar
-    |  +- deployjar
-    +- target/generated-sources/protobuf
-    |  +- java
-    |     +- org.greet
-    |     |  +- Greet_proto.java
-    |  +- grpc-java
-    |     +- org.greet
-    |        +- Greet_Server.java
-    |        +- GreetJavabufTranslator.java
-    |        +- GreetMessageBodyReaderWriter.java
-    |        +- GreetServiceGrpc.java
-    |        +- GreetServiceGrpcImpl.java
-    |  +- greet.grpc-0.0.1.jar
-    |  +- greet.grpc-0.0.1.war
-    |  +- greet.grpc-0.0.1-sources.jar
++- pom.xml
++- src/main/java
+|  +- org.greet
+|     +- GeneralGreeting.java
+|     +  Greeter.java
+|     +  Greeting.java
++- src/main/proto
+|  +- Greet.proto
++- src/main/webapp
+|  +- META-INF
+|  |  +- beans.xml
+|  +- WEB-INF
+|     +- web.xml
++- src/main/resources
+|  +- buildjar
+|  +- deployjar
++- target/generated-sources/protobuf
+|  +- java
+|     +- org.greet
+|     |  +- Greet_proto.java
+|  +- grpc-java
+|     +- org.greet
+|        +- Greet_Server.java
+|        +- GreetJavabufTranslator.java
+|        +- GreetMessageBodyReaderWriter.java
+|        +- GreetServiceGrpc.java
+|        +- GreetServiceGrpcImpl.java
+|  +- greet.grpc-0.0.1.jar
+|  +- greet.grpc-0.0.1.war
+|  +- greet.grpc-0.0.1-sources.jar
 ----
 
 *Notes*
@@ -1865,14 +1815,14 @@ in the resteasy-grpc-testsuite in resteasy-grpc:
 
 [source,java]
 ----
-    try (
-            Client client = ClientBuilder.newClient();
-            var response = client.target("http://localhost:8080/grpc-test/grpcserver/context")
-                    .request()
-                    .get()) {
-        final var message = response.getStatus() + ": " + response.readEntity(String.class);
-        Assert.assertEquals(message, 204, response.getStatus());
-    }
+try (
+        Client client = ClientBuilder.newClient();
+        var response = client.target("http://localhost:8080/grpc-test/grpcserver/context")
+                .request()
+                .get()) {
+    final var message = response.getStatus() + ": " + response.readEntity(String.class);
+    Assert.assertEquals(message, 204, response.getStatus());
+}
 ----
 
 By the way, `AbstractGrpcToJakartaRESTTest` has a lot of client side code that might be useful to look at.
@@ -1953,16 +1903,16 @@ out any information needed for a given computation. Recall that
 
 [source,protobuf]
 ----
-    message GeneralEntityMessage {
-       ServletInfo servletInfo = 1;
-       string URL = 2;
-       map<string, gHeader> headers = 3;
-       repeated gCookie cookies = 4;
-       string httpMethod = 5;
-       oneof messageType {
-       ...
-       }
-    }
+message GeneralEntityMessage {
+   ServletInfo servletInfo = 1;
+   string URL = 2;
+   map<string, gHeader> headers = 3;
+   repeated gCookie cookies = 4;
+   string httpMethod = 5;
+   oneof messageType {
+   ...
+   }
+}
 ----
 
 Some of these fields, e.g., cookies and headers, are naturally supplied
@@ -1970,12 +1920,12 @@ by the client. On the other hand, the information in
 
 [source,protobuf]
 ----
-    message ServletInfo {
-       string characterEncoding = 1;
-       string clientAddress = 2;
-       string clientHost = 3;
-       int32  clientPort = 4;
-    }
+message ServletInfo {
+   string characterEncoding = 1;
+   string clientAddress = 2;
+   string clientHost = 3;
+   int32  clientPort = 4;
+}
 ----
 
 which would normally come from the network connection, must be supplied
