@@ -9,7 +9,7 @@ author: Ron Sigal
 Release 1.0.0.Alpha5 of resteasy-grpc has a new feature for handling arbitrary arrays. Although protobuf comes
 with a representation of one dimension arrays, e.g.
 
-```
+```protobuf
     message ints {
       repeated int64 is = 1;
     }
@@ -25,7 +25,7 @@ The mechanism has two parts:
 
 arrays.proto looks like this:
 
-```
+```protobuf
         message dev_resteasy_grpc_arrays___BooleanArray {
            repeated bool bool_field = 1;
         }
@@ -66,7 +66,7 @@ It starts with a definition of array message types for
 Then, `dev_resteasy_grpc_arrays___ArrayHolder` is defined with a oneof field that can
 hold any of these array message types. The self-referential field
 
-```
+```protobuf
               dev_resteasy_grpc_arrays___ArrayHolderArray arrayHolderArray_field = 13;
 ```
 
@@ -77,7 +77,7 @@ Compiling arrays.proto generates `dev.resteasy.grpc.arrays.Array_proto`, which g
 gateway into the javabuf[^javabuf] world. Suppose we want to generate a representation of
 `int[] {3, 5}`. That would look like
 
-```
+```java
         dev_resteasy_grpc_arrays___IntArray.Builder iab = dev_resteasy_grpc_arrays___IntArray.newBuilder();
         iab.addIntField(3);
         iab.addIntField(5);
@@ -105,13 +105,13 @@ of `int[][] {{3, 5}, {7, 11, 13}}`.
 To avoid the mess, grpc-bridge-runtime includes the class `dev.resteasy.grpc.arrays.ArrayUtility`. With `ArrayUtility`,
 building the javabuf representation of `int[][] {{3, 5}, {7, 11, 13}}` is as easy as
 
-```
+```java
         dev_resteasy_grpc_arrays___ArrayHolder holder = ArrayUtility.getHolder(new int[][] {{3, 5}, {7, 11, 13}});
 ```
 
 Moreover, `ArrayUtility` can turn the `dev_resteasy_grpc_arrays___ArrayHolder` back to the original array:
 
-```
+```java
         Object array = ArrayUtility.getArray(holder);
         Assert.assertArrayEquals(new int[][] {{3, 5}, {7, 11, 13}}, (int[][]) array);
 ```
@@ -119,20 +119,20 @@ Moreover, `ArrayUtility` can turn the `dev_resteasy_grpc_arrays___ArrayHolder` b
 These two calls to `ArrayUtility` depend on the fact that the target array is built from a primitive Java type. If the
 array uses an application specific type, then there are two alternative calls that can be used:
 
-```
+```java
         public static dev_resteasy_grpc_arrays___ArrayHolder getHolder(JavabufTranslator translator, Object o);
 ```   
 
 and
 
-```
+```java
         public static Object getArray(JavabufTranslator translator, Array_proto.dev_resteasy_grpc_arrays___ArrayHolder ah) throws Exception;
 ```
 
 Also, if an application uses arrays, the generated `JavabufTranslator` incorporates `ArrayUtility`, so that it can be
 used instead:
 
-```
+```java
         dev_resteasy_grpc_arrays___ArrayHolder ah = (dev_resteasy_grpc_arrays___ArrayHolder) translator.translateToJavabuf(new int[][] {{3, 5}, {7, 11, 13}});
         Object array = translator.translateFromJavabuf(ah);
         Assert.assertArrayEquals(new int[][] {{3, 5}, {7, 11, 13}}, (int[][]) array);
@@ -141,7 +141,7 @@ used instead:
 
 **Note.** The latter point can be usefully expanded, independent of the presence of arrays. Consider the class
 
-```
+```java
         package dev.resteasy.grpc.example;
 
         public class C {
@@ -160,7 +160,7 @@ used instead:
 Using the fluent methods created in, say, `C_proto` by the protobuf parser, an instance of
 `C_proto.dev_resteasy_grpc_example___C` can be created by
 
-```
+```java
         C_proto.dev_resteasy_grpc_example___C.Builder cb = C_proto.dev_resteasy_grpc_example___C.newBuilder();
         C_proto.dev_resteasy_grpc_example___C c1 = cb.setI(3).setD(5.0).setS("seven").build();
 ```
@@ -168,7 +168,7 @@ Using the fluent methods created in, say, `C_proto` by the protobuf parser, an i
 Note that each field must be set individually. On the other hand, given the `C(int, double, String)` constructor,
 an instance of `C_proto.dev_resteasy_grpc_example___C` can be created more directly:
 
-```
+```java
         C_proto.dev_resteasy_grpc_example___C c2 = (C_proto.dev_resteasy_grpc_example___C) translator.translateToJavabuf(new C(3, 5.0, "seven"));
 ```
 

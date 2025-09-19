@@ -13,7 +13,7 @@ and `java.util.Set`. In order to handle arbitrary implementations, idiosyncratic
 implementating classes are ignored and all implementations are assigned the least common nature of lists and sets. That is,
 an implementation of `java.util.List` is considered to be an ordered sequence and is translated to a protobuf
 message type of the form
-```
+```protobuf
     message java_util___ArrayList16 {
       string classname = 1;
       repeated int32 data = 2;
@@ -21,7 +21,7 @@ message type of the form
 ```
 and an implementation of `java.util.Set` is considered to be an unordered collection and is translated to a
 protobuf message type of the form
-```
+```protobuf
     message java_util___HashSet3 {
       string classname = 1;
       repeated string data = 2;
@@ -40,7 +40,7 @@ a workaround. The important thing is to define a protobuf message whose repeated
 `java_util___ArrayList16`. That would be a reasonable representation of `ArrayList<Integer>`. Similarly, `java_util___HashSet3`
 would be a reasonable representation of `HashSet<String>`. The `JavaToProtobufGenerator` class in the
 [grpc-bridge](https://github.com/resteasy/resteasy-grpc) module generates the protobuf messages and decorates them as follows:
-```
+```java
     // List: java.util.ArrayList<java.lang.Integer>
     message java_util___ArrayList16 {
       string classname = 1;
@@ -56,7 +56,7 @@ would be a reasonable representation of `HashSet<String>`. The `JavaToProtobufGe
     }
 ```
 These are two simple examples. Consider something a little more complicated: `java.util.ArrayList<java.util.HashSet<java.lang.String>>`:
-```
+```java
     // List: java.util.ArrayList<java.util.HashSet<java.lang.String>>
     message java_util___ArrayList14 {
       string classname = 1;
@@ -70,7 +70,7 @@ field in `java_util___ArrayList14` is of type `java_util___HashSet3`.
 A complication arises in the form of type variables and wildcards. The solution adopted in resteasy-grpc is to map unassigned
 type variables and wildcards to `java.lang.Object`, which makes sense, since they can take any types at runtime. The protobuf
 analog to `java.lang.Object` is `google.protobuf.Any`, which is defined
-```
+```protobuf
     message Any {
        string type_url = 1;
        bytes value = 2;
@@ -81,7 +81,7 @@ package declared in the .proto file.  The value field has built-in type bytes, w
 of bytes no longer than 2^32", according to https://developers.google.com/protocol-buffers/docs/proto3. 
 
 Suppose we have the Jakarta REST resource methods
-```
+```java
     package x.y;
 
     @GET
@@ -110,13 +110,13 @@ Suppose we have the Jakarta REST resource methods
     }
 ```
 where x.y.Grimble is
-```
+```java
     public class Grimble<T> {
         T t;
     }
 ```
 `JavaToProtobufGenerator` would create the rpc and message definitions
-```
+```protobuf
     // p/grimble/raw x_y___Grimble google.protobuf.Empty GET sync
       rpc gr_raw (GeneralEntityMessage) returns (GeneralReturnMessage);
 
@@ -155,7 +155,7 @@ where x.y.Grimble is
 ```
 The details about the rpc comments are described elsewhere ([gRPC Bridge Project: User Guide](https://resteasy.dev/docs/grpc/)),
 but here it's enough to know that the rpc definition
-```
+```protobuf
     // p/grimble/variable x_y___Grimble18 google.protobuf.Empty GET sync
       rpc gr_variable (GeneralEntityMessage) returns (GeneralReturnMessage);
 ```
@@ -175,7 +175,7 @@ type `google.protobuf.Any`, which, as discussed above, represents an arbitrary t
 `of java.lang.Object`.
 
 The discussion about generic types and type variables applies to lists and sets. For example,
-```
+```java
     @Path("arraylist/hashset/wildcard")
     @POST
     public ArrayList<HashSet<?>> arraylistHashsetTest2(ArrayList<HashSet<?>> l) {
@@ -183,7 +183,7 @@ The discussion about generic types and type variables applies to lists and sets.
     }
 ```
 gives rise to
-```
+```java
     // List: java.util.ArrayList<java.util.HashSet<java.lang.Object>>
     message java_util___ArrayList13 {
       string classname = 1;
@@ -202,7 +202,7 @@ gives rise to
 Here we'll discuss a gRPC client intending to communicate with a Jakarta REST server. The subject is covered in detail in 
 [gRPC Bridge Project: User Guide](https://resteasy.dev/docs/grpc/), but here we will look at sending and receiving
 `Collection`s. For example, consider the resource method
-```
+```java
     @GET
     @Path("arraylist/integer")
     public ArrayList<?> listArray0(ArrayList<Integer> list) {
@@ -212,7 +212,7 @@ Here we'll discuss a gRPC client intending to communicate with a Jakarta REST se
 We've seen that `java.util.ArrayList<java.lang.Integer>` translates to javabuf class `java_util___ArrayList16`. So the client
 has to create an instance of `java_util___ArrayList16` to send to the server. There are two possible strategies. One is to
 work in the javabuf world:
-```
+```java
     java_util___ArrayList16.Builder juaBuilder = java_util___ArrayList16.newBuilder();
     juaBuilder.setClassname("java.util.ArrayList");
     juaBuilder.addData(3);
@@ -220,7 +220,7 @@ work in the javabuf world:
     java_util___ArrayList16 jua = juaBuilder.build();
 ```
 Alternatively, one could create an `ArrayList` and translate it to an `java_util___ArrayList16`:
-```
+```java
     ArrayList<Integer> list = new ArrayList<Integer>();
  	list.add(3);
     list.add(7);
@@ -229,18 +229,18 @@ Alternatively, one could create an `ArrayList` and translate it to an `java_util
 ```
 where `translator` is an instance of `dev.resteasy.grpc.bridge.runtime.protobuf.JavabufTranslator`.
 The next step is to build a `GeneralEntityMessage`:
-```
+```java
     GeneralEntityMessage.Builder gemBuilder = GeneralEntityMessage.newBuilder();
     gemBuilder.setJavaUtilArrayList16Field(gemBuilder.build());
 ```
 Then the remote method can be invoked:
-```
+```java
     GeneralReturnMessage response = stub.listArray0(gem);
 ```
 where `stub` is the client side representative of the server methods.
 Finally, the result can be extracted from the `GeneralReturnMessage`. Note that `listArray0` returns
 an instance of `ArrayList<?>`, which translates to javabuf class
-```
+```java
     // List: java.util.ArrayList<java.lang.Object>
     message java_util___ArrayList17 {
        string classname = 1;
@@ -249,11 +249,11 @@ an instance of `ArrayList<?>`, which translates to javabuf class
     }
 ```
 This complicates things a bit since we have to extract the returned list from an `Any`.
-```
+```java
     java_util___ArrayList17 result = response.getJavaUtilArrayList17Field();
     Any any = response.getAnyField();
     Message result = any.unpack((Class) Utility.extractClassFromAny(any, translator));
     list = (ArrayList<Object>) translator.translateFromJavabuf(result);
 ```
 ### Maps
-Stay tuned for the next release, which which implementations of `java.util.Map` will be treated in a similar way.
+Stay tuned for the next release, in which implementations of `java.util.Map` will be treated similarly.
