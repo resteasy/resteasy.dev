@@ -1442,62 +1442,6 @@ ul.sf-shadow ul {
 	}
 
 
-
-
-
-
-/*  =Footer  */
-.footer {
-	clear:both;
-	text-align:center;
-	color:#7C7C7C;
-	font-size:9.5px;
-	/*background:transparent  no-repeat 5px 0;   */
-	padding:10px 0px;
-	/*width: 979px;*/
-	height:25px;
-	width:400px; /* (needs be at least 400px wide for browser issues) */
-	margin:0 auto;
-}
-.footer a {
-	color:#7C7C7C;
-	margin:0 2px;
-}
-.footer p {
-	padding:8px 0 0 0;
-	margin:0px;
-	float:left;
-}
-
-
-#footerlogo {
-	float: left;
-	text-align: center;
-	width: 75px;
-	height:25px;
-	display:inline;
-	padding:0 15px 0 10px;
-}
-
-#footerlogo a {
-	display: block;
-	text-align: center;
-	margin: 0pt auto;
-	width: 75px;
-	height:25px;
-}
-
-#footerlogo h6 {
-	padding:0px;
-	margin:0px;
-	background: transparent  no-repeat 0 -478px;/* red hat logo in footer */
-	width:75px;
-	height:25px;
-	text-indent:-9999px;
-	display:block;
-}
-
-
 /* ---------------- Magnolia Template Dialog Styles ------------------------------------ */
 .layout_settings_bar {
 	background-color:#903;
