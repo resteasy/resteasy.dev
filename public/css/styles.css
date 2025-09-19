@@ -42,7 +42,7 @@ br.clearfix {
 }
 
 .spacer {
-	background:url(../../images/common/spacer.png) no-repeat top left transparent;
+	background: no-repeat top left transparent;
 }
 a:hover .spacer  {
 	text-decoration:none;
@@ -55,7 +55,7 @@ a:hover .spacer  {
 /* =Layout
 --------------------- */
 #wrapper {
-	background: #f3f3f3 url(../../images/bgs/bg.png) repeat-x 0 0;
+	background: #f3f3f3  repeat-x 0 0;
 	padding-top:3px;
 	position: relative;
 	overflow:hidden;
@@ -66,7 +66,7 @@ a:hover .spacer  {
 #branding {
 	position: relative;
 	margin: 0 auto 0px auto;
-	background: transparent url(../../images/bgs/branding-stkv2.png) repeat-x 0 0;
+	background: transparent  repeat-x 0 0;
 	height:57px;
 }
 #top_subnav_branding {
@@ -115,7 +115,7 @@ a:hover .spacer  {
 	overflow:hidden;
 }
 #wrapper-2 {
-	background: #a8a8a8 url(../../images/bgs/wrapper2.png) repeat-x 0 0;
+	background: #a8a8a8  repeat-x 0 0;
 	margin: 0px auto 0;
 	/*-webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;*/
 	/*box-shadow:0 2px 3px #7B8185;*/
@@ -179,7 +179,7 @@ a:hover .spacer  {
 .rightcol-layout #rightcolumn{
 	float:right;
 	margin-left:-300px;
-	background:url(../../images/magnolia/bkg_dogearhang.png) no-repeat scroll right top #EFEFEF;
+	background: no-repeat scroll right top #EFEFEF;
 }
 .rightcol-layout #main-wrapper{
 	float:left;
@@ -208,14 +208,14 @@ a:hover .spacer  {
 }
 .leftcol-layout #main {
 	margin:0 0 0 300px;
-	background:url(../../images/magnolia/bkg_dogearhangwhite.png) no-repeat scroll right top #FFF;
+	background: no-repeat scroll right top #FFF;
 }
 
 /* =both col layout ----------------------------*/
 .bothcol-layout #rightcolumn{
 	float:right;
 	margin-left:-300px;
-	background:url(../../images/magnolia/bkg_dogearhang.png) no-repeat scroll right top #EFEFEF;
+	background: no-repeat scroll right top #EFEFEF;
 	padding-bottom: 40px;
 }
 .bothcol-layout #leftcolumn{
@@ -239,7 +239,7 @@ a:hover .spacer  {
 
 /* =no col layout ----------------------------*/
 .nocol-layout #main-wrapper {
-	background:url(../../images/magnolia/bkg_dogearhangwhite.png) no-repeat scroll right top #FFFFFF;
+	background: no-repeat scroll right top #FFFFFF;
 }
 #community #main-wrapper{
 	background-image:none; /* removes the dogear */
@@ -247,7 +247,7 @@ a:hover .spacer  {
 	-webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;
 }
 #home .nocol-layout #main-wrapper {
-	background:url(../../images/bgs/wrapper2bg-crosshatch.png) repeat scroll 0 0 #A8A8A8;
+	background: repeat scroll 0 0 #A8A8A8;
 }
 
 .nocol-layout #main {
@@ -255,7 +255,7 @@ a:hover .spacer  {
 }
 
 #main {
-	/*background:url(../../images/magnolia/deckled-edge.png) repeat-y scroll right top #FFFFFF;*/
+	/*background: repeat-y scroll right top #FFFFFF;*/
 	background-color:#FFF;
 	/*overflow: hidden;  IE 6 */
 	padding:30px;
@@ -296,13 +296,13 @@ a:hover .spacer  {
 	color: #fff;
 }
 #logo {
-	background: transparent url(../../images/bgs/corners-branding-right-stkv2.png) no-repeat top right; /* rounded corners and shadow */
+	background: transparent  no-repeat top right; /* rounded corners and shadow */
 	overflow: hidden;
 	position: relative;
 	height: 65px;
 }
 #logo span {
-	background: transparent url(../../images/bgs/jbosscommunity-logo-stacked.png) no-repeat 0 0;
+	background: transparent  no-repeat 0 0;
 	position: absolute;
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -314,7 +314,7 @@ a:hover .spacer  {
 	width: 233px;
 }
 #logo span:hover {
-	background: transparent url(../../images/bgs/jbosscommunity-logo-stacked.png) no-repeat 0 -57px;
+	background: transparent  no-repeat 0 -57px;
 }
 #logo strong,
 #logo em {
@@ -376,7 +376,7 @@ a:hover .spacer  {
 	border: 1px solid #abc4d5;
 }
 #search-box input#searchbar {
-	background: url(../../images/common/ico_searcharrow-dark.png) no-repeat top right #6b7c86;
+	background:  no-repeat top right #6b7c86;
 }
 #search-box input.search-arrow {
 	position:absolute;
@@ -386,7 +386,7 @@ a:hover .spacer  {
 	height: 16px;
 }
 #search-box .button {
-	background: transparent url(../../images/icons/searcharrow.png) 0 0 no-repeat;
+	background: transparent  0 0 no-repeat;
 	width: auto;
 	margin: 0;
 	color: #fff;
@@ -453,7 +453,7 @@ a:hover .spacer  {
 
 #dropmenudiv {
 	margin:-10px 0 0 0px;
-	background:#6b7c86 url(../../images/bgs/dropmenudiv.png) bottom left no-repeat;
+	background:#6b7c86  bottom left no-repeat;
 	/*border:1px solid #243447;
 	border-top:none;     */
     color: #fff;
@@ -516,7 +516,7 @@ a:hover .spacer  {
 	}
 
 #primarynav ul li{
-	/*background: url(../../images/bgs/common-sprite.png) no-repeat scroll 0 -398px ;*/
+	/*background:  no-repeat scroll 0 -398px ;*/
 	text-align:center;
 	list-style:none;
 	padding:0;
@@ -531,10 +531,10 @@ a:hover .spacer  {
 	display:none;
 	}
 #primarynav ul li.enterprise  {
-	/*background: url(../../images/bgs/common-sprite.png) no-repeat scroll 0 -318px  ; */
+	/*background:  no-repeat scroll 0 -318px  ; */
 	}
 #primarynav ul li a {
-	background:url(../../images/bgs/branding-stkv2.png) repeat-x scroll 0 0 transparent;  /* this is to keep the metanav from running over the primarynav with long login names */
+	background: repeat-x scroll 0 0 transparent;  /* this is to keep the metanav from running over the primarynav with long login names */
 	color:#C9D4E4;/* lightest blue */
 	text-decoration: none;
 	font-size:12px;
@@ -545,7 +545,7 @@ a:hover .spacer  {
 	text-transform:uppercase;
 	}
 #primarynav ul li.current a {
-	background:url(../../images/common/primarynav-current-notchup.png) no-repeat bottom center transparent;
+	background: no-repeat bottom center transparent;
 	padding-bottom:20px;
 	}
 #primarynav ul li li.current a {
@@ -615,7 +615,7 @@ a:hover .spacer  {
 #proj_nav ul li:hover,
 #sub_nav ul li.current,
 #sub_nav ul li:hover {
-	background:url(../../images/bgs/subnav-right.png) no-repeat scroll top right transparent;
+	background: no-repeat scroll top right transparent;
 	padding-bottom:7px;
 	_width:74px;/* hack for IE 6 */
 	margin-top:-2px;
@@ -636,7 +636,7 @@ li .notch {
 	display:none;
 }
 li.current .notch {
-	background:url(../../images/bgs/subnav-notch.png) no-repeat scroll center bottom transparent;
+	background: no-repeat scroll center bottom transparent;
 	position:absolute;
 	height:10px;
 	width:100%;
@@ -687,7 +687,7 @@ li.current .notch {
 #proj_nav ul li:hover a,
 #sub_nav ul li.current a,
 #sub_nav ul li:hover a {
-	background: url(../../images/bgs/common-sprite.png) no-repeat 0 -57px ;
+	background:  no-repeat 0 -57px ;
 	height:26px;
 	margin-top:0px;
 	color:#545454;
@@ -716,7 +716,7 @@ li.current .notch {
 	margin-left:5px;
 	margin-top:-5px;
 	padding:0 0 5px 0;/* this defaults the 20px padding inherited from above */
-	background:#DDDEDF /*url(../../images/bgs/subnav-drop.png) top repeat-x*/;
+	background:#DDDEDF /* top repeat-x*/;
 	-webkit-border-bottom-left-radius:4px;
 	-webkit-border-bottom-right-radius:4px;
 	-moz-border-radius: 0px 0px 4px 4px; border-radius:0px 0px 4px 4px;
@@ -819,7 +819,7 @@ li.current .notch {
 #primarynav .sf-menu li {
 	float:			left;
 	position:		relative;
-	background: url(../../images/bgs/primarynav-lines.png) no-repeat top right ;
+	background:  no-repeat top right ;
 	padding-right:2px;
 
 }
@@ -872,7 +872,7 @@ ul.sf-menu li li li.sfHover ul {
 }
 
 ul.sf-shadow ul {
-    background: url(../../images/bgs/shadow.png) no-repeat scroll right bottom transparent;
+    background:  no-repeat scroll right bottom transparent;
     border-bottom-left-radius: 17px;
     border-top-right-radius: 17px;
     padding: 0 8px 9px 0;
@@ -887,19 +887,19 @@ ul.sf-shadow ul {
 }
 
 #primarynav ul li ul li.open a {
-	background:transparent url(../../images/bgs/arrownav-sprite.png) no-repeat 190px 6px;
+	background:transparent  no-repeat 190px 6px;
 	}
 #primarynav ul li ul li.open a:hover {
-	background:#6F7885 url(../../images/bgs/arrownav-sprite.png) no-repeat 190px -53px;
+	background:#6F7885  no-repeat 190px -53px;
 	}
 
 #proj_nav ul li ul li.open a,
 #sub_nav ul li ul li.open a {
-	background:transparent url(../../images/bgs/arrownav-sprite.png) no-repeat 160px 6px;/* this is a thinner positioning */
+	background:transparent  no-repeat 160px 6px;/* this is a thinner positioning */
 	}
 #proj_nav ul li ul li.open a:hover,
 #sub_nav ul li ul li.open a:hover {
-	background:#C8C8C8 url(../../images/bgs/arrownav-sprite.png) no-repeat 160px -53px;/* this is a thinner positioning */
+	background:#C8C8C8  no-repeat 160px -53px;/* this is a thinner positioning */
 	}
 
 
@@ -951,7 +951,7 @@ ul.sf-shadow ul {
 #primarynav ul li ul li ul li.leaf a.current,
 #primarynav ul li ul li.leaf a.current,
 #primarynav ul li.leaf a.current {
-	background:#C0C8D1 url(../../images/bgs/arrownav-sprite.png) no-repeat 190px 6px;
+	background:#C0C8D1  no-repeat 190px 6px;
 	color:#FFF;
 }
 #primarynav ul li ul li ul li.leaf a.current,
@@ -963,14 +963,14 @@ ul.sf-shadow ul {
 #primarynav ul li ul li ul li.open a.current:hover,
 #primarynav ul li ul li.open a.current:hover,
 #primarynav ul li.open a.current:hover {
-	background:url(../../images/bgs/arrownav-sprite.png) no-repeat 190px -53px #6F7885;
+	background: no-repeat 190px -53px #6F7885;
 	color:#FFF;
 }
 
 #proj_nav ul li ul li ul li.open a.current, #sub_nav ul li ul li ul li.open a.current,
 #proj_nav ul li ul li.open a.current, #sub_nav ul li ul li.open a.current,
 #proj_nav ul li.open a.current, #sub_nav ul li.open a.current {
-	background: url(../../images/bgs/arrownav-sprite.png) no-repeat 0 -60px;
+	background:  no-repeat 0 -60px;
 	}
 
 
@@ -1019,7 +1019,7 @@ ul.sf-shadow ul {
 
 #proj_logo-neg,   /* for branded banners */
 #proj_logo      { /* for default banners */
-	background:url(../../images/bgs/corners-banner-left.png) no-repeat scroll 0 0 transparent;
+	background: no-repeat scroll 0 0 transparent;
     position: absolute;
     left: 0;
     top: 0;
@@ -1033,7 +1033,7 @@ ul.sf-shadow ul {
 }
 
 #top_subnav_branding #banner {
-	background:	url(../../images/singular/default_banner-1180px.png) no-repeat scroll top right transparent;
+	background:	 no-repeat scroll top right transparent;
 	height:110px;
 	-webkit-border-top-left-radius:4px;
 	-webkit-border-top-right-radius:4px;
@@ -1041,7 +1041,7 @@ ul.sf-shadow ul {
 }
 
 #top_subnav_branding #tagline {
-	/*background:url(../../images/bgs/corners-banner-right.png) no-repeat scroll top right transparent;*/
+	/*background: no-repeat scroll top right transparent;*/
 	height:111px;
 	font-size:21px;
 	letter-spacing:-1px;
@@ -1283,7 +1283,7 @@ ul.sf-shadow ul {
     width: 100%;
 	z-index:103; /* this is higher then the dropmenudiv */
 	position:relative;
-	background: url(../../images/common/ico_searcharrow-dark.png) no-repeat top right #6b7c86;
+	background:  no-repeat top right #6b7c86;
 }
 
 
@@ -1306,7 +1306,7 @@ ul.sf-shadow ul {
     transition: all 0.2s ease-in-out;
     order-radius: 8px;
 
-    background: url(../../images/common/arrow-tabnav-down.png) repeat scroll 0 0 #bbc3cd;
+    background:  repeat scroll 0 0 #bbc3cd;
     content: "x";
     height: 16px;
     position: absolute;
@@ -1319,7 +1319,7 @@ ul.sf-shadow ul {
 }
 
 #tab {
-    background: url(../../images/common/tabnav-search.png) repeat scroll 0 0 transparent;
+    background:  repeat scroll 0 0 transparent;
     display: block;
     float: right;
     height: 47px;
@@ -1442,62 +1442,6 @@ ul.sf-shadow ul {
 	}
 
 
-
-
-
-
-/*  =Footer  */
-.footer {
-	clear:both;
-	text-align:center;
-	color:#7C7C7C;
-	font-size:9.5px;
-	/*background:transparent url(../../images/common/common-sprite.gif) no-repeat 5px 0;   */
-	padding:10px 0px;
-	/*width: 979px;*/
-	height:25px;
-	width:400px; /* (needs be at least 400px wide for browser issues) */
-	margin:0 auto;
-}
-.footer a {
-	color:#7C7C7C;
-	margin:0 2px;
-}
-.footer p {
-	padding:8px 0 0 0;
-	margin:0px;
-	float:left;
-}
-
-
-#footerlogo {
-	float: left;
-	text-align: center;
-	width: 75px;
-	height:25px;
-	display:inline;
-	padding:0 15px 0 10px;
-}
-
-#footerlogo a {
-	display: block;
-	text-align: center;
-	margin: 0pt auto;
-	width: 75px;
-	height:25px;
-}
-
-#footerlogo h6 {
-	padding:0px;
-	margin:0px;
-	background: transparent url(../../images/bgs/common-sprite.png) no-repeat 0 -478px;/* red hat logo in footer */
-	width:75px;
-	height:25px;
-	text-indent:-9999px;
-	display:block;
-}
-
-
 /* ---------------- Magnolia Template Dialog Styles ------------------------------------ */
 .layout_settings_bar {
 	background-color:#903;
@@ -1530,7 +1474,7 @@ with these settings:
 
 
 #container li {
-   background: url(../../images/icons/sharethis-sprite.png) no-repeat top left;
+   background:  no-repeat top left;
 }
 .st-facebook-sprite-on{ background-position: 0 0; width: 22px; height: 22px; }
 .st-facebook-sprite{ background-position: 0 -32px; width: 22px; height: 22px; }

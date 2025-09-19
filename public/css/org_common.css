@@ -21,7 +21,7 @@ These are the common css styles for the JBoss.org site.
 	overflow:hidden;
 	/*height:106px;
 	display:block;
-	background:url(../../images/magnolia/bkgproj_announce.png) no-repeat;  not needed for liquid */
+	background: no-repeat;  not needed for liquid */
 }
 
 #proj_announce-whole {
@@ -36,7 +36,7 @@ These are the common css styles for the JBoss.org site.
 	overflow:hidden;
 	/*height:106px;
 	display:block;
-	background:url(../../images/magnolia/projectpage-banner2.png) no-repeat; not needed for liquid */
+	background: no-repeat; not needed for liquid */
 }
 
 #proj_logo {
@@ -270,7 +270,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 .simpletablestyle .header {
-	background:url(../../images/magnolia/bkg-blkheader.png)  #000000 repeat-x top left;
+	background:  #000000 repeat-x top left;
 	height:31px;
 	font-size:10px;
 	font-weight:bold;
@@ -318,7 +318,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 	padding: 3px 30px 3px 0px;
 	min-width:80px;
 	height:20px;
-	background: transparent url(../../images/common/download-arrw_sml.gif) no-repeat right top;
+	background: transparent  no-repeat right top;
 	}
 
 
@@ -429,7 +429,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 	padding: 3px 30px 3px 0px;
 	min-width:80px;
 	height:20px;
-	background: transparent url(../../images/common/download-arrw_sml.gif) no-repeat right top;
+	background: transparent  no-repeat right top;
 	}
 
 
@@ -440,7 +440,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 .basetablestyle .header {
-	background:url(../../images/magnolia/bkg-blkheader.png)  #000000 repeat-x top left;
+	background:  #000000 repeat-x top left;
 	height:31px;
 }
 
@@ -739,10 +739,10 @@ Content Specific Styles: These are styles the affect the content of the pages.
 .docnav li.next{right:0px;text-align:right;}
 .docnav li.previous strong, .docnav li.next strong{display:block;height:22px;}
 .docnav{margin:0 auto;text-align:center;}
-.docnav li.next a strong{background:  url(../../images/common/docsnav-sprite.gif) 23px -90px no-repeat;padding-top:10px; padding-bottom: 15px; height:40px; padding-right:40px;font-size:1.2em; width:17px;}
-.docnav li.previous a strong{background: url(../../images/common/docsnav-sprite.gif) 0 0 no-repeat;padding-top:10px; padding-bottom: 15px; height:40px; padding-left:40px;font-size:1.2em;}
-.docnav li.home a strong{background: url(../../images/common/docsnav-sprite.gif) 0 -275px no-repeat;padding-top:10px; padding-bottom: 15px;height:40px; padding-left:50px;font-size:1.2em;}
-.docnav li.up a strong{background: url(../../images/common/docsnav-sprite.gif) 0 -180px no-repeat;padding-top:10px; padding-bottom: 15px;height:40px; padding-left:40px;font-size:1.2em;}
+.docnav li.next a strong{background:   23px -90px no-repeat;padding-top:10px; padding-bottom: 15px; height:40px; padding-right:40px;font-size:1.2em; width:17px;}
+.docnav li.previous a strong{background:  0 0 no-repeat;padding-top:10px; padding-bottom: 15px; height:40px; padding-left:40px;font-size:1.2em;}
+.docnav li.home a strong{background:  0 -275px no-repeat;padding-top:10px; padding-bottom: 15px;height:40px; padding-left:50px;font-size:1.2em;}
+.docnav li.up a strong{background:  0 -180px no-repeat;padding-top:10px; padding-bottom: 15px;height:40px; padding-left:40px;font-size:1.2em;}
 
 .docnav a:link, .docnav a:visited {color:#666 !important;}
 .docnav a:hover,.docnav a:focus, .docnav a:active{color:black !important;}
@@ -862,7 +862,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 .lbLoading {
-	background: #fff url(../../images/common/loading.gif) no-repeat center;
+	background: #fff  no-repeat center;
 }
 
 #lbImage {
@@ -886,7 +886,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 #lbPrevLink:hover {
-	background: transparent url(../../images/common/common/prevlabel.gif) no-repeat 0 15%;
+	background: transparent  no-repeat 0 15%;
 }
 
 #lbNextLink {
@@ -894,7 +894,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 #lbNextLink:hover {
-	background: transparent url(../../images/common/nextlabel.gif) no-repeat 100% 15%;
+	background: transparent  no-repeat 100% 15%;
 }
 
 #lbBottom {
@@ -912,7 +912,7 @@ Content Specific Styles: These are styles the affect the content of the pages.
 	float: right;
 	width: 66px;
 	height: 22px;
-	background: transparent url(../../images/common/closelabel.gif) no-repeat center;
+	background: transparent  no-repeat center;
 	margin: 5px 0;
 	outline: none;
 }
@@ -971,7 +971,7 @@ a.next { position:absolute; top:200px; right:-32px; }
 
 /*  =Read More link */
 .read-more a{
-	background: transparent url(../../images/common/arrow-leftnav.png) no-repeat left top scroll;
+	background: transparent  no-repeat left top scroll;
 	margin-left:5px;
 	padding:3px 10px 3px 20px;
 	list-style:none;
@@ -997,7 +997,7 @@ with these settings:
   Class Prefix (optional): nothing
 */
 .project-icon-med {
-  background: url(../../images/icons/sprite-project-icons-all.png) no-repeat top left;
+  background:  no-repeat top left;
   float:left;
   margin:-1px 4px 0 0;
   display:block;
@@ -1085,7 +1085,7 @@ with these settings:
 */
 
 .jira-icon {
-  background: url(../../images/common/jira-icons-sprite.png) no-repeat top left;
+  background:  no-repeat top left;
   width: 16px;
   height: 16px;
   display: inline-block;
@@ -1118,7 +1118,7 @@ with these settings:
 /* ---------------- Project page specific sprites ------------------------------ */
 
 .projectpage-sprite {
-   background: url(../../images/common/projectpage_sprite.png) no-repeat top left;
+   background:  no-repeat top left;
 }
 
 .projectpage-sprite-jive-icon-announcement-16x16{ background-position: 0 0; width: 17px; height: 17px; }

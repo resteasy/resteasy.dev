@@ -175,7 +175,7 @@ hr {
 
 .proj_briefs ul li {
 	list-style:none;
-	background:transparent url(../../images/common/arrow-leftnav.png) no-repeat scroll left top;
+	background:transparent  no-repeat scroll left top;
 	margin-left:-5px;
 	padding:0px 0px 0px 20px;
 }
@@ -234,9 +234,9 @@ hr {
 #proj_checklist ul li,
 .proj_checklist ul li {
 	list-style:none;
-	background: url(../../images/magnolia/check-sprite.gif) no-repeat scroll 0 -124px transparent; /* green check */
-	/*background:transparent url(../../images/magnolia/check-sprite.gif) no-repeat scroll 0 0; /* check-grey.png */
-	/*background:transparent url(../../images/magnolia/check-sprite.gif) no-repeat scroll 0 -62px; /* check.png */
+	background:  no-repeat scroll 0 -124px transparent; /* green check */
+	/*background:transparent  no-repeat scroll 0 0; /* check-grey.png */
+	/*background:transparent  no-repeat scroll 0 -62px; /* check.png */
 	margin-left:5px;
 	padding:0px 0px 0px 20px;
 }
@@ -299,7 +299,7 @@ pre.code-block {
 /*-- =Mailing Lists--*/
 #mailing-lists dl {
 	margin-bottom:15px;
-	background: transparent url(../../images/magnolia/envelope.png) no-repeat top left;
+	background: transparent  no-repeat top left;
 
 }
 
@@ -333,12 +333,12 @@ pre.code-block {
 }
 
 .blog-posts dl.oddrow {
-	background: url(../../images/magnolia/blogpost-notch.png) no-repeat scroll right bottom #EEF4F9;
+	background:  no-repeat scroll right bottom #EEF4F9;
 	padding:15px 15px 35px 15px;
 	margin:0px 0px;
 }
 .blog-posts dl.evenrow {
-	background: url(../../images/magnolia/blogpost-notcheven.png) no-repeat scroll right bottom #F7F7F7;
+	background:  no-repeat scroll right bottom #F7F7F7;
 	padding:15px 15px 35px 15px;
 	margin:0px 0px;
 }
@@ -357,7 +357,7 @@ pre.code-block {
 	padding-right:13px;
 	line-height:1.4;
 	/*display:inline;
-	background: transparent url(../../images/common/ellipses.gif) no-repeat bottom right;*/
+	background: transparent  no-repeat bottom right;*/
 }
 .blog-posts dd.date {
 	margin-top:0px;
@@ -387,7 +387,7 @@ pre.code-block {
 
 .blog-posts ul li {
 	list-style:none;
-	background:transparent url(../../images/common/arrow-leftnav.png) no-repeat scroll left top;
+	background:transparent  no-repeat scroll left top;
 	margin-left:-5px;
 	padding:3px 10px 3px 20px;
 }
@@ -501,13 +501,13 @@ pre.code-block {
 }
 
 .interviews-rss dd  {
-	/*background:transparent url(../../images/common/ellipses.gif) no-repeat scroll right bottom; */
+	/*background:transparent  no-repeat scroll right bottom; */
 	display:inline; 
 	margin:0 10px 0 0; 
 	padding:0 13px 0 0; 
 }
 .rtcolumn-rss dd {
-	/*background:transparent url(../../images/common/ellipses.gif) no-repeat scroll right bottom; */
+	/*background:transparent  no-repeat scroll right bottom; */
 	display:inline; 
 	margin:0 10px 0 0; 
 	padding:0 13px 0 0; 
@@ -576,7 +576,7 @@ pre.code-block {
 	line-height:16px;
 	display:block;
 	font-size:12px;
-	background:#FFFFFF /*url(../../images/magnolia/whitebox-bkg.png) repeat-x left bottom*/;
+	background:#FFFFFF /* repeat-x left bottom*/;
 	-moz-border-radius-topleft: 8px; -webkit-border-top-left-radius: 8px;
 	-moz-border-radius-topright: 8px; -webkit-border-top-right-radius: 8px;
 	-moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px;
@@ -587,7 +587,7 @@ pre.code-block {
 }
 
 #tertiary-nav li {
-	background: transparent url(../../images/common/arrow-leftnav2.png) no-repeat left top scroll;
+	background: transparent  no-repeat left top scroll;
 	margin-left:-35px;
 	padding:3px 10px 3px 16px;
 	list-style:none;
@@ -641,7 +641,7 @@ pre.code-block {
 	line-height:16px;
 	display:block;
 	font-size:12px;
-	background:#fafafa url(../../images/magnolia/whitebox-bkg.png) repeat-x left top;
+	background:#fafafa  repeat-x left top;
 	-moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px;
 	-moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px;
 	-moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px;
@@ -655,7 +655,7 @@ pre.code-block {
 .whitebox h3,
 .interviews-rss h3, 
 .rtcolumn-rss h3 {
-	background: url(../../images/magnolia/contentblock-bg.png) repeat-x scroll center top;
+	background:  repeat-x scroll center top;
 	color:#3F3F3F;
 	padding:9px 0 9px 9px;
 	margin:0px;
@@ -788,7 +788,7 @@ pre.code-block {
 /*-- =Warning--*/
 
 .proj_warn {
-	background:#fbefed url(../../images/common/asides-sprite.png) no-repeat 8px -1140px;
+	background:#fbefed  no-repeat 8px -1140px;
 	border:1px solid #EACCA7;
 	color:#533500;
 	-moz-border-radius: 5px; -webkit-border-radius: 5px;
@@ -799,7 +799,7 @@ pre.code-block {
 
 /*-- =Note--*/
 .proj_note {
-	background:#B5BCBD url(../../images/common/asides-sprite.png) no-repeat 8px -566px ;
+	background:#B5BCBD  no-repeat 8px -566px ;
 	border:1px solid #8A9195;
 	-moz-border-radius: 5px; -webkit-border-radius: 5px;
 	padding:10px 20px 10px 55px;
@@ -818,7 +818,7 @@ pre.code-block {
 /*-- =Tip--*/
 
 .proj_tip {
-	background:#D5E1D5 url(../../images/common/asides-sprite.png) no-repeat 8px -856px;
+	background:#D5E1D5  no-repeat 8px -856px;
 	border:1px solid #B6CCB6;
 	color:#334933;
 	-moz-border-radius: 5px; -webkit-border-radius: 5px;
@@ -830,7 +830,7 @@ pre.code-block {
 /*-- =Caution--*/
 
 .proj_caution {
-	background:#FAF8ED url(../../images/common/asides-sprite.png) no-repeat 8px 8px;
+	background:#FAF8ED  no-repeat 8px 8px;
 	border:1px solid #EACCA7;
 	color:#533500;
 	-moz-border-radius: 5px; -webkit-border-radius: 5px;
@@ -842,7 +842,7 @@ pre.code-block {
 /*-- =Important--*/
 
 .proj_important {
-	background:#E1EEF4 url(../../images/common/asides-sprite.png) no-repeat 8px -280px;
+	background:#E1EEF4  no-repeat 8px -280px;
 	border:1px solid #CED6D8;
 	color:#334558;
 	-moz-border-radius: 5px; -webkit-border-radius: 5px;
@@ -854,7 +854,7 @@ pre.code-block {
 /*-- =define --*/
 
 .proj_define {
-	background:#F0F0F0 url(../../images/common/stripe_grey.png) repeat ;
+	background:#F0F0F0  repeat ;
 	/*background-color:#F0F0F0;*/
 	-moz-border-radius: 5px; -webkit-border-radius: 5px;
 	padding:18px 25px;
@@ -879,7 +879,7 @@ pre.code-block {
 	padding:0 10px 0 5px;
 }
 .deftable .header {
-	background:#000000 url(../../images/magnolia/bkg-blkheader.png) repeat-x scroll left top;
+	background:#000000  repeat-x scroll left top;
 	color:#FFFFFF;
 	font-weight:bold;
 	height:31px;
@@ -931,7 +931,7 @@ pre.code-block {
 	vertical-align: top; 
 	padding: 20px;
 	color: #565656;
-	background:url(../../images/magnolia/deftable_bkg.gif)  repeat-x left bottom;
+	background:  repeat-x left bottom;
 }
 
 .deftable .defFirst { 
@@ -941,7 +941,7 @@ pre.code-block {
 	vertical-align: top; 
 	padding: 20px;
 	color: #565656;
-	background:url(../../images/magnolia/deftable_bkg.gif)  repeat-x left bottom;
+	background:  repeat-x left bottom;
 }
 
 .deftable .defLast { 
@@ -950,7 +950,7 @@ pre.code-block {
 	vertical-align: top; 
 	padding: 20px;
 	color: #565656;
-	background:url(../../images/magnolia/deftable_bkg.gif)  repeat-x bottom;
+	background:  repeat-x bottom;
 
 }
 .deftable .def ul,
@@ -968,7 +968,7 @@ pre.code-block {
 
 .deftable .def li,
 .deftable .defFirst li {
-	background:transparent url(../../images/common/arrow-leftnav.png) no-repeat left top;
+	background:transparent  no-repeat left top;
 	list-style:none;
 	margin-left:-5px;
 	padding:3px 10px 3px 20px;
@@ -1001,7 +1001,7 @@ pre.code-block {
 /*-- =Basics --*/
 .proj_basics li,
 #proj_basics li {
-	background: transparent url(../../images/common/arrow-leftnav.png) no-repeat left top scroll;
+	background: transparent  no-repeat left top scroll;
 	margin-left:-35px;
 	padding:3px 10px 3px 20px;
 	list-style:none;
@@ -1169,11 +1169,11 @@ pre.code-block {
 
 
 #proj_quick-start ul li.download a{
-	background:url(../../images/common/download-arrw-sprite.gif) top right #CECECE no-repeat;
+	background: top right #CECECE no-repeat;
 	color:#FFFFFF;
 	}
 #proj_quick-start ul li.download a:hover{
-	background:url(../../images/common/download-arrw-sprite.gif) bottom right #CECECE no-repeat;
+	background: bottom right #CECECE no-repeat;
 	}
 	
 
@@ -1212,7 +1212,7 @@ pre.code-block {
 #proj_quick-start ul li a:hover,
 #proj_quick-start ul li.current a{
 	padding:4px 0px 4px 10px;
-	background:#FFFFFF url(../../images/magnolia/bkg_subnav-highlight.png) bottom left repeat-x;
+	background:#FFFFFF  bottom left repeat-x;
 	display:block;
 	color:#545454;
 	text-decoration:none;
@@ -1222,7 +1222,7 @@ pre.code-block {
 /*-- =Twitter Button --*/
 
 #twitter {
-	background:transparent url(../../images/magnolia/cage.gif) no-repeat left top scroll;
+	background:transparent  no-repeat left top scroll;
 	height:92px;
 	padding:10px 0px;
 	width:210px;	
@@ -1239,7 +1239,7 @@ pre.code-block {
 }
 
 #twitter p a {
-	background:transparent url(../../images/magnolia/bkg_twitterbttn-sprite.gif) no-repeat center bottom scroll;
+	background:transparent  no-repeat center bottom scroll;
 	color:#535454;
 	display:block;
 	height:29px;
@@ -1282,7 +1282,7 @@ pre.code-block {
 }
 
 #main .quotebubble {
-	background: transparent url(../../images/common/blurb_maincontent.png) repeat scroll left top; /* green */
+	background: transparent  repeat scroll left top; /* green */
 	padding:12px 20px 15px;
 	margin-bottom:0px;
 	-moz-border-radius: 8px; -webkit-border-radius: 8px;
@@ -1290,7 +1290,7 @@ pre.code-block {
 }
 
 #proj_cite cite {
-	background: transparent url(../../images/common/blurb-sprite.png) no-repeat 0 0;
+	background: transparent  no-repeat 0 0;
 	color:#A4A4A4;
 	display:block;
 	font-size:12px;
@@ -1301,7 +1301,7 @@ pre.code-block {
 }
 
 #main #proj_cite cite {
-	background: transparent url(../../images/common/blurb-sprite.png) no-repeat 0 -75px; /* green */
+	background: transparent  no-repeat 0 -75px; /* green */
 	color:#A4A4A4;
 	display:block;
 	font-size:12px;
@@ -1335,7 +1335,7 @@ pre.code-block {
 }
 
 #proj_support {
-	background:url(../../images/magnolia/blurb_white.png) no-repeat;
+	background: no-repeat;
 	height:70px;
 	width:200px;
 	margin-left:-4px;
@@ -1382,7 +1382,7 @@ pre.code-block {
 	margin: 0px 0 10px 10px;
 }
 .supported-products li a {
-	background:url(../../images/magnolia/bkg_product-sprite.gif) top left no-repeat;
+	background: top left no-repeat;
 	color:#666666;
 	padding: 7px 0 5px 28px;
 }
@@ -1417,7 +1417,7 @@ pre.code-block {
 	margin-top:0px;
 }
 .supported-products-vert li a {
-	background:url(../../images/magnolia/bkg_productsml-sprite.gif) top left no-repeat;
+	background: top left no-repeat;
 	color:#666666;
 	padding: 4px 0 0 32px;
 	display:block;
@@ -1481,21 +1481,21 @@ pre.code-block {
 }
 
 #badges .license-asl a {
-	background: url(../../images/magnolia/license_asl-sprite.gif) no-repeat top center;
+	background:  no-repeat top center;
 }
 #badges .license-asl a:hover {
 	background-position: bottom center;
 }
 
 #badges .license-lgpl a {
-	background: url(../../images/magnolia/license_lgpl-sprite.gif) no-repeat top center;
+	background:  no-repeat top center;
 }
 #badges .license-lgpl a:hover {
 	background-position: bottom center;
 }
 
 #badges .license-gpl a {
-	background: url(../../images/magnolia/license_gpl-sprite.gif) no-repeat top center;
+	background:  no-repeat top center;
 }
 #badges .license-gpl a:hover {
 	background-position: bottom center;
@@ -1508,7 +1508,7 @@ pre.code-block {
 
 
 #badges .jsr a {
-	background: url(../../images/magnolia/jsr-sprite.gif) no-repeat top center;
+	background:  no-repeat top center;
 	font-family:Helvetica, Arial, sans-serif;
 	font-weight:bold;
 	text-decoration:none;
@@ -1576,15 +1576,15 @@ pre.code-block {
 }
 
 #badges .tools a {
-	background: url(../../images/magnolia/badges-sprite.gif) no-repeat 0 -150px;
+	background:  no-repeat 0 -150px;
 }
 
 #badges .jopr a {
-	background: url(../../images/magnolia/badges-sprite.gif) no-repeat 0 -75px;
+	background:  no-repeat 0 -75px;
 }
 
 #badges .arquillian a {
-	background: url(../../images/magnolia/badges-sprite.gif) no-repeat 0 0;
+	background:  no-repeat 0 0;
 }
 
 
@@ -1654,7 +1654,7 @@ pre.code-block {
 
 /*** DEMO SKIN ***/
 #tertiary-flyout-nav {
-	background:#FFFFFF url(../../images/magnolia/whitebox-bkg.png) repeat-x scroll left bottom;
+	background:#FFFFFF  repeat-x scroll left bottom;
 	-moz-border-radius-topleft: 8px; -webkit-border-top-left-radius: 8px;
 	-moz-border-radius-topright: 8px; -webkit-border-top-right-radius: 8px;
 	-moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px;
@@ -1722,7 +1722,7 @@ pre.code-block {
 
 /*** shadows for all but IE6 ***/
 #tertiary-flyout-nav ul ul {
-	background:	url(../../images/common/shadow.png) no-repeat bottom right;
+	background:	 no-repeat bottom right;
 	padding: 0 8px 9px 0;
 	-moz-border-radius-bottomleft: 17px;
 	-moz-border-radius-topright: 17px;
@@ -1777,7 +1777,7 @@ pre.code-block {
 	font-weight:normal;
 	padding:0 10px 0 5px;
 	border-bottom:#999999 dotted 1px;
-	background:url(../../images/magnolia/bkg-blkheader.png)  #000000 repeat-x top left;
+	background:  #000000 repeat-x top left;
 	height:31px;
 	color:#FFFFFF;
 	text-align:left;
@@ -1818,7 +1818,7 @@ pre.code-block {
 }
 
 .wikimarkup ul li {
-	background: transparent url(../../images/common/arrow-leftnav.png) no-repeat left top scroll;
+	background: transparent  no-repeat left top scroll;
 	margin-left:-15px;
 	padding:3px 10px 3px 20px;
 	list-style:none;
@@ -1839,7 +1839,7 @@ pre.code-block {
 }
 
 .wikimarkup ul li li li li{
-	background: transparent url(../../images/common/arrow-leftnav.png) no-repeat left top scroll;
+	background: transparent  no-repeat left top scroll;
 	margin-left:-15px;
 	padding:3px 10px 3px 20px;
 	list-style:none;
@@ -1870,7 +1870,7 @@ pre.code-block {
 }
 
 #twitter_update_list span {
-	background:transparent url(../../images/magnolia/bkg_twitterbird.png) no-repeat left top;
+	background:transparent  no-repeat left top;
 	color: #333333;
 	display: block;
 	padding-left: 22px;
@@ -2034,16 +2034,16 @@ h2.el-idc3 em,
 }
 
 .directory-listing .parent {
-	background:transparent url(../../images/common/dwnld-parentarrow.png) no-repeat left top;
+	background:transparent  no-repeat left top;
 	padding-left:20px;
 }
 .directory-listing .folder {
-	background:transparent url(../../images/common/dwnld-folder.png) no-repeat left top;
+	background:transparent  no-repeat left top;
 	padding-left:20px;
 	white-space:nowrap;
 }
 .directory-listing .info {
-	background:transparent url(../../images/common/dwnld-info.png) no-repeat left top;
+	background:transparent  no-repeat left top;
 	padding-left:20px;
 	display:block;
 	height:16px;
@@ -2053,7 +2053,7 @@ h2.el-idc3 em,
 }
 
 .directory-listing tr.header th a {
-	background:transparent url(../../images/common/dwnld-sortarrows.png) no-repeat right top;
+	background:transparent  no-repeat right top;
 	padding-right:15px;
 	margin-right:10px;
 	color:#ACCDDD;
@@ -2078,12 +2078,12 @@ h2.el-idc3 em,
 	display:none;	
 }
 .directory-listing .dlRssLink a {
-	background:transparent url(../../images/common/dwnld-rss.png) no-repeat right top;
+	background:transparent  no-repeat right top;
 	padding-right:18px;
 }
 
 .directory-listing .dlRssLink a:hover {
-	background:transparent url(../../images/common/dwnld-rss-on.png) no-repeat right top;
+	background:transparent  no-repeat right top;
 }
 
 div.share-page {
