@@ -10,14 +10,14 @@
 }
 .rhlogo {
 	float: right;
-	background-image: url('{{site.baseurl}}/img/rhbar/redhatlogo_reverse.png');
+	background-image: url('/img/rhbar/redhatlogo_reverse.png');
 	background-repeat: no-repeat;
 	height: 40px;
 	width: 85px;
 }
 .jbdevlogo {
 	float: right;
-	background-image: url('{{site.baseurl}}/img/rhbar/rhd_reverse.png');
+	background-image: url('/img/rhbar/rhd_reverse.png');
 	background-repeat: no-repeat;
 	height: 40px;
 	width: 136px;

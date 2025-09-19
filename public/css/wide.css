@@ -191,7 +191,7 @@ Inside #Stage */
 	width: 1138px;
 }
 #stage div.tw-slider .slider-bar {
-	background: #000 url(../../images/bgs/scrollbar-wide.png) 0 0 no-repeat;
+	background: #000  0 0 no-repeat;
 	width: 966px;
 }
 /* #####################
@@ -203,7 +203,7 @@ Inside #wrapper-2 -> Base Element */
 	width: 1138px;
 }
 #wrapper-2 div.tw-slider .slider-bar {
-	background: #000 url(../../images/bgs/scrollbar-wide.png) 0 0 no-repeat;
+	background: #000  0 0 no-repeat;
 	width: 966px;
 }
 

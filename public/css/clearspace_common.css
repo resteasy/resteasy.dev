@@ -127,7 +127,7 @@ pre {
     }
 
 .alert-close {
-    /*background: transparent url(../images/icon-close_small.gif) no-repeat left;
+    /*background: transparent  no-repeat left;
     padding: 1px 0 1px 12px;*/
     }
 
@@ -163,7 +163,7 @@ pre {
     }
 
 .alert-announcement-label {
-    background: transparent url(../../images/common/jive-icon-announcement-16x16.gif) no-repeat left;
+    background: transparent  no-repeat left;
     color: #988f42;
     }
 
