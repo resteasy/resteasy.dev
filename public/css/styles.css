@@ -6,15 +6,15 @@ author: JBoss Community Team
 
 body {
     font: 12px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	background-color:#BAC3CD;
-	color: #555;
-	margin:0px;
-	padding:0px;
+    background-color:#BAC3CD;
+    color: #555;
+    margin:0px;
+    padding:0px;
 }
 
 /*------------- =Layout Cheats --------------*/
 img {
-	border:none;
+    border:none;
 }
 .clearfix {
     clear: both;
@@ -33,19 +33,19 @@ img {
 }
 
 .clearfix2 {
-	min-height:0;
+    min-height:0;
 }
 
 br.clearfix {
-	clear:both;
-	line-height:0px;
+    clear:both;
+    line-height:0px;
 }
 
 .spacer {
-	background: no-repeat top left transparent;
+    background: no-repeat top left transparent;
 }
 a:hover .spacer  {
-	text-decoration:none;
+    text-decoration:none;
 }
 
 
@@ -55,223 +55,223 @@ a:hover .spacer  {
 /* =Layout
 --------------------- */
 #wrapper {
-	background: #f3f3f3  repeat-x 0 0;
-	padding-top:3px;
-	position: relative;
-	overflow:hidden;
+    background: #f3f3f3  repeat-x 0 0;
+    padding-top:3px;
+    position: relative;
+    overflow:hidden;
 }
 #maincontent-wrapper {
-	margin:0 10px;
+    margin:0 10px;
 }
 #branding {
-	position: relative;
-	margin: 0 auto 0px auto;
-	background: transparent  repeat-x 0 0;
-	height:57px;
+    position: relative;
+    margin: 0 auto 0px auto;
+    background: transparent  repeat-x 0 0;
+    height:57px;
 }
 #top_subnav_branding {
-	position: relative;
-	margin: 0 auto 0px auto;
-	/*box-shadow:3px 3px 3px #ccc;
-	height:131px;  need this to help Opera
-	background-color:#bcbcbc;
-	-webkit-border-top-left-radius:5px;
-	-webkit-border-top-right-radius:5px;
-	-moz-border-radius: 5px 5px 0 0; border-radius:5px 5px 0 0; */
+    position: relative;
+    margin: 0 auto 0px auto;
+    /*box-shadow:3px 3px 3px #ccc;
+    height:131px;  need this to help Opera
+    background-color:#bcbcbc;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius: 5px 5px 0 0; border-radius:5px 5px 0 0; */
 
 }
 #project #top_subnav_branding {
-	background-color:transparent;
+    background-color:transparent;
 }
 #top_subnav_branding img {/* this targets the community template micro-site banners */
-	padding:0 5px;
+    padding:0 5px;
 }
 #community #top_subnav_branding #banner img {/* this targets the community template micro-site banners */
-	padding:0;
+    padding:0;
 }
 #project #top_subnav_branding #banner img {  /* this targets the project template banners */
-	position: relative;
+    position: relative;
     z-index: 99;
-	padding:0px;
+    padding:0px;
 }
-.community-banner { 	/* this is to be used for community banners that must be added in by html rather than uploaded */
-	max-width:1175px;
-	overflow:hidden;
-	margin:5px 5px 0 0;
-	padding-top:5px;
+.community-banner {     /* this is to be used for community banners that must be added in by html rather than uploaded */
+    max-width:1175px;
+    overflow:hidden;
+    margin:5px 5px 0 0;
+    padding-top:5px;
 }
 #proj_announce-whole,
 #proj_announce        {
-	display:none; 		/* this is to remove the old banner and show the new banner beneath it */
-	overflow:hidden;
-	margin-top: -110px; /* this is negatively indented to cover up the 1180px project-banner or default-banner below it */
-	height:110px;       /* this is to give it a height to keep the proj_nav from coming up when the image isn't used */
+    display:none;         /* this is to remove the old banner and show the new banner beneath it */
+    overflow:hidden;
+    margin-top: -110px; /* this is negatively indented to cover up the 1180px project-banner or default-banner below it */
+    height:110px;       /* this is to give it a height to keep the proj_nav from coming up when the image isn't used */
 }
 #proj_announce h3,
 #proj_announce h2  {
-	display:none; 		/* hides old html logo and tagline */
+    display:none;         /* hides old html logo and tagline */
 }
 #banner {
-	overflow:hidden;
+    overflow:hidden;
 }
 #wrapper-2 {
-	background: #a8a8a8  repeat-x 0 0;
-	margin: 0px auto 0;
-	/*-webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;*/
-	/*box-shadow:0 2px 3px #7B8185;*/
+    background: #a8a8a8  repeat-x 0 0;
+    margin: 0px auto 0;
+    /*-webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;*/
+    /*box-shadow:0 2px 3px #7B8185;*/
     position: relative;
     z-index: 1;
-	padding-bottom:5px;
+    padding-bottom:5px;
 }
 #wrap-content {
-	background-color:#FFF;
-	padding:0px;
-	margin:0 5px 0px;
-	-webkit-border-bottom-left-radius:4px;
-	-webkit-border-bottom-right-radius:4px;
-	-moz-border-radius: 0px 0px 4px 4px; border-radius:0px 0px 4px 4px;
+    background-color:#FFF;
+    padding:0px;
+    margin:0 5px 0px;
+    -webkit-border-bottom-left-radius:4px;
+    -webkit-border-bottom-right-radius:4px;
+    -moz-border-radius: 0px 0px 4px 4px; border-radius:0px 0px 4px 4px;
 }
 #wrapper-3 {
-	float: left;
-	display: inline; /* IE 6 */
-	margin:0px;
-	width: 700px;
-	width: 100%;
-	/*overflow:hidden; this is making anchors get hidden in overflow */
-	-webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;
-	line-height:1.5;
-	background-color:#FFF;
-	}
+    float: left;
+    display: inline; /* IE 6 */
+    margin:0px;
+    width: 700px;
+    width: 100%;
+    /*overflow:hidden; this is making anchors get hidden in overflow */
+    -webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;
+    line-height:1.5;
+    background-color:#FFF;
+    }
 #subnav_footer,
 #projsubnav_footer,
 #nav-footer,
 #tabnav {
-	margin:0px auto;
-	font-weight:bold;
-	display:block;
+    margin:0px auto;
+    font-weight:bold;
+    display:block;
     font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-	font-size:12px;
-	height:100%;
-	max-width:1180px;
-	min-width:768px;
-	text-align:left;
+    font-size:12px;
+    height:100%;
+    max-width:1180px;
+    min-width:768px;
+    text-align:left;
 }
 #subnav_footer li.current .notch,
 #projsubnav_footer li.current .notch,
 #nav-footer li.current .notch,
 #tabnav li.current .notch  {
-	display:none;
+    display:none;
 }
 #subnav_footer {
-	display:none;	/* hides footer until Rysiek can remove by script */
+    display:none;    /* hides footer until Rysiek can remove by script */
 }
 
 #site-info {
-	clear: both;
-	overflow: hidden;
-	height: 1%; /* IE 6 */
-	margin:0 auto;    /* to center the footer div */
-	text-align:center;/* to center the footer div */
+    clear: both;
+    overflow: hidden;
+    height: 1%; /* IE 6 */
+    margin:0 auto;    /* to center the footer div */
+    text-align:center;/* to center the footer div */
 }
 
 
 /* =right col layout ----------------------------*/
 .rightcol-layout #rightcolumn{
-	float:right;
-	margin-left:-300px;
-	background: no-repeat scroll right top #EFEFEF;
+    float:right;
+    margin-left:-300px;
+    background: no-repeat scroll right top #EFEFEF;
 }
 .rightcol-layout #main-wrapper{
-	float:left;
-	width:100%;
-	background-color: #EFEFEF;
+    float:left;
+    width:100%;
+    background-color: #EFEFEF;
 }
 .rightcol-layout #main {
-	margin:0 300px 0 0;
+    margin:0 300px 0 0;
 }
 
 /* =left col layout ----------------------------*/
 .leftcol-layout #leftcolumn{
-	float:left;
-	margin-right:-300px;
-	background-color: #FAFAFA; /* light grey */
-   	background-image: -webkit-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	background-image:    -moz-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	background-image:     -ms-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	background-image:      -o-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	padding-bottom: 40px;
+    float:left;
+    margin-right:-300px;
+    background-color: #FAFAFA; /* light grey */
+       background-image: -webkit-linear-gradient(top, #FFF, #FAFAFA 60px);
+       background-image:    -moz-linear-gradient(top, #FFF, #FAFAFA 60px);
+       background-image:     -ms-linear-gradient(top, #FFF, #FAFAFA 60px);
+       background-image:      -o-linear-gradient(top, #FFF, #FAFAFA 60px);
+       padding-bottom: 40px;
 }
 .leftcol-layout #main-wrapper{
-	width:100%;
-	background-color: #FAFAFA;
-	overflow: hidden; /* without this the main column drops below the left column */
+    width:100%;
+    background-color: #FAFAFA;
+    overflow: hidden; /* without this the main column drops below the left column */
 }
 .leftcol-layout #main {
-	margin:0 0 0 300px;
-	background: no-repeat scroll right top #FFF;
+    margin:0 0 0 300px;
+    background: no-repeat scroll right top #FFF;
 }
 
 /* =both col layout ----------------------------*/
 .bothcol-layout #rightcolumn{
-	float:right;
-	margin-left:-300px;
-	background: no-repeat scroll right top #EFEFEF;
-	padding-bottom: 40px;
+    float:right;
+    margin-left:-300px;
+    background: no-repeat scroll right top #EFEFEF;
+    padding-bottom: 40px;
 }
 .bothcol-layout #leftcolumn{
-	float:left;
-	margin-right:-300px;
-	background-color:#FAFAFA; /* light grey */
-   	background-image: -webkit-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	background-image:    -moz-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	background-image:     -ms-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	background-image:      -o-linear-gradient(top, #FFF, #FAFAFA 60px);
-   	padding-bottom: 40px;
-   	position: relative ; /* this fixes issue with left column links being unclickable */
+    float:left;
+    margin-right:-300px;
+    background-color:#FAFAFA; /* light grey */
+       background-image: -webkit-linear-gradient(top, #FFF, #FAFAFA 60px);
+       background-image:    -moz-linear-gradient(top, #FFF, #FAFAFA 60px);
+       background-image:     -ms-linear-gradient(top, #FFF, #FAFAFA 60px);
+       background-image:      -o-linear-gradient(top, #FFF, #FAFAFA 60px);
+       padding-bottom: 40px;
+       position: relative ; /* this fixes issue with left column links being unclickable */
 }
 .bothcol-layout #main-wrapper {
-	float:left;
-	width:100%;
+    float:left;
+    width:100%;
 }
 .bothcol-layout #main {
-	margin:0 300px 0 300px;
+    margin:0 300px 0 300px;
 }
 
 /* =no col layout ----------------------------*/
 .nocol-layout #main-wrapper {
-	background: no-repeat scroll right top #FFFFFF;
+    background: no-repeat scroll right top #FFFFFF;
 }
 #community #main-wrapper{
-	background-image:none; /* removes the dogear */
-	/*overflow:hidden;  this is messing up anchors */
-	-webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;
+    background-image:none; /* removes the dogear */
+    /*overflow:hidden;  this is messing up anchors */
+    -webkit-border-radius:4px; -moz-border-radius: 4px; border-radius:4px;
 }
 #home .nocol-layout #main-wrapper {
-	background: repeat scroll 0 0 #A8A8A8;
+    background: repeat scroll 0 0 #A8A8A8;
 }
 
 .nocol-layout #main {
-	background:none;
+    background:none;
 }
 
 #main {
-	/*background: repeat-y scroll right top #FFFFFF;*/
-	background-color:#FFF;
-	/*overflow: hidden;  IE 6 */
-	padding:30px;
-	margin-bottom:5px;
-	min-height:650px; /* long enough to keep the primary nav dropdowns from getting cropped off */
+    /*background: repeat-y scroll right top #FFFFFF;*/
+    background-color:#FFF;
+    /*overflow: hidden;  IE 6 */
+    padding:30px;
+    margin-bottom:5px;
+    min-height:650px; /* long enough to keep the primary nav dropdowns from getting cropped off */
 }
 .column {
-	/*display: inline; temp remove IE 6 */
-	width: 270px;
-	padding:30px 15px 0px;/* brings grey column down to the bottom of the wrapper */
-	/*margin-bottom: -32747px; /* brings grey column down to the bottom of the wrapper */
-	margin-top:0px;
+    /*display: inline; temp remove IE 6 */
+    width: 270px;
+    padding:30px 15px 0px;/* brings grey column down to the bottom of the wrapper */
+    /*margin-bottom: -32747px; /* brings grey column down to the bottom of the wrapper */
+    margin-top:0px;
 }
 
 #community #main-wrapper #main {
-	background-image:none; /* removes the dogear */
+    background-image:none; /* removes the dogear */
 }
 
 
@@ -293,119 +293,119 @@ a:hover .spacer  {
     width: 1px;
 }
 #branding {
-	color: #fff;
+    color: #fff;
 }
 #logo {
-	background: transparent  no-repeat top right; /* rounded corners and shadow */
-	overflow: hidden;
-	position: relative;
-	height: 65px;
+    background: transparent  no-repeat top right; /* rounded corners and shadow */
+    overflow: hidden;
+    position: relative;
+    height: 65px;
 }
 #logo span {
-	background: transparent  no-repeat 0 0;
-	position: absolute;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	z-index: 10;
-	display: block;
-	top: 0;
-	left: 0;
-	height: 57px;
-	width: 233px;
+    background: transparent  no-repeat 0 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    z-index: 10;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 57px;
+    width: 233px;
 }
 #logo span:hover {
-	background: transparent  no-repeat 0 -57px;
+    background: transparent  no-repeat 0 -57px;
 }
 #logo strong,
 #logo em {
-	overflow: hidden;
-	position: relative;
-	color: #000;
-	margin-left:-9999px;
+    overflow: hidden;
+    position: relative;
+    color: #000;
+    margin-left:-9999px;
 }
 #logo em {
-	position: absolute;
-	z-index: 11;
-	left: 80px;
-	bottom: 0;
-	width: 100%;
-	height: 30px;
-	color: #336699;
-	font-size: 130%;
-	font-style: normal;
-	font-weight: bold;
-	line-height: 1.2em;
-	white-space: nowrap;
+    position: absolute;
+    z-index: 11;
+    left: 80px;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    color: #336699;
+    font-size: 130%;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.2em;
+    white-space: nowrap;
 }
 #logo a {
-	position: absolute;
-	display: block;
-	left: 0;
-	width: 233px;
-	height: 40px;
-	padding: 10px 0;
-	cursor: pointer;
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 233px;
+    height: 40px;
+    padding: 10px 0;
+    cursor: pointer;
 }
 #logo a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 #logo a img {
-	display: none;
+    display: none;
 }
 
 
 /* =Searach */
 
 #search-box {
-	position: absolute;
-	top: 15px;
-	right: 0;
-	padding-right:5px;
-	z-index:103; /* this is higher than the dropmenudiv */
+    position: absolute;
+    top: 15px;
+    right: 0;
+    padding-right:5px;
+    z-index:103; /* this is higher than the dropmenudiv */
 }
 #search-box input {
-	margin: 0 0px 8px 0;
-	border: 0px;
-	width: 150px;
-	padding: 3px 0 3px 5px;
-	-webkit-border-radius:10px;-moz-border-radius: 10px; border-radius:10px;
+    margin: 0 0px 8px 0;
+    border: 0px;
+    width: 150px;
+    padding: 3px 0 3px 5px;
+    -webkit-border-radius:10px;-moz-border-radius: 10px; border-radius:10px;
 }
 #search-box input:focus,
 #search-box input.a11y-focus {
-	background: #fff;
-	border: 1px solid #abc4d5;
+    background: #fff;
+    border: 1px solid #abc4d5;
 }
 #search-box input#searchbar {
-	background:  no-repeat top right #6b7c86;
+    background:  no-repeat top right #6b7c86;
 }
 #search-box input.search-arrow {
-	position:absolute;
-	right: 8px;
+    position:absolute;
+    right: 8px;
     top: -1px;
-	width: 16px;
-	height: 16px;
+    width: 16px;
+    height: 16px;
 }
 #search-box .button {
-	background: transparent  0 0 no-repeat;
-	width: auto;
-	margin: 0;
-	color: #fff;
-	cursor: pointer;
+    background: transparent  0 0 no-repeat;
+    width: auto;
+    margin: 0;
+    color: #fff;
+    cursor: pointer;
 }
 #search-box .button:hover,
 #search-box .button:active,
 #search-box .button:focus {
-	background: #333;
-	color: #fff;
-	border: 1px solid #abc4d5;
-	border-right: 1px solid #4d4d4d;
-	border-bottom: 1px solid #4d4d4d;
+    background: #333;
+    color: #fff;
+    border: 1px solid #abc4d5;
+    border-right: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
 }
 #search-box a.button {
-	width: 100px;
-	display: inline;
-	border: none;
-	padding: 3px 10px 2px 10px;
+    width: 100px;
+    display: inline;
+    border: none;
+    padding: 3px 10px 2px 10px;
 }
 
 
@@ -413,193 +413,193 @@ a:hover .spacer  {
 /* =nav meta */
 
 #nav-meta {
-	position: absolute;
-	right: 100px;
-	top: 19px;
+    position: absolute;
+    right: 100px;
+    top: 19px;
 }
 #nav-meta ul {
-	margin:0px;
+    margin:0px;
 }
 #nav-meta ul li {
-	float: left;
-	margin: 0 2px 0 0;
-	list-style: none;
-	font-size: 10px;
-	height: 17px;
-	color: #8C8F91;
+    float: left;
+    margin: 0 2px 0 0;
+    list-style: none;
+    font-size: 10px;
+    height: 17px;
+    color: #8C8F91;
 }
 
 #nav-meta ul #jbssologininfo1 a img {
-	margin-top:-6px;
+    margin-top:-6px;
 }
 
 #nav-meta ul li a {
-	color: #ececec;
-	color: #C9D4E4;
-	margin: 0 4px;
-	padding: 0;
-	text-decoration: none;
-	font-size:11px;
-	vertical-align: top;
+    color: #ececec;
+    color: #C9D4E4;
+    margin: 0 4px;
+    padding: 0;
+    text-decoration: none;
+    font-size:11px;
+    vertical-align: top;
 }
 #nav-meta ul li a:hover,
 #nav-meta ul li a:active,
 #nav-meta ul li a:focus {
-	color: #FFF;
-	/*border-bottom: 1px dotted #6A8EA4 ;*/
-	outline:0 none;
+    color: #FFF;
+    /*border-bottom: 1px dotted #6A8EA4 ;*/
+    outline:0 none;
 }
 
 
 #dropmenudiv {
-	margin:-10px 0 0 0px;
-	background:#6b7c86  bottom left no-repeat;
-	/*border:1px solid #243447;
-	border-top:none;     */
+    margin:-10px 0 0 0px;
+    background:#6b7c86  bottom left no-repeat;
+    /*border:1px solid #243447;
+    border-top:none;     */
     color: #fff;
-	position: absolute;
-	z-index: 1;  /* this now lower than proj_nav or sub_nav and the #search-box (was 102 to be higher than the proj_nav and sub_nav) */
-	padding: 14px 0px 4px 5px;
-	text-decoration:none;
-	text-align: left;
-	width:auto; /* this isn't working with new percentages */
-	-webkit-border-radius:5px;
-	-moz-border-radius: 0px 0px 5px 5px;
-	border-radius:0px 0px 5px 5px;
-	overflow:hidden;
-	}
+    position: absolute;
+    z-index: 1;  /* this now lower than proj_nav or sub_nav and the #search-box (was 102 to be higher than the proj_nav and sub_nav) */
+    padding: 14px 0px 4px 5px;
+    text-decoration:none;
+    text-align: left;
+    width:auto; /* this isn't working with new percentages */
+    -webkit-border-radius:5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    border-radius:0px 0px 5px 5px;
+    overflow:hidden;
+    }
 
 #dropmenudiv a {
-	width: 146px;  /* matches the inline width of the #dropmenudiv inline  */
-	display: block;
-	text-indent: 6px;
-	margin:2px 0px 2px -5px;
-	padding: 2px 0px ;
-	text-decoration: none;
-	color: #c0c8d1;
-	white-space:nowrap;
-	font-size: 10px;
-	font-weight:bold;
-	text-shadow:1px 1px 1px #454646;
-	text-decoration: none;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	}
+    width: 146px;  /* matches the inline width of the #dropmenudiv inline  */
+    display: block;
+    text-indent: 6px;
+    margin:2px 0px 2px -5px;
+    padding: 2px 0px ;
+    text-decoration: none;
+    color: #c0c8d1;
+    white-space:nowrap;
+    font-size: 10px;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #454646;
+    text-decoration: none;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
 
 
 #dropmenudiv a:hover {
-	color: #fff;
-	/*background-color:#6b7c86; */
-	display:block !important;
-	font-style:normal;
-	white-space:nowrap;
-	font-size: 10px;
-	}
+    color: #fff;
+    /*background-color:#6b7c86; */
+    display:block !important;
+    font-style:normal;
+    white-space:nowrap;
+    font-size: 10px;
+    }
 
 
 /*  =Primary Nav  */
 
 #primarynav {
-	display:block;
-	width:100%;
-	/*height:37px;*/
-	/*font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;*/
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:13px;
-	position:absolute;
-	top:0px;
-	left:168px;
-	z-index:9999; 	/* this is HIGHER than #sub_nav and #proj_nav AND #jive-userbar in CS to keep dropdowns order (was 13 before 5/14/10) */
-	}
+    display:block;
+    width:100%;
+    /*height:37px;*/
+    /*font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;*/
+    font-family:Helvetica, Arial, sans-serif;
+    font-size:13px;
+    position:absolute;
+    top:0px;
+    left:168px;
+    z-index:9999;     /* this is HIGHER than #sub_nav and #proj_nav AND #jive-userbar in CS to keep dropdowns order (was 13 before 5/14/10) */
+    }
 
 #primarynav ul{
-	position:absolute;   /* this makes the ul lists overlap */
-	}
+    position:absolute;   /* this makes the ul lists overlap */
+    }
 
 #primarynav ul li{
-	/*background:  no-repeat scroll 0 -398px ;*/
-	text-align:center;
-	list-style:none;
-	padding:0;
-	height:53px;
-	margin:0;
-	_margin-top:-1px; /* hack for IE 6 */
-	}
+    /*background:  no-repeat scroll 0 -398px ;*/
+    text-align:center;
+    list-style:none;
+    padding:0;
+    height:53px;
+    margin:0;
+    _margin-top:-1px; /* hack for IE 6 */
+    }
 #primarynav ul li.current  {
-	background-color:#232E3C;
-	}
+    background-color:#232E3C;
+    }
 #primarynav ul li.current .notch {
-	display:none;
-	}
+    display:none;
+    }
 #primarynav ul li.enterprise  {
-	/*background:  no-repeat scroll 0 -318px  ; */
-	}
+    /*background:  no-repeat scroll 0 -318px  ; */
+    }
 #primarynav ul li a {
-	background: repeat-x scroll 0 0 transparent;  /* this is to keep the metanav from running over the primarynav with long login names */
-	color:#C9D4E4;/* lightest blue */
-	text-decoration: none;
-	font-size:12px;
-	padding: 19px 15px; /* also in small.css */
-	overflow:hidden;
-	text-shadow:0 1px 1px #000;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	text-transform:uppercase;
-	}
+    background: repeat-x scroll 0 0 transparent;  /* this is to keep the metanav from running over the primarynav with long login names */
+    color:#C9D4E4;/* lightest blue */
+    text-decoration: none;
+    font-size:12px;
+    padding: 19px 15px; /* also in small.css */
+    overflow:hidden;
+    text-shadow:0 1px 1px #000;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform:uppercase;
+    }
 #primarynav ul li.current a {
-	background: no-repeat bottom center transparent;
-	padding-bottom:20px;
-	}
+    background: no-repeat bottom center transparent;
+    padding-bottom:20px;
+    }
 #primarynav ul li li.current a {
-	margin-left:-1px;
+    margin-left:-1px;
 }
 #primarynav ul li li:hover {
-	background-image:none;    /* removes above background image above on dropdowns */
-	background-color:#6F7885; /* med blue-grey */
+    background-image:none;    /* removes above background image above on dropdowns */
+    background-color:#6F7885; /* med blue-grey */
 }
 #primarynav ul li:hover a {
-	color:#FFF;
-	text-shadow:1px 1px 1px #667A8E;
-	text-decoration:none;
+    color:#FFF;
+    text-shadow:1px 1px 1px #667A8E;
+    text-decoration:none;
 }
 
 
 /* =Sub navigation and Project navigation  (merge these all into sub_nav when we have time, because they are exacly the same below the first div class) -------------------- */
 
 #sub_nav {
-	margin:5px 0 0 0;
-	background: #bebebe;
-	font-weight:bold;
-	font-size:12px;
-	font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-	position:relative;
-	z-index:101; /* was 11 - higher than proj_nav (might need to make jive-userbar higher to keep dropdown order */
-	height:26px;
-	-webkit-border-top-left-radius:5px;
-	-webkit-border-top-right-radius:5px;
-	-moz-border-radius: 5px 5px 0px 0px; border-radius:5px 5px 0px 0px;
-	}
+    margin:5px 0 0 0;
+    background: #bebebe;
+    font-weight:bold;
+    font-size:12px;
+    font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    position:relative;
+    z-index:101; /* was 11 - higher than proj_nav (might need to make jive-userbar higher to keep dropdown order */
+    height:26px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius: 5px 5px 0px 0px; border-radius:5px 5px 0px 0px;
+    }
 
 .sub_nav_empty {
   height: 5px !important;
   }
 
 #proj_nav {
-	margin:-12px 0 0 0;/* this brings proj_nav up over stage to show banner behind rounded corners and bring dropshadow on stage behind proj_nav */
-	background: #bebebe;
-	font-weight:bold;
-	font-size:12px;
-	font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-	position:relative;
-	z-index:100; /* this is LOWER than #primary_nav (but NOT (need to make searchbar 111higher than #jive-userbar to keep dropdowns order)  IT USED TO BE 10  */
-	height:26px;
-	-webkit-border-top-left-radius:5px;
-	-webkit-border-top-right-radius:5px;
-	-moz-border-radius: 5px 5px 0px 0px; border-radius:5px 5px 0px 0px;
-	}
+    margin:-12px 0 0 0;/* this brings proj_nav up over stage to show banner behind rounded corners and bring dropshadow on stage behind proj_nav */
+    background: #bebebe;
+    font-weight:bold;
+    font-size:12px;
+    font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    position:relative;
+    z-index:100; /* this is LOWER than #primary_nav (but NOT (need to make searchbar 111higher than #jive-userbar to keep dropdowns order)  IT USED TO BE 10  */
+    height:26px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius: 5px 5px 0px 0px; border-radius:5px 5px 0px 0px;
+    }
 
 #proj_nav ul,
 #sub_nav ul{
-	position:absolute;   /* this makes the ul lists overlap the content area */
-	padding-left:7px;    /* needs be the same width as the projnav-shadow.png */
+    position:absolute;   /* this makes the ul lists overlap the content area */
+    padding-left:7px;    /* needs be the same width as the projnav-shadow.png */
 	width:100%;
 	height:26px;
 	}

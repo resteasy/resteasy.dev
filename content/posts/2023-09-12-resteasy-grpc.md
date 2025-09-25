@@ -240,8 +240,8 @@ If everything goes fine, we have a provisioned WildFly server installed:
 ```bash
 weli@ovpn-12-142:~/w/g/wildfly
 ➤ ls
-LICENSE.txt		appclient		copyright.txt		domain			modules			welcome-content
-README.txt		bin			docs			jboss-modules.jar	standalone
+LICENSE.txt        appclient        copyright.txt        domain            modules            welcome-content
+README.txt        bin            docs            jboss-modules.jar    standalone
 ```
 
 Now we can start this provisioned WildFly server with the following command:

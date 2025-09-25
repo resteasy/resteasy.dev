@@ -232,15 +232,15 @@ curl http://localhost:8080/microprofile-config-one/one/report
 
 Ordinal   Name
 60   null:org.jboss.rest.config.one.ServiceActivator:ServletConfigSource
-	 resteasy.servlet.mapping.prefix : /
-	 javax.ws.rs.Application : org.jboss.rest.config.one.ServiceActivator
+     resteasy.servlet.mapping.prefix : /
+     javax.ws.rs.Application : org.jboss.rest.config.one.ServiceActivator
 50   null:null:FilterConfigSource
-	 no entries
+     no entries
 40   null:ServletContextConfigSource
-	 resteasy.preferJacksonOverJsonB : false
-	 resteasy.scanned.resources : org.jboss.rest.config.one.DemoResource
-	 resteasy.document.expand.entity.references : false
-	 resteasy.unwrapped.exceptions : javax.ejb.EJBException
+     resteasy.preferJacksonOverJsonB : false
+     resteasy.scanned.resources : org.jboss.rest.config.one.DemoResource
+     resteasy.document.expand.entity.references : false
+     resteasy.unwrapped.exceptions : javax.ejb.EJBException
 ````
 This is the minimum set of configuration data RESTEasy requires.  All the properties
 which start with "resteasy." are [RESTEasy configuration switches](https://docs.jboss.org/resteasy/docs/3.12.1.Final/userguide/html/Installation_Configuration.html#configuration_switches).
@@ -281,9 +281,9 @@ curl http://localhost:8080/microprofile-config-one/one/lookup/resteasy.preferJac
 
 Ordinal   Name
 400   SysPropConfigSource
-	 resteasy.preferJacksonOverJsonB : TRUE
+     resteasy.preferJacksonOverJsonB : TRUE
 40   null:ServletContextConfigSource
-	 resteasy.preferJacksonOverJsonB : TRUE
+     resteasy.preferJacksonOverJsonB : TRUE
 ````
 Hmmm.  The property in SysPropConfigSource is expected.
 The value of resteasy.preferJacksonOverJsonB in ServletContextConfigSource is
@@ -336,9 +336,9 @@ curl http://localhost:8080/microprofile-config-two/two/lookup/resteasy.preferJac
 
 Ordinal   Name
 100   PropertiesConfigSource[source=vfs:/content/microprofile-config-two.war/WEB-INF/classes/META-INF/microprofile-config.properties]
-	 resteasy.preferJacksonOverJsonB : TruE
+     resteasy.preferJacksonOverJsonB : TruE
 40   null:ServletContextConfigSource
-	 resteasy.preferJacksonOverJsonB : false
+     resteasy.preferJacksonOverJsonB : false
 
 ````
 
@@ -424,18 +424,18 @@ curl http://localhost:8080/microprofile-config-four/four/report
 
 Ordinal   Name
 60   null:DemoFour:ServletConfigSource
-	 javax.ws.rs.Application : org.jboss.rest.config.one.ServiceActivator
+     javax.ws.rs.Application : org.jboss.rest.config.one.ServiceActivator
 53   PropertiesConfigSource[source=vfs:/content/microprofile-config-four.war/WEB-INF/classes/META-INF/microprofile-config.properties]
-	 config_ordinal : 53
-	 farewell-phrase : that's all folks
+     config_ordinal : 53
+     farewell-phrase : that's all folks
 50   null:null:FilterConfigSource
-	 no entries
+     no entries
 40   null:ServletContextConfigSource
-	 resteasy.preferJacksonOverJsonB : false
-	 month : June
-	 courts : legal-courts
-	 resteasy.document.expand.entity.references : false
-	 resteasy.unwrapped.exceptions : javax.ejb.EJBException
+     resteasy.preferJacksonOverJsonB : false
+     month : June
+     courts : legal-courts
+     resteasy.document.expand.entity.references : false
+     resteasy.unwrapped.exceptions : javax.ejb.EJBException
 
 -- Thanks for asking --
 ````
@@ -458,20 +458,20 @@ curl http://localhost:8080/microprofile-config-four/air/four/report
 
 Ordinal   Name
 60   null:DemoFour:ServletConfigSource
-	 no entries
+     no entries
 53   PropertiesConfigSource[source=vfs:/content/microprofile-config-four.war/WEB-INF/classes/META-INF/microprofile-config.properties]
-	 config_ordinal : 53
-	 farewell-phrase : that's all folks
+     config_ordinal : 53
+     farewell-phrase : that's all folks
 50   null:null:FilterConfigSource
-	 resteasy.servlet.mapping.prefix : /air
-	 javax.ws.rs.Application : org.jboss.rest.config.one.ServiceActivator
-	 aquarium : fish-filter
+     resteasy.servlet.mapping.prefix : /air
+     javax.ws.rs.Application : org.jboss.rest.config.one.ServiceActivator
+     aquarium : fish-filter
 40   null:ServletContextConfigSource
-	 resteasy.preferJacksonOverJsonB : false
-	 month : June
-	 courts : legal-courts
-	 resteasy.document.expand.entity.references : false
-	 resteasy.unwrapped.exceptions : javax.ejb.EJBException
+     resteasy.preferJacksonOverJsonB : false
+     month : June
+     courts : legal-courts
+     resteasy.document.expand.entity.references : false
+     resteasy.unwrapped.exceptions : javax.ejb.EJBException
 
 ````
 FilterConfigSource does contain configuration data and notice ServletConfigSource
@@ -499,11 +499,11 @@ curl http://localhost:8080/microprofile-config-four/air/four/lookup/aquarium
 
 Ordinal   Name
 400   SysPropConfigSource
-	 aquarium : Tropical Pets
+     aquarium : Tropical Pets
 300   EnvConfigSource
-	 aquarium : tank equipment
+     aquarium : tank equipment
 50   null:airFilter:FilterConfigSource
-	 aquarium : fish-filter
+     aquarium : fish-filter
 ````
 SUCCESS!!  "Tropical Pets" is in SysPropConfigSource.
 "tank equipment" in EnvConfigSource and the initial value, "fish-filter"

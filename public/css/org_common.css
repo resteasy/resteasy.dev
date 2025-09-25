@@ -18,74 +18,74 @@ These are the common css styles for the JBoss.org site.
 /*------------- =Announcement banner --------------*/
 
 #proj_announce {
-	overflow:hidden;
-	/*height:106px;
-	display:block;
-	background: no-repeat;  not needed for liquid */
+    overflow:hidden;
+    /*height:106px;
+    display:block;
+    background: no-repeat;  not needed for liquid */
 }
 
 #proj_announce-whole {
-	overflow:hidden;
-	/*height:106px;
-	display:block;
-	z-index:0;
-	position:relative;  removed for liquid  */
+    overflow:hidden;
+    /*height:106px;
+    display:block;
+    z-index:0;
+    position:relative;  removed for liquid  */
 }
 
 #projpage_announce {
-	overflow:hidden;
-	/*height:106px;
-	display:block;
-	background: no-repeat; not needed for liquid */
+    overflow:hidden;
+    /*height:106px;
+    display:block;
+    background: no-repeat; not needed for liquid */
 }
 
 #proj_logo {
 }
 #proj_announe-whole #proj_logo {
-	text-indent:-9999px;
-	display:block;
+    text-indent:-9999px;
+    display:block;
 }
 #proj_announce h2 {
-	padding:49px 0 0 20px;
-	font-size:30px;
-	margin:0px;
-	color:#4b5767;
-	text-shadow:0 1px 1px #CCC;
+    padding:49px 0 0 20px;
+    font-size:30px;
+    margin:0px;
+    color:#4b5767;
+    text-shadow:0 1px 1px #CCC;
 }
 #proj_announce-whole h2 {
-	display:none;
+    display:none;
 }
 
 #proj_tagline {
-	float:right;
-	padding-right:60px;
+    float:right;
+    padding-right:60px;
 }
 #proj_announce-whole #proj_tagline {
-	text-indent:-9999px;
-	display:block;
+    text-indent:-9999px;
+    display:block;
 }
 
 
 #proj_announce h3 {
-	color:#4b5767;
-	font-size:22px;
-	/*font-weight:100;*/
-	margin:0;
-	padding:53px 40px 0 0;
-	letter-spacing:-0.03em;
-	text-shadow:0 1px 1px #CCC;
+    color:#4b5767;
+    font-size:22px;
+    /*font-weight:100;*/
+    margin:0;
+    padding:53px 40px 0 0;
+    letter-spacing:-0.03em;
+    text-shadow:0 1px 1px #CCC;
 }
 #proj_announce-whole #proj_tagline-neg {
-	/*display:none;*/
+    /*display:none;*/
 }
 #proj_container h1{
-	margin-left:15px;
+    margin-left:15px;
     font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-	font-weight:100;
-	color:#FFFFFF;
-	font-size:28px;
-	margin-top:20px;
-	margin-bottom:8px;
+    font-weight:100;
+    color:#FFFFFF;
+    font-size:28px;
+    margin-top:20px;
+    margin-bottom:8px;
 }
 
 
@@ -95,11 +95,11 @@ These are the common css styles for the JBoss.org site.
 /* = Common tags and elements  */
 
 pre:has(code) {
-	margin: 0px;
-	max-height: max-content;
-	width: auto;
-	padding: 0px;
-	border: none;
+    margin: 0px;
+    max-height: max-content;
+    width: auto;
+    padding: 0px;
+    border: none;
 }
 
 pre {
@@ -110,19 +110,19 @@ pre {
  }
 
 .min-height {
-	min-height:300px;
+    min-height:300px;
 }
 
 /*  = Standard Links and Specialized links  */
 
 
 a {
-	color:#336699;
-	text-decoration: none;
+    color:#336699;
+    text-decoration: none;
 }
 
 a:hover {
-	text-decoration:underline;
+    text-decoration:underline;
 }
 
 
@@ -131,88 +131,88 @@ a:hover {
 
 
 .OneColumnContent {
-	margin: 0px 20px 15px 20px;
+    margin: 0px 20px 15px 20px;
 }
 
 /*  = Base Two Column layout  */
 
 
 .TwoColumnContent {
-	padding: 0px 25px 15px 200px;
+    padding: 0px 25px 15px 200px;
 }
 
 /* ------------ = Header Tags -------------- */
 
 h1, h2, h3, h4, h5, h6, h7 {
-	letter-spacing: -.06em;
+    letter-spacing: -.06em;
     font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-	/*letter-spacing: 0px;*/
-	/*font-family: 'PT Sans', "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;*/
-	display:block;
-	font-weight: normal;
+    /*letter-spacing: 0px;*/
+    /*font-family: 'PT Sans', "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;*/
+    display:block;
+    font-weight: normal;
 }
 
 h1 {
-	color:#CC0000;
-	font-size:27px;
-	margin:6px 0;
+    color:#CC0000;
+    font-size:27px;
+    margin:6px 0;
 }
 h2 {
-	color:#424242;
-	font-size:25px;
-	margin:5px 0;
+    color:#424242;
+    font-size:25px;
+    margin:5px 0;
 }
 h3 {
-	color:#88201B;
-	font-size:23px;
-	margin:4px 0;
+    color:#88201B;
+    font-size:23px;
+    margin:4px 0;
 }
 h4 {
-	color:#494949;
-	font-size:21px;
-	margin:3px 0;
+    color:#494949;
+    font-size:21px;
+    margin:3px 0;
 }
 h5 {
-	color:#005E8F;
-	font-size:17px;
-	margin:2px 0
+    color:#005E8F;
+    font-size:17px;
+    margin:2px 0
 }
 h6 {
-	color:#545353;
-	font-size:15px;
-	margin:1px 0;
+    color:#545353;
+    font-size:15px;
+    margin:1px 0;
 }
 h7 {
-	color:#666666;
-	font-size:13px;
-	margin: 0px;
+    color:#666666;
+    font-size:13px;
+    margin: 0px;
 }
 
 
 /* = Floats, Clears, Margins and HRs   */
 
 .clear {
-	clear:both;
+    clear:both;
 }
 
 .floatright {
-	float:right;
+    float:right;
 }
 
 .floatleft {
-	float:left;
+    float:left;
 }
 
 .nomargin {
-	margin: 0px;
+    margin: 0px;
 }
 
 .greyHR {
-	border-top:1px solid #a1a1a1;
-	background-color:#ffffff;
-	border-bottom:0px;
-	border-left:0px;
-	border-right:0px;
+    border-top:1px solid #a1a1a1;
+    background-color:#ffffff;
+    border-bottom:0px;
+    border-left:0px;
+    border-right:0px;
 }
 
 .dashedHR {
@@ -223,14 +223,14 @@ h7 {
 }
 
 .page-space { /*    <div class="page-space">&nbsp;</div>    */
-	margin-bottom:400px;
-	}
+    margin-bottom:400px;
+    }
 
 
 .notfound-links li{
-	list-style:none;
-	font-size:13px;
-	}
+    list-style:none;
+    font-size:13px;
+    }
 
 /*
 
@@ -247,58 +247,58 @@ Content Specific Styles: These are styles the affect the content of the pages.
 /*  = Simple Table style (black header, grey/white stripes  */
 
 .simpletablestyle {
-	background-color:#E6E7E8;
-	clear:both;
+    background-color:#E6E7E8;
+    clear:both;
 }
 
 .simpletablestyle img {
-	border:0px;
+    border:0px;
 }
 
 .simpletablestyle td {
-	height:3em;
-	padding-left: 6px;
-	font-size:11px;
-	padding:5px 5px;
+    height:3em;
+    padding-left: 6px;
+    font-size:11px;
+    padding:5px 5px;
 }
 
 .simpletablestyle th {
-	font-size:12px;
-	font-weight:normal;
-	padding:0 10px 0 5px;
-	border-bottom:#999999 dotted 1px;
+    font-size:12px;
+    font-weight:normal;
+    padding:0 10px 0 5px;
+    border-bottom:#999999 dotted 1px;
 }
 
 .simpletablestyle .header {
-	background:  #000000 repeat-x top left;
-	height:31px;
-	font-size:10px;
-	font-weight:bold;
-	color:#FFFFFF;
-	text-align:left;
+    background:  #000000 repeat-x top left;
+    height:31px;
+    font-size:10px;
+    font-weight:bold;
+    color:#FFFFFF;
+    text-align:left;
 }
 
 .simpletablestyle .header a {
-	color:#94aebd;
+    color:#94aebd;
 }
 
 
 .simpletablestyle tr.header td {
-	padding: 0px 10px 0px 5px;
+    padding: 0px 10px 0px 5px;
 }
 
 
 .simpletablestyle .subheader {
-	background-color: #e6e7e8;
-	font-size:10px;
-	font-weight:bold;
-	color:#000000;
-	text-align:left;
+    background-color: #e6e7e8;
+    font-size:10px;
+    font-weight:bold;
+    color:#000000;
+    text-align:left;
 }
 
 .simpletablestyle tbody tr:nth-child(even) {
     background-color: #f4f3f3;
-	padding-left: 6px;
+    padding-left: 6px;
 }
 
 .simpletablestyle tbody tr:nth-child(odd) {
@@ -306,105 +306,105 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 .simpletablestyle .categoryRow { /* need this? */
-	color:#333333;
-	font-weight:bold;
-	font-size:13px;
-	font-family:Helvetica,sans-serif;
+    color:#333333;
+    font-weight:bold;
+    font-size:13px;
+    font-family:Helvetica,sans-serif;
 }
 
 
 .simpletablestyle td a.td-download {
-	display:inline;
-	padding: 3px 30px 3px 0px;
-	min-width:80px;
-	height:20px;
-	background: transparent  no-repeat right top;
-	}
+    display:inline;
+    padding: 3px 30px 3px 0px;
+    min-width:80px;
+    height:20px;
+    background: transparent  no-repeat right top;
+    }
 
 
 
 /*--  =Default Table style (black header, grey/white stripes   --*/
 
 .basetablestyle, .bodyTable {
-	margin:0px;
+    margin:0px;
 }
 
 .basetablestyle img {
-	border:0px;
+    border:0px;
 }
 
 .basetablestyle td {
-	height:3em;
-	padding-left: 6px;
-	padding-right: 15px;
+    height:3em;
+    padding-left: 6px;
+    padding-right: 15px;
 }
 
 .basetablestyle .header {
-	background-color: #233345;
-	font-size:10px;
-	font-weight:bold;
-	color:#94aebd;
-	text-align:left;
+    background-color: #233345;
+    font-size:10px;
+    font-weight:bold;
+    color:#94aebd;
+    text-align:left;
 }
 
 .basetablestyle .header a {
-	color:#94aebd;
+    color:#94aebd;
 }
 
 .basetablestyle .tableheaderfirst {
-	border-bottom:1px solid #233345;
-	height:2em;
+    border-bottom:1px solid #233345;
+    height:2em;
 }
 
 .basetablestyle .tableheader {
-	border-left:1px solid #94aebd;
-	border-bottom:1px solid #233345;
-	height:2em;
+    border-left:1px solid #94aebd;
+    border-bottom:1px solid #233345;
+    height:2em;
 }
 
 .basetablestyle .subheader {
-	background-color: #e6e7e8;
-	font-size:10px;
-	font-weight:bold;
-	color:#000000;
-	text-align:left;
+    background-color: #e6e7e8;
+    font-size:10px;
+    font-weight:bold;
+    color:#000000;
+    text-align:left;
 }
 
 .basetablestyle .subheader .tableheaderfirst {
-	height:2em;
-	border-bottom: 0px;
+    height:2em;
+    border-bottom: 0px;
 }
 
 .basetablestyle .subheader .tableheader {
-	height:2em;
-	border-left:1px solid #e6e7e8;
-	border-bottom:0px;
+    height:2em;
+    border-left:1px solid #e6e7e8;
+    border-bottom:0px;
 }
 
 .basetablestyle .rowlinefirst {
-	border-bottom:1px solid #e6e7e8;
-	padding:10px;
+    border-bottom:1px solid #e6e7e8;
+    padding:10px;
 }
 
 .basetablestyle .rowline {
-	border-left:1px solid #e6e7e8;
-	border-bottom:1px solid #e6e7e8;
-	padding:10px;
+    border-left:1px solid #e6e7e8;
+    border-bottom:1px solid #e6e7e8;
+    padding:10px;
 }
 
 .basetablestyle .categoryRow {
     background-color: #dcdedf;
-	font-weight:bold;
-	padding-left: 6px;
-	color:#333333;
-	font-size:13px;
-	font-family:Helvetica,sans-serif;
+    font-weight:bold;
+    padding-left: 6px;
+    color:#333333;
+    font-size:13px;
+    font-family:Helvetica,sans-serif;
 }
 
 
 .basetablestyle .oddRow, .a {
     background-color: #f4f3f3;
-	padding-left: 6px;
+    padding-left: 6px;
 }
 
 .basetablestyle .evenRow, .b {
@@ -412,65 +412,65 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 .basetablestyle .footerrow {
-	background-color:#656565;
+    background-color:#656565;
 }
 
 .basetablestyle .bottomline {
-	border-bottom:1px solid #E6E7E8;
+    border-bottom:1px solid #E6E7E8;
 }
 
 .basetablestyle .topline {
-	border-top:1px solid #E6E7E8;
+    border-top:1px solid #E6E7E8;
 }
 
 
 .basetablestyle td.rowline a.td-download {
-	display:inline;
-	padding: 3px 30px 3px 0px;
-	min-width:80px;
-	height:20px;
-	background: transparent  no-repeat right top;
-	}
+    display:inline;
+    padding: 3px 30px 3px 0px;
+    min-width:80px;
+    height:20px;
+    background: transparent  no-repeat right top;
+    }
 
 
 .basetablestyle, .bodyTable {
-	border:#EFEFEF 1px solid;
-	border-bottom:none;
-	border-top:none;
+    border:#EFEFEF 1px solid;
+    border-bottom:none;
+    border-top:none;
 }
 
 .basetablestyle .header {
-	background:  #000000 repeat-x top left;
-	height:31px;
+    background:  #000000 repeat-x top left;
+    height:31px;
 }
 
 .basetablestyle .header {
-	color:#FFFFFF;
+    color:#FFFFFF;
 }
 
 .basetablestyle td {
-	font-size:11px;
+    font-size:11px;
 }
 
 .basetablestyle .tableheader,
 .basetablestyle .tableheaderfirst {
-	font-size:12px;
-	font-weight:normal;
+    font-size:12px;
+    font-weight:normal;
 }
 
 .basetablestyle .tableheader,
 .basetablestyle .tableheaderfirst {
-	border:1px solid #999999;
-	border-bottom: 1px dotted #999999;
+    border:1px solid #999999;
+    border-bottom: 1px dotted #999999;
 }
 .basetablestyle .tableheader {
-	border-left:none;
+    border-left:none;
 }
 
 .basetablestyle .categoryRow {
-	color:#333333;
-	font-size:13px;
-	font-family:Helvetica,sans-serif;
+    color:#333333;
+    font-size:13px;
+    font-family:Helvetica,sans-serif;
 }
 
 
@@ -480,134 +480,134 @@ Content Specific Styles: These are styles the affect the content of the pages.
 /* = Admin forms & Inputs  */
 
 .adminforms {
-	margin:0px 20px 10px 20px;
-	display:block;
+    margin:0px 20px 10px 20px;
+    display:block;
 }
 
 .adminforms h4 {
-	font-weight:bold;
-	font-size:12px;
-	margin:20px auto 20px auto;
-	border-bottom:1px solid #e6e7e8;
+    font-weight:bold;
+    font-size:12px;
+    margin:20px auto 20px auto;
+    border-bottom:1px solid #e6e7e8;
 }
 
 .adminforms label{
- 	float: left;
-	margin: 0px auto 3px auto;
-	padding-right:10px;
-	white-space:nowrap;
+     float: left;
+    margin: 0px auto 3px auto;
+    padding-right:10px;
+    white-space:nowrap;
 }
 
 .adminforms input, textarea, select {
-	margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .adminforms .radios {
-	width: 14px;
-	margin-bottom: -1px;
+    width: 14px;
+    margin-bottom: -1px;
 }
 .adminforms .selectnarrow {
-	width:80px;
-	margin-bottom: 8px;
+    width:80px;
+    margin-bottom: 8px;
 }
 .adminforms .selectmedium {
-	width:160px;
-	margin-bottom: 8px;
+    width:160px;
+    margin-bottom: 8px;
 }
 
 .adminforms br {
-	clear: both;
+    clear: both;
 }
 
 .adminforms hr {
-	border-top:1px dashed #d5d5d5;
-	border-bottom:0px;
-	color: #ffffff;
-	border-left:0px;
-	border-right:0px;
+    border-top:1px dashed #d5d5d5;
+    border-bottom:0px;
+    color: #ffffff;
+    border-left:0px;
+    border-right:0px;
 }
 
 .adminforms .submit {
-	font-size: 10px;
-	font-weight: bold;
-	color: #FFFFFF;
-	background-color: #4a5d75;
-	border-top: 1px solid #94aebd;
-	border-left: 1px solid #94aebd;
-	border-right: 1px solid #233345;
-	border-bottom: 1px solid #233345;
-	height:20px;
-	padding:0px 10px 0px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4a5d75;
+    border-top: 1px solid #94aebd;
+    border-left: 1px solid #94aebd;
+    border-right: 1px solid #233345;
+    border-bottom: 1px solid #233345;
+    height:20px;
+    padding:0px 10px 0px 10px;
 }
 
 .adminforms .contentarrows ul {
-	padding-left: 0px;
-	margin-left: 0px;
-	display: block;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: block;
 }
 
 .adminforms .contentarrows ul li {
-	list-style: none;
-	display: block;
-	padding: 0px 16px 6px 16px;
-	margin-top: 30px;
+    list-style: none;
+    display: block;
+    padding: 0px 16px 6px 16px;
+    margin-top: 30px;
 
 }
 .adminforms .contentarrows ul li.last {
-	margin-top: 0px;
+    margin-top: 0px;
 }
 
 #propertiesbox {
-	margin-top: 20px;
-	padding: 0px 10px 10px 10px;
-	background-color: #ececec;
-	border: 1px solid #d5d5d5;
+    margin-top: 20px;
+    padding: 0px 10px 10px 10px;
+    background-color: #ececec;
+    border: 1px solid #d5d5d5;
 }
 
 /*  = Form buttons   */
 
 .formbuttons {
-	margin: 10px auto 15px auto;
-	padding-top: 5px ;
-	border-top: 1px solid #4a5d75;
+    margin: 10px auto 15px auto;
+    padding-top: 5px ;
+    border-top: 1px solid #4a5d75;
 }
 
 .formbuttons ul {
-	padding-left: 0px;
-	margin-left: 0px;
-	display: inline;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: inline;
 }
 
 .formbuttons ul li {
-	list-style: none;
-	display: inline;
-	padding-right: 4px;
+    list-style: none;
+    display: inline;
+    padding-right: 4px;
 }
 
 .formbuttons .submit {
-	font-size: 10px;
-	font-weight: bold;
-	color: #FFFFFF;
-	background-color: #4a5d75;
-	border-top: 1px solid #94aebd;
-	border-left: 1px solid #94aebd;
-	border-right: 1px solid #233345;
-	border-bottom: 1px solid #233345;
-	height:20px;
-	cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4a5d75;
+    border-top: 1px solid #94aebd;
+    border-left: 1px solid #94aebd;
+    border-right: 1px solid #233345;
+    border-bottom: 1px solid #233345;
+    height:20px;
+    cursor: pointer;
 }
 
 /* = Single column submit & label  */
 
 .singlecolumn .submit {
- 	width:80px;
+     width:80px;
 }
 .singlecolumn label {
-	width: 170px;
+    width: 170px;
 }
 
 .singlecolumn input, select {
-	width: 300px;
+    width: 300px;
 }
 
 /*  = Bootstrap Buttons (these are copied from bootstrap-community.css, so once we have boostrap working we can delete the styles here and use that stylesheet) */
@@ -707,24 +707,24 @@ Content Specific Styles: These are styles the affect the content of the pages.
 /*  = Default Buttons  */
 
 .buttonMed {
-	font-size: 10px;
-	font-weight: bold;
-	color: #FFFFFF;
-	background-color: #4a5d75;
-	border-top: 1px solid #94aebd;
-	border-left: 1px solid #94aebd;
-	border-right: 1px solid #233345;
-	border-bottom: 1px solid #233345;
-	height: 20px;
-	cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4a5d75;
+    border-top: 1px solid #94aebd;
+    border-left: 1px solid #94aebd;
+    border-right: 1px solid #233345;
+    border-bottom: 1px solid #233345;
+    height: 20px;
+    cursor: pointer;
 }
 
 /* = Anchor tag fix for most browsers except Safari  */
 
 .anchorfix {
-	position:absolute; /* this lifts the anchor out of the content area */
-	width:1px; /* this is to fix it in IE 5.5 and 6.0 or it will disappear the anchor entirely */
-	}
+    position:absolute; /* this lifts the anchor out of the content area */
+    width:1px; /* this is to fix it in IE 5.5 and 6.0 or it will disappear the anchor entirely */
+    }
 
 
 /* = Docbook document navigation  */
@@ -759,25 +759,25 @@ Content Specific Styles: These are styles the affect the content of the pages.
 /* = Downloads modal dialog styles (this has replaced stylesheet: modal.css) */
 
 #modallayer {
-	background-color: transparent;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	z-index: 1000;
-   	text-align: left;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+       text-align: left;
 }
 
 #dialog {
-	width: 440px;
-	min-height: 100px;
-	display: none;
-  	border:1px solid #94aebd;
-	background-color: #f3f3f3;
-	background-repeat: no-repeat;
-	background-position: 0px 25px;
-  	ext-align: left;
+    width: 440px;
+    min-height: 100px;
+    display: none;
+      border:1px solid #94aebd;
+    background-color: #f3f3f3;
+    background-repeat: no-repeat;
+    background-position: 0px 25px;
+      ext-align: left;
 }
 
 #modallayer h4,
@@ -840,106 +840,106 @@ Content Specific Styles: These are styles the affect the content of the pages.
 /* = SLIMBOX */
 
 #lbOverlay {
-	position: fixed;
-	z-index: 9999;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #000;
-	cursor: pointer;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    cursor: pointer;
 }
 
 #lbCenter, #lbBottomContainer {
-	position: absolute;
-	z-index: 9999;
-	overflow: hidden;
-	background-color: #fff;
+    position: absolute;
+    z-index: 9999;
+    overflow: hidden;
+    background-color: #fff;
 }
 
 .lbLoading {
-	background: #fff  no-repeat center;
+    background: #fff  no-repeat center;
 }
 
 #lbImage {
-	position: absolute;
-	left: 0;
-	top: 0;
-	border: 10px solid #fff;
-	background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 10px solid #fff;
+    background-repeat: no-repeat;
 }
 
 #lbPrevLink, #lbNextLink {
-	display: block;
-	position: absolute;
-	top: 0;
-	width: 50%;
-	outline: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    outline: none;
 }
 
 #lbPrevLink {
-	left: 0;
+    left: 0;
 }
 
 #lbPrevLink:hover {
-	background: transparent  no-repeat 0 15%;
+    background: transparent  no-repeat 0 15%;
 }
 
 #lbNextLink {
-	right: 0;
+    right: 0;
 }
 
 #lbNextLink:hover {
-	background: transparent  no-repeat 100% 15%;
+    background: transparent  no-repeat 100% 15%;
 }
 
 #lbBottom {
-	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
-	font-size: 10px;
-	color: #666;
-	line-height: 1.4em;
-	text-align: left;
-	border: 10px solid #fff;
-	border-top-style: none;
+    font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #666;
+    line-height: 1.4em;
+    text-align: left;
+    border: 10px solid #fff;
+    border-top-style: none;
 }
 
 #lbCloseLink {
-	display: block;
-	float: right;
-	width: 66px;
-	height: 22px;
-	background: transparent  no-repeat center;
-	margin: 5px 0;
-	outline: none;
+    display: block;
+    float: right;
+    width: 66px;
+    height: 22px;
+    background: transparent  no-repeat center;
+    margin: 5px 0;
+    outline: none;
 }
 
 #lbCaption, #lbNumber {
-	margin-right: 71px;
+    margin-right: 71px;
 }
 
 #lbCaption {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 
 /* =Looped Slider slideshow */
 .container {
-	width:500px;
-	height:375px;
-	overflow:hidden;
-	position:relative;
-	cursor:pointer;
+    width:500px;
+    height:375px;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
 }
 
 .slides {
-	position:absolute;
-	top:0; left:0;
+    position:absolute;
+    top:0; left:0;
 }
 
 .slides div {
-	position:absolute;
-	top:0; width:500px;
-	display:none;
+    position:absolute;
+    top:0; width:500px;
+    display:none;
 }
 
  /*  Optional  */
@@ -967,10 +967,10 @@ a.next { position:absolute; top:200px; right:-32px; }
 
 /*  =Read More link */
 .read-more a{
-	background: transparent  no-repeat left top scroll;
-	margin-left:5px;
-	padding:3px 10px 3px 20px;
-	list-style:none;
+    background: transparent  no-repeat left top scroll;
+    margin-left:5px;
+    padding:3px 10px 3px 20px;
+    list-style:none;
 }
 
 
@@ -1126,7 +1126,7 @@ with these settings:
 /* ----------------- Social Media buttons from ShareThis ------------------------- */
 
 .projectpage-socialmedia {
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 

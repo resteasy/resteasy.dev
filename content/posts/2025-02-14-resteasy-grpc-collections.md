@@ -222,7 +222,7 @@ work in the javabuf world:
 Alternatively, one could create an `ArrayList` and translate it to an `java_util___ArrayList16`:
 ```java
     ArrayList<Integer> list = new ArrayList<Integer>();
- 	list.add(3);
+     list.add(3);
     list.add(7);
     GenericType<java.util.ArrayList<java.lang.Integer>> type = new GenericType<java.util.ArrayList<java.lang.Integer>>() { };
     java_util___ArrayList16 jua = (java_util___ArrayList16) translator.translateToJavabuf(list, type);
