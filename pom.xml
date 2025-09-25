@@ -49,7 +49,7 @@
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.roq</groupId>
-            <artifactId>quarkus-roq-plugin-asciidoc</artifactId>
+            <artifactId>quarkus-roq-plugin-asciidoc-jruby</artifactId>
             <version>${version.quarkus-roq}</version>
         </dependency>
         <dependency>

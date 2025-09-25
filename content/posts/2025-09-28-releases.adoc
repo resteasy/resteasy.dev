@@ -1,0 +1,109 @@
+---
+layout: post
+title: "RESTEasy 6.2.14.Final and 7.0.0.Final Releases"
+subtitle: ""
+date: 2025-09-28
+author: James R. Perkins
+---
+
+Today we are excited to announce the release of RESTEasy link:/downloads#6214final[6.2.14.Final] and RESTEasy
+link:/downloads#700final[7.0.0.Final]. RESTEasy 7.0.0.Final has been a long time coming and likely could have been
+final a while ago. However, we had some housekeeping we wanted to get done first.
+
+The release of 7.0.0.Final is a major milestone. It finalizes our effort to streamline the core framework and move
+key integrations into their own separate projects. This allows them to be versioned and released independently, giving
+users more flexibility.
+
+== Major Changes
+
+With RESTEasy 7.0, the Vert.x, Netty, and Jetty integrations have been moved from the core repository into their own
+projects. The old artifacts are now deprecated in 6.2.14.Final and have been removed completely in 7.0.0.Final.
+
+We strongly recommend all users migrate to the new group and artifact IDs (GAVs), as all future development and fixes
+will happen in these new repositories.
+
+The following table maps the old GAVs to the new ones:
+
+|===
+|Old/Removed GA |New GAV
+
+|`org.jboss.resteasy:resteasy-netty4`
+|`dev.resteasy.netty:resteasy-embedded-server:1.0.0.Final`
+
+|`org.jboss.resteasy:resteasy-netty4-cdi`
+|`dev.resteasy.netty:resteasy-embedded-server-cdi:1.0.0.Final`
+
+|`org.jboss.resteasy:resteasy-reactor-netty`
+|`dev.resteasy.netty:resteasy-embedded-server-reactor:1.0.0.Final`
+
+|`org.jboss.resteasy:resteasy-client-reactor-netty`
+|`dev.resteasy.netty:resteasy-reactor-netty-client:1.0.0.Final`
+
+|`org.jboss.resteasy:resteasy-netty4`
+|`dev.resteasy.netty:resteasy-embedded-server:1.0.0.Final`
+
+|`org.jboss.resteasy:resteasy-vertx`
+|`dev.resteasy.vertx:resteasy-vertx-embedded-server:1.0.1.Final`
+
+|`org.jboss.resteasy:resteasy-client-vertx`
+|`dev.resteasy.vertx:resteasy-vertx-client:1.0.1.Final`
+
+|`org.jboss.resteasy:resteasy-client-jetty`
+|`dev.resteasy.jetty:resteasy-jetty-client:1.0.0.Alpha2`
+|===
+
+[WARNING]
+====
+The package for the Netty Reactor Client changed. This had to be done as it used the same package as the RESTEasy Client
+and causes a package split between the two artifacts.
+====
+
+== 7.0.0.Final
+
+RESTEasy 7.0.0.Final is a https://jakarta.ee/specifications/restful-ws/4.0/[Jakarta REST 4.0] implementation. For the
+users of the Jakarta RESTful Web Services implementation, this is mostly bug fixes from the previous version of 7.0.0.Beta1.
+
+=== Bug
+
+* https://issues.redhat.com/browse/RESTEASY-3591[RESTEASY-3591] No SocketConfig is set for Connection Managers in ClientHttpEngineBuilder43 which can cause indefinitely hangs
+* https://issues.redhat.com/browse/RESTEASY-3593[RESTEASY-3593] The ResteasyDeploymentImpl getOptionValue does not behave the same when the security manager is enabled
+* https://issues.redhat.com/browse/RESTEASY-3598[RESTEASY-3598] ClassNotFoundException for org.jboss.resteasy.client.jaxrs.internal.proxy.ProxyBuilderImpl
+* https://issues.redhat.com/browse/RESTEASY-3620[RESTEASY-3620] The SeBootstrap implementation should clear the RESTEasy Context when stopping the server
+
+=== Task
+
+* https://issues.redhat.com/browse/RESTEASY-3611[RESTEASY-3611] Remove support for the security manager
+* https://issues.redhat.com/browse/RESTEASY-3616[RESTEASY-3616] Deprecate/Remove RESTEasy Vert.x in the core project and move to a new project
+* https://issues.redhat.com/browse/RESTEASY-3618[RESTEASY-3618] Refactor the integration-tests-embedded to be a testable archive
+* https://issues.redhat.com/browse/RESTEASY-3629[RESTEASY-3629] Remove the resteasy-client-jetty from the project
+* https://issues.redhat.com/browse/RESTEASY-3632[RESTEASY-3632] Deprecate /Remove the RESTEasy Netty Integration
+
+=== Enhancement
+
+* https://issues.redhat.com/browse/RESTEASY-3292[RESTEASY-3292] Create a provider for java.nio.file.Path
+
+
+
+Full releases notes can be found at https://github.com/resteasy/resteasy/releases/tag/7.0.0.Final.
+
+== 6.2.14.Final
+
+RESTEasy 6.2.14.Final is a https://jakarta.ee/specifications/restful-ws/3.1/[Jakarta REST 3.1] implementation. This
+release includes several important bug fixes and formally deprecates the components that have been moved to separate
+projects.
+
+=== Bug
+
+* https://issues.redhat.com/browse/RESTEASY-3591[RESTEASY-3591] No SocketConfig is set for Connection Managers in ClientHttpEngineBuilder43 which can cause indefinitely hangs
+* https://issues.redhat.com/browse/RESTEASY-3593[RESTEASY-3593] The ResteasyDeploymentImpl getOptionValue does not behave the same when the security manager is enabled
+* https://issues.redhat.com/browse/RESTEASY-3598[RESTEASY-3598] ClassNotFoundException for org.jboss.resteasy.client.jaxrs.internal.proxy.ProxyBuilderImpl
+* https://issues.redhat.com/browse/RESTEASY-3620[RESTEASY-3620] The SeBootstrap implementation should clear the RESTEasy Context when stopping the server
+
+=== Task
+
+* https://issues.redhat.com/browse/RESTEASY-3616[RESTEASY-3616] Deprecate/Remove RESTEasy Vert.x in the core project and move to a new project
+* https://issues.redhat.com/browse/RESTEASY-3618[RESTEASY-3618] Refactor the integration-tests-embedded to be a test
+
+== Finally
+
+As always, https://github.com/resteasy/resteasy/discussions/[feedback] is welcome. Stay safe, and, depending on where you are, stay warm or be cool.
