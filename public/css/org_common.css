@@ -767,7 +767,6 @@ Content Specific Styles: These are styles the affect the content of the pages.
 	left: 0px;
 	z-index: 1000;
    	text-align: left;
-	background-image: url(../../images/common/background_trans.png);
 }
 
 #dialog {
@@ -776,7 +775,6 @@ Content Specific Styles: These are styles the affect the content of the pages.
 	display: none;
   	border:1px solid #94aebd;
 	background-color: #f3f3f3;
-	background-image: url(../../images/common/modaldialog_infoicon.gif);
 	background-repeat: no-repeat;
 	background-position: 0px 25px;
   	ext-align: left;
@@ -784,7 +782,6 @@ Content Specific Styles: These are styles the affect the content of the pages.
 
 #modallayer h4,
 .ui-dialog-content h4 {
-        background-image: url(../../images/common/modaldialog_hdrbkg.gif);
         background-repeat:repeat-x;
         background-color: #d5d5d5;
         font-weight:bold;
@@ -802,7 +799,6 @@ Content Specific Styles: These are styles the affect the content of the pages.
 }
 
 #modallayer #buttonrow {
-        background-image: url(../../images/common/modaldialog_footrbkg.gif);
         background-repeat:repeat-x;
         background-color: #d5d5d5;
         color:#243446;
@@ -953,7 +949,7 @@ del { text-decoration: line-through; }
 #loopedSlider { margin:18px auto; width:500px; position:relative; clear:both; }
 ul.pagination { list-style-type:none; margin:0; padding:0; margin:9px auto; width:90px; }
 ul.pagination li { float:left; margin:0 5px; }
-ul.pagination a { display:block; width:12px; padding-top:12px; height:0; overflow:hidden; background-image:url(https://www.jboss.org/dms/testimages/images/pagination.png); background-position:0 0; background-repeat:no-repeat;}
+ul.pagination a { display:block; width:12px; padding-top:12px; height:0; overflow:hidden; background-position:0 0; background-repeat:no-repeat;}
 ul.pagination li.active a {background-position:0 -12px}
 a.previous { position:absolute; top:200px; left:-32px; }
 a.next { position:absolute; top:200px; right:-32px; }
