@@ -6,7 +6,7 @@
     <div class="grid__item width-3-12">
         <div class="grid__item">
             <h4>
-                <a href="{post.data.link ?: post.url}" {#if post.data.link}target="_blank" {/if}>
+                <a href="{post.url.absolute}">
                 {post.title}
                 </a>
             </h4>
@@ -21,7 +21,7 @@
             {site.pageContent(post).stripHtml.wordLimit(75).raw}
         </p>
         {/if}
-        <a href="{post.data.link.or(post.url)}" {#if post.data.link}target="_blank" {/if}>
+        <a href="{post.url.absolute}">
         {#if post.data.link.contains("youtube")}Watch Video >{#else}Read More >{/if}
         </a>
     </div>
