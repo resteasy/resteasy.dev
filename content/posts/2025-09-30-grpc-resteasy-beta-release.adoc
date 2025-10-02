@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "resteasy-grpc 1.0.0.Beta1 is available"
-aliases: [/news/2025/09/30/resteasy-grpc-1.0.0.Beta1-released]
 date:   2025-09-30
 tags:   announcement release
 author: rsigal
@@ -232,7 +231,7 @@ Superclass[][] is represented by `dev_resteasy_grpc_arrays_\__ArrayHolder___WArr
 ===== Collections and maps
 
 We take a simplifying approach to instances of `java.util.List`, `java.util.Set`, `java.util.Map`,
-and `javax.ws.rs.core.MultivaluedMap`. Implementations, e.g., `java.util.ArrayList`, can be
+and `jakarta.ws.rs.core.MultivaluedMap`. Implementations, e.g., `java.util.ArrayList`, can be
 quite complex for reasons of efficiency and desired usage, but we choose to ignore those implementation
 details. For example, `java.util.ArrayList<Integer>` and `java.util.LinkedList<Integer>` will both be
 represented essentially the same:
@@ -540,7 +539,7 @@ mvn archetype:generate -B \
 Running `mvn install` will build the files discussed above and package everything into
 a WAR. Dropping the WAR into an instance of WildFly provisioned with the 
 https://github.com/wildfly-extras/wildfly-grpc-feature-pack[wildfly-grpc-feature-pack] will
-expose the gridge project.
+expose the bridge project.
 
 === Conclusion
 
