@@ -31,7 +31,7 @@ Kubernetes, and OpenJDK; doing so is part of the company's DNA. Red Hat business
 
 ## Community Feedback
 
-We'd love to hear your thoughts on this. Let us know what you're thinking on the [mailing list](https://lists.jboss.org/archives/list/resteasy-dev@lists.jboss.org/) or the [discussion topic](https://github.com/orgs/resteasy/discussions/4513).
+We'd love to hear your thoughts on this. Let us know what you're thinking on ~~the [mailing list](https://lists.jboss.org/archives/list/resteasy-dev@lists.jboss.org/) or~~ the [discussion topic](https://github.com/orgs/resteasy/discussions/4513).
 
 Best regards,
 
