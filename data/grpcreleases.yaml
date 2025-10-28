@@ -1,10 +1,10 @@
 - group: 1.x
   supported: true
   detail:
-    - version: 1.0.0.Alpha6
-      date: 2025-02-13
+    - version: 1.0.0.Beta1
+      date: 2025-09-24
       license: ASL v2
-      source: https://github.com/resteasy/resteasy-grpc/archive/refs/tags/1.0.0.Alpha6.zip
-      release_notes: https://github.com/resteasy/resteasy-grpc/releases/tag/1.0.0.Alpha6
+      source: https://github.com/resteasy/resteasy-grpc/archive/refs/tags/1.0.0.Beta1.zip
+      release_notes: https://github.com/resteasy/resteasy-grpc/releases/tag/1.0.0.Beta1
       documentation:
         link: /docs/grpc
