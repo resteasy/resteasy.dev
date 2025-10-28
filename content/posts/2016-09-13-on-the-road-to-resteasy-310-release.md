@@ -14,6 +14,6 @@ Clearly, bug fixes and new features are coming too in 3.1.0! We&#39;re trying to
 
 We&#39;ve tagged two 3.1.0 Beta releases so far, both available as artifacts on Maven repository. I&#39;m currently waiting for the last one to be merged into WildFly master (PR [here](https://github.com/wildfly/wildfly/pull/9181)).
 
-If you have some time, consider early checking your projects with the new 3.1.0 and feel free to report back any issue (btw, as a reminder, note we have [new mailing lists](https://resteasy.jboss.org/mailinglists) since some months!). We plan to go CR soon and hopefully release at before the end of October.
+If you have some time, consider early checking your projects with the new 3.1.0 and feel free to report back any issue (btw, as a reminder, note we have ~~[new mailing lists](https://resteasy.jboss.org/mailinglists) since some months~~[GitHub discussions](https://github.com/orgs/resteasy/discussions/!). We plan to go CR soon and hopefully release at before the end of October.
 
 Stay tuned :-)
