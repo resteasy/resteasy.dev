@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "resteasy-grpc 1.0.0.Final is available"
+date:   2025-11-20
+tags:   announcement release
+author: rsigal
+description: resteasy-grpc 1.0.0.Final is available.
+---
+
+== RESTEasy gRPC to Jakarta REST Bridge project: First Final release available
+
+The first Final releases (1.0.0.Final) of the *RESTEasy gRPC to Jakarta REST Bridge* 
+project (https://github.com/resteasy/resteasy-grpc[https://github.com/resteasy/resteasy-grpc]), aka **resteasy-grpc**,
+and its sibling *gRPCtoJakartaREST-archetype* project (1.0.1.Final)
+(https://github.com/resteasy/gRPCtoJakartaREST-archetype[https://github.com/resteasy/gRPCtoJakartaREST-archetype])
+are now available on Maven Central. For more information, see 
+*RESTEasy gRPC to Jakarta REST Bridge project: First Beta release available*: https://resteasy.dev/2025/09/30/grpc-resteasy-beta-release//
