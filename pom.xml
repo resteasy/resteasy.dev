@@ -44,7 +44,7 @@
         <version.compiler-plugin>3.14.0</version.compiler-plugin>
         <version.quarkus-roq>1.9.0</version.quarkus-roq>
         <version.quarkus.platform>3.25.0</version.quarkus.platform>
-        <version.surefire-plugin>3.5.3</version.surefire-plugin>
+        <version.surefire-plugin>3.5.4</version.surefire-plugin>
     </properties>
 
     <dependencyManagement>
