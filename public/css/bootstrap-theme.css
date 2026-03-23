@@ -107,7 +107,6 @@ body#project {
 }
 
 #banner img {
-  max-height: 40px !important;
   width: auto !important;
   margin-bottom: 0.25rem !important;
 }
@@ -458,6 +457,93 @@ body#project {
 }
 
 /* ============================================
+   TABLES - Modern Bootstrap Style
+   ============================================ */
+table,
+.simpletablestyle,
+.wikimarkup,
+.directory-listing {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 1.5rem 0 !important;
+  border: 1px solid var(--resteasy-border) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+  background-color: white !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+table thead,
+.simpletablestyle thead,
+table tr.header,
+.simpletablestyle tr.header {
+  background: linear-gradient(135deg, var(--resteasy-primary-dark) 0%, var(--resteasy-primary) 100%) !important;
+  color: white !important;
+}
+
+table th,
+.simpletablestyle th {
+  padding: 1rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: white !important;
+  border-bottom: 2px solid var(--resteasy-primary-dark) !important;
+  text-align: left !important;
+  text-shadow: none !important;
+}
+
+table td,
+.simpletablestyle td {
+  padding: 0.875rem 1rem !important;
+  font-size: 0.9375rem !important;
+  color: var(--color-text, #212529) !important;
+  border-bottom: 1px solid var(--resteasy-border) !important;
+}
+
+/* Alternating row colors - clean and subtle */
+table tbody tr:nth-child(odd),
+.simpletablestyle tbody tr:nth-child(odd) {
+  background-color: white !important;
+}
+
+table tbody tr:nth-child(even),
+.simpletablestyle tbody tr:nth-child(even) {
+  background-color: #f8f9fa !important;
+}
+
+table tbody tr:hover,
+.simpletablestyle tbody tr:hover {
+  background-color: #e8f4f8 !important;
+  transition: background-color 0.15s ease !important;
+}
+
+/* Links in tables */
+table td a,
+.simpletablestyle td a,
+table td a.td-download,
+.simpletablestyle td a.td-download {
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.15s ease !important;
+}
+
+table td a:hover,
+.simpletablestyle td a:hover {
+  color: var(--resteasy-accent) !important;
+  text-decoration: underline !important;
+}
+
+/* Remove border from last row */
+table tbody tr:last-child td,
+.simpletablestyle tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* ============================================
    BREADCRUMBS & RIGHT COLUMN
    ============================================ */
 #breadcrumb {
@@ -484,15 +570,18 @@ body#project {
   margin-left: 0.5rem !important;
 }
 
-/* Right column - hide on mobile, show as sidebar on desktop */
+/* Right column - Modern card-style sidebar */
 #rightcolumn {
-  background: var(--resteasy-bg-light) !important;
-  padding: 1.5rem !important;
+  background: white !important;
+  padding: 0 !important;
   border-radius: 0.5rem !important;
   margin-top: 2rem !important;
   float: none !important;
   width: 100% !important;
   margin-left: 0 !important;
+  border: 1px solid var(--resteasy-border) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+  overflow: hidden !important;
 }
 
 @media (min-width: 992px) {
@@ -514,11 +603,28 @@ body#project {
   }
 }
 
+/* Social media section */
+.projectpage-socialmedia {
+  padding: 1rem !important;
+  border-bottom: 1px solid var(--resteasy-border) !important;
+  background: var(--resteasy-bg-light) !important;
+}
+
+/* Useful Links section */
+#proj_quick-start {
+  padding: 1.5rem !important;
+}
+
 #proj_quick-start h3 {
   font-size: 1.125rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 1rem !important;
-  color: #212529 !important;
+  font-weight: 700 !important;
+  margin: 0 0 1rem 0 !important;
+  color: var(--resteasy-primary-dark) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 0.875rem !important;
+  padding-bottom: 0.75rem !important;
+  border-bottom: 2px solid var(--resteasy-accent) !important;
 }
 
 #proj_quick-start ul {
@@ -528,17 +634,333 @@ body#project {
 }
 
 #proj_quick-start li {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid var(--resteasy-border-light, #eaecef) !important;
+}
+
+#proj_quick-start li:last-child {
+  border-bottom: none !important;
 }
 
 #proj_quick-start a {
+  display: block !important;
+  padding: 0.75rem 0 !important;
   color: var(--resteasy-primary) !important;
   text-decoration: none !important;
-  font-size: 0.95rem !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease !important;
+  position: relative !important;
+  padding-left: 1.25rem !important;
+}
+
+#proj_quick-start a::before {
+  content: "›" !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: var(--resteasy-accent) !important;
+  font-weight: bold !important;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+  transition: transform 0.15s ease !important;
 }
 
 #proj_quick-start a:hover {
+  color: var(--resteasy-accent) !important;
+  text-decoration: none !important;
+  padding-left: 1.5rem !important;
+}
+
+#proj_quick-start a:hover::before {
+  transform: translateX(0.25rem) !important;
+}
+
+/* Badges section */
+#badges {
+  padding: 1.5rem !important;
+  border-top: 1px solid var(--resteasy-border) !important;
+  background: var(--resteasy-bg-light) !important;
+}
+
+#badges ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#badges li {
+  margin-bottom: 0.5rem !important;
+}
+
+#badges a {
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+  font-size: 0.875rem !important;
+}
+
+#badges a:hover {
   text-decoration: underline !important;
+}
+
+/* ============================================
+   DARK MODE THEME
+   ============================================ */
+[data-bs-theme="dark"] {
+  /* Dark mode color overrides */
+  --resteasy-primary: #4a9ebb;
+  --resteasy-primary-dark: #3d7a9a;
+  --resteasy-primary-light: #5fb8d4;
+  --resteasy-accent: #6dd4f0;
+  --resteasy-accent-light: #89def4;
+  --resteasy-success: #3fa76b;
+  --resteasy-bg-light: #1a1f24;
+  --resteasy-bg-accent: #242b32;
+  --resteasy-border: #3a4149;
+  --resteasy-text-muted: #8f9ba8;
+}
+
+[data-bs-theme="dark"] body#project {
+  background-color: #0d1117 !important;
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] #wrapper,
+[data-bs-theme="dark"] #maincontent-wrapper,
+[data-bs-theme="dark"] #wrapper-2,
+[data-bs-theme="dark"] #wrap-content,
+[data-bs-theme="dark"] #wrapper-3,
+[data-bs-theme="dark"] #main-wrapper,
+[data-bs-theme="dark"] #main {
+  background: #0d1117 !important;
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] #top_subnav_branding {
+  background: #161b22 !important;
+  border-bottom-color: var(--resteasy-border) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-bs-theme="dark"] #proj_nav {
+  background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-bs-theme="dark"] #proj_nav ul.sf-menu li ul {
+  background: #1a1f24 !important;
+  border-color: var(--resteasy-border) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-bs-theme="dark"] #proj_nav ul.sf-menu li ul li a {
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] #proj_nav ul.sf-menu li ul li a:hover {
+  background-color: #242b32 !important;
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .proj_define {
+  background: linear-gradient(135deg, #1c2a38 0%, #243447 100%) !important;
+  border-left-color: var(--resteasy-accent) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-bs-theme="dark"] #proj_checklist li {
+  background: var(--resteasy-bg-light) !important;
+  border-color: var(--resteasy-border) !important;
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] #proj_checklist li:hover {
+  background: #242b32 !important;
+  border-color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] #rightcolumn {
+  background: #161b22 !important;
+  border-color: var(--resteasy-border) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .projectpage-socialmedia {
+  background: #0d1117 !important;
+  border-bottom-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] #proj_quick-start {
+  background: transparent !important;
+}
+
+[data-bs-theme="dark"] #proj_quick-start h3 {
+  color: #e6edf3 !important;
+  border-bottom-color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] #proj_quick-start li {
+  border-bottom-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] #proj_quick-start a {
+  color: var(--resteasy-accent-light) !important;
+}
+
+[data-bs-theme="dark"] #proj_quick-start a:hover {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] #badges {
+  background: #0d1117 !important;
+  border-top-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] #badges a {
+  color: var(--resteasy-accent-light) !important;
+}
+
+[data-bs-theme="dark"] #breadcrumb {
+  color: var(--resteasy-text-muted) !important;
+  border-bottom-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] #breadcrumb a {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] p,
+[data-bs-theme="dark"] a {
+  color: #c9d1d9 !important;
+}
+
+[data-bs-theme="dark"] a:hover {
+  color: var(--resteasy-accent-light) !important;
+}
+
+/* Tables in dark mode */
+[data-bs-theme="dark"] table,
+[data-bs-theme="dark"] .simpletablestyle,
+[data-bs-theme="dark"] .wikimarkup,
+[data-bs-theme="dark"] .directory-listing {
+  background-color: #161b22 !important;
+  color: #e6edf3 !important;
+  border-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] table thead,
+[data-bs-theme="dark"] .simpletablestyle thead,
+[data-bs-theme="dark"] .wikimarkup thead,
+[data-bs-theme="dark"] table tr.header,
+[data-bs-theme="dark"] .simpletablestyle tr.header,
+[data-bs-theme="dark"] .wikimarkup tr.header,
+[data-bs-theme="dark"] .directory-listing tr.header {
+  background-color: #1a1f24 !important;
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] table th,
+[data-bs-theme="dark"] .simpletablestyle th,
+[data-bs-theme="dark"] .wikimarkup th,
+[data-bs-theme="dark"] .directory-listing th {
+  background-color: #1a1f24 !important;
+  color: #e6edf3 !important;
+  border-color: var(--resteasy-border) !important;
+  text-shadow: none !important;
+}
+
+[data-bs-theme="dark"] table td,
+[data-bs-theme="dark"] .simpletablestyle td,
+[data-bs-theme="dark"] .wikimarkup td,
+[data-bs-theme="dark"] .directory-listing td {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+  border-color: var(--resteasy-border) !important;
+}
+
+/* Odd rows (white #ffffff in light mode) - dark in dark mode */
+[data-bs-theme="dark"] table.simpletablestyle tbody tr:nth-child(odd),
+[data-bs-theme="dark"] .simpletablestyle tbody tr:nth-child(odd),
+[data-bs-theme="dark"] table tbody tr:nth-child(odd),
+[data-bs-theme="dark"] table tr:nth-child(odd),
+[data-bs-theme="dark"] .wikimarkup tr:nth-child(2n+1),
+[data-bs-theme="dark"] .directory-listing tr:nth-child(odd) {
+  background-color: #0d1117 !important;
+  padding-left: 6px !important;
+}
+
+/* Even rows (light gray #f4f3f3 in light mode) - lighter in dark mode */
+[data-bs-theme="dark"] table.simpletablestyle tbody tr:nth-child(even),
+[data-bs-theme="dark"] .simpletablestyle tbody tr:nth-child(even),
+[data-bs-theme="dark"] table tbody tr:nth-child(even),
+[data-bs-theme="dark"] table tr:nth-child(even),
+[data-bs-theme="dark"] .wikimarkup tr:nth-child(2n),
+[data-bs-theme="dark"] .directory-listing tr:nth-child(even) {
+  background-color: #21262d !important;
+  padding-left: 6px !important;
+}
+
+[data-bs-theme="dark"] table tbody tr:hover,
+[data-bs-theme="dark"] .simpletablestyle tbody tr:hover,
+[data-bs-theme="dark"] .wikimarkup tr:hover,
+[data-bs-theme="dark"] .directory-listing tr:hover {
+  background-color: #2d333b !important;
+}
+
+[data-bs-theme="dark"] table a,
+[data-bs-theme="dark"] .simpletablestyle a,
+[data-bs-theme="dark"] .wikimarkup a,
+[data-bs-theme="dark"] .directory-listing a {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] #site-info {
+  background: #0d1117 !important;
+  border-top-color: var(--resteasy-border) !important;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  all: unset !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+  margin-left: auto !important;
+  cursor: pointer !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  border-radius: 0.25rem !important;
+  white-space: nowrap !important;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+#theme-toggle i {
+  font-size: 1.125rem !important;
+}
+
+.theme-toggle-text {
+  display: inline !important;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-text {
+    display: none !important;
+  }
 }
 
 /* ============================================

@@ -6,16 +6,13 @@
                 <div class="container">
                     <a href="/"><img src="{site.url('/img/orgLayoutBody/resteasy-banner-1180px.png').absolute}"
                                      onError="this.style.display='none'"/></a>
-                    <div id="projectname">
-                        RESTEasy
-                    </div>
                     <div id="tagline">Distributed peace of mind.</div>
                 </div>
             </div>
             <div id="proj_nav" class="">
                 <div class="container">
                 <ul class="sf-menu">
-                    <li class="current">
+                    <li class="open" data-nav="overview">
                         <span class="notch">&nbsp;</span>
                         <a href="{site.url.absolute}" class="menu-title">Overview</a>
                         <ul class="level1">
@@ -24,11 +21,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="open">
+                    <li class="open" data-nav="downloads">
                         <span class="notch">&nbsp;</span>
                         <a href="{site.url('/downloads').absolute}" class="menu-title">Downloads</a>
                     </li>
-                    <li class="open">
+                    <li class="open" data-nav="docs">
                         <span class="notch">&nbsp;</span>
                         <a href="{site.url('/docs').absolute}" class="menu-title">Documentation</a>
                     </li>
@@ -42,7 +39,7 @@
                             <!-- <li class="leaf"><a href="https://twitter.com/resteasy">Twitter</a></li> -->
                         </ul>
                     </li>
-                    <li class="open">
+                    <li class="open" data-nav="blogs">
                         <span class="notch">&nbsp;</span>
                         <a href="{site.url('/blogs').absolute}" class="menu-title">Blog</a>
                     </li>
@@ -53,9 +50,15 @@
                             <li class="leaf"><a href="https://github.com/resteasy/resteasy">GitHub</a></li>
                         </ul>
                     </li>
-                    <li id="buildmenu" class="open">
+                    <li id="buildmenu" class="open" data-nav="build">
                         <span class="notch">&nbsp;</span>
                         <a href="{site.url('/build').absolute}" class="menu-title">Build</a>
+                    </li>
+                    <li>
+                        <button id="theme-toggle" type="button" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-toggle-text">Dark</span>
+                        </button>
                     </li>
                 </ul>
                 </div><!-- end container -->
