@@ -3,6 +3,7 @@
             <div id="wrapper-3">
                <div id="main-wrapper">
                   <div id="main">
+                     <div class="container py-4">
                      <div id="breadcrumb">
                        <span>
                               <a href="{site.url('/').absolute}">RESTEasy</a>
@@ -17,6 +18,7 @@
                      <h5>By {page.data.author ?: "The RESTEasy Team"} | {page.date.format("MMMM dd, YYYY")} {#include partials/share-page.html /}</h5>
                      <p></p>
                      {#insert /}
+                     </div><!-- end container -->
 
                   </div><!-- end main -->
                </div>

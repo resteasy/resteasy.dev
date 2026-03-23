@@ -1,0 +1,551 @@
+/* ============================================
+   RESTEasy Bootstrap Theme
+   Modern design using Bootstrap 5
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES - Brand Colors
+   ============================================ */
+:root {
+  /* RESTEasy Brand Colors - Modern Teal/Slate Palette */
+  --resteasy-primary: #2c5f7a;        /* Deep slate blue */
+  --resteasy-primary-dark: #1e4255;   /* Darker slate */
+  --resteasy-primary-light: #3d7a9a;  /* Lighter slate */
+  --resteasy-accent: #4a9ebb;         /* Bright teal accent */
+  --resteasy-accent-light: #5fb8d4;   /* Light teal */
+  --resteasy-success: #2d8659;        /* Muted green */
+  --resteasy-bg-light: #f4f6f8;       /* Cool light gray */
+  --resteasy-bg-accent: #e8f2f7;      /* Light blue-gray */
+  --resteasy-border: #d1dce3;         /* Cool border */
+  --resteasy-text-muted: #5a6c7d;     /* Muted slate text */
+}
+
+/* ============================================
+   RESET OLD STYLES
+   ============================================ */
+/* Hide all old wrapper divs and use Bootstrap container */
+body#project {
+  background-color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 16px !important;
+  color: #212529 !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix Bootstrap containers - no fixed heights! */
+.container,
+.container-fluid {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+#wrapper,
+#maincontent-wrapper,
+#wrapper-2,
+#wrap-content,
+#wrapper-3,
+#main-wrapper {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  float: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+#main {
+  all: unset !important;
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: white !important;
+  min-height: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Hide old logo and branding */
+#branding,
+#logo,
+#proj_logo,
+#proj_logo-neg {
+  display: none !important;
+}
+
+/* ============================================
+   HEADER & BANNER
+   ============================================ */
+#top_subnav_branding {
+  all: unset !important;
+  display: block !important;
+  background: white !important;
+  border-bottom: 1px solid var(--resteasy-border) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1030 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#banner {
+  all: unset !important;
+  display: block !important;
+  padding: 1rem 0 !important;
+  background: none !important;
+  border-radius: 0 !important;
+  height: auto !important;
+}
+
+#banner img {
+  max-height: 40px !important;
+  width: auto !important;
+  margin-bottom: 0.25rem !important;
+}
+
+#projectname {
+  all: unset !important;
+  display: block !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--resteasy-primary-dark) !important;
+  margin: 0.25rem 0 0.125rem 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+#tagline {
+  all: unset !important;
+  display: block !important;
+  font-size: 0.95rem !important;
+  color: var(--resteasy-text-muted) !important;
+  margin: 0 !important;
+}
+
+/* ============================================
+   NAVIGATION - Bootstrap Navbar Style
+   ============================================ */
+#proj_nav {
+  all: unset !important;
+  display: block !important;
+  background: linear-gradient(135deg, var(--resteasy-primary-dark) 0%, var(--resteasy-primary) 100%) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+#proj_nav .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#proj_nav ul.sf-menu {
+  all: unset !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+#proj_nav ul.sf-menu > li {
+  all: unset !important;
+  display: block !important;
+  position: relative !important;
+  height: auto !important;
+  margin: 0 !important;
+  float: none !important;
+}
+
+#proj_nav ul.sf-menu > li > a {
+  all: unset !important;
+  display: block !important;
+  padding: 0.625rem 1rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+}
+
+#proj_nav ul.sf-menu > li > a:hover,
+#proj_nav ul.sf-menu > li.current > a {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid var(--resteasy-accent-light) !important;
+}
+
+/* Dropdown menus */
+#proj_nav ul.sf-menu li ul {
+  all: unset !important;
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  min-width: 180px !important;
+  background: white !important;
+  border: 1px solid var(--resteasy-border) !important;
+  border-radius: 0.25rem !important;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15) !important;
+  padding: 0.25rem 0 !important;
+  margin: 0 !important;
+  z-index: 1050 !important;
+  list-style: none !important;
+  height: auto !important;
+}
+
+#proj_nav ul.sf-menu li:hover > ul {
+  display: block !important;
+}
+
+#proj_nav ul.sf-menu li ul li {
+  all: unset !important;
+  display: block !important;
+}
+
+#proj_nav ul.sf-menu li ul li a {
+  all: unset !important;
+  display: block !important;
+  padding: 0.5rem 1rem !important;
+  color: #212529 !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease !important;
+}
+
+#proj_nav ul.sf-menu li ul li a:hover {
+  background-color: var(--resteasy-bg-light) !important;
+  color: var(--resteasy-primary) !important;
+}
+
+/* Hide notch elements */
+.notch {
+  display: none !important;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.proj_define {
+  background: linear-gradient(135deg, var(--resteasy-bg-accent) 0%, #d4e8f0 100%) !important;
+  border-left: 4px solid var(--resteasy-accent) !important;
+  padding: 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0.375rem !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Features Section */
+#proj_checklist {
+  margin: 2rem 0 !important;
+  width: 100% !important;
+  clear: both !important;
+  overflow: visible !important;
+}
+
+#proj_checklist h3 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  color: #212529 !important;
+}
+
+#proj_checklist ul {
+  all: unset !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 0.75rem !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+#proj_checklist li {
+  all: unset !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  padding: 0.75rem !important;
+  background: var(--resteasy-bg-light) !important;
+  border: 1px solid var(--resteasy-border) !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.2s ease !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+
+#proj_checklist li:hover {
+  background: white !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  transform: translateY(-1px) !important;
+  border-color: var(--resteasy-primary) !important;
+}
+
+#proj_checklist li::before {
+  content: "✓" !important;
+  flex-shrink: 0 !important;
+  width: 20px !important;
+  height: 20px !important;
+  background: var(--resteasy-success) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  margin-right: 0.625rem !important;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+#site-info {
+  all: unset !important;
+  display: block !important;
+  background: var(--resteasy-bg-light) !important;
+  border-top: 1px solid var(--resteasy-border) !important;
+  padding: 3rem 0 2rem 0 !important;
+  margin-top: 4rem !important;
+  text-align: left !important;
+}
+
+.commonhaus-footer {
+  margin-bottom: 1.5rem !important;
+}
+
+.commonhaus-logo img {
+  max-width: 200px !important;
+  height: auto !important;
+  margin-bottom: 1rem !important;
+}
+
+.commonhaus-legal {
+  font-size: 0.875rem !important;
+  color: #6c757d !important;
+  line-height: 1.75 !important;
+}
+
+/* Footer Navigation */
+#projsubnav_footer {
+  all: unset !important;
+  display: block !important;
+  padding: 2rem 0 !important;
+  border-top: 1px solid var(--resteasy-border) !important;
+  margin-top: 2rem !important;
+}
+
+#projsubnav_footer ul {
+  all: unset !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 2rem !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#projsubnav_footer > ul > li {
+  all: unset !important;
+  display: block !important;
+  flex: 1 1 150px !important;
+  min-width: 150px !important;
+}
+
+#projsubnav_footer a {
+  color: #495057 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.15s ease !important;
+}
+
+#projsubnav_footer a:hover {
+  color: var(--resteasy-primary) !important;
+  text-decoration: underline !important;
+}
+
+#projsubnav_footer .menu-title {
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+#projsubnav_footer ul.level1 {
+  all: unset !important;
+  display: block !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0.5rem 0 0 0 !important;
+}
+
+#projsubnav_footer ul.level1 li {
+  all: unset !important;
+  display: block !important;
+  margin: 0.25rem 0 !important;
+}
+
+#projsubnav_footer ul.level1 a {
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  #proj_nav ul.sf-menu {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  #proj_nav ul.sf-menu > li {
+    width: 100% !important;
+  }
+
+  #proj_nav ul.sf-menu > li > a {
+    padding: 0.75rem 1rem !important;
+  }
+
+  #proj_nav ul.sf-menu li ul {
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+
+  #proj_nav ul.sf-menu li ul li a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding-left: 2rem !important;
+  }
+
+  #proj_nav ul.sf-menu li ul li a:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+  }
+
+  #proj_checklist ul {
+    grid-template-columns: 1fr !important;
+  }
+
+  #projsubnav_footer ul {
+    flex-direction: column !important;
+  }
+}
+
+/* ============================================
+   BREADCRUMBS & RIGHT COLUMN
+   ============================================ */
+#breadcrumb {
+  font-size: 0.875rem !important;
+  color: var(--resteasy-text-muted) !important;
+  margin-bottom: 1rem !important;
+  padding: 0.5rem 0 !important;
+  border-bottom: 1px solid var(--resteasy-border) !important;
+}
+
+#breadcrumb a {
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+}
+
+#breadcrumb a:hover {
+  text-decoration: underline !important;
+}
+
+#breadcrumb img {
+  height: 16px !important;
+  width: auto !important;
+  vertical-align: middle !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Right column - hide on mobile, show as sidebar on desktop */
+#rightcolumn {
+  background: var(--resteasy-bg-light) !important;
+  padding: 1.5rem !important;
+  border-radius: 0.5rem !important;
+  margin-top: 2rem !important;
+  float: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+@media (min-width: 992px) {
+  /* On larger screens, show as a sidebar */
+  .rightcol-layout #wrapper-3 {
+    display: flex !important;
+    gap: 2rem !important;
+  }
+
+  .rightcol-layout #main-wrapper {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .rightcol-layout #rightcolumn {
+    flex: 0 0 300px !important;
+    margin-top: 0 !important;
+    width: 300px !important;
+  }
+}
+
+#proj_quick-start h3 {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  color: #212529 !important;
+}
+
+#proj_quick-start ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#proj_quick-start li {
+  margin-bottom: 0.5rem !important;
+}
+
+#proj_quick-start a {
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+}
+
+#proj_quick-start a:hover {
+  text-decoration: underline !important;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.clearfix::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
