@@ -437,8 +437,11 @@ footer#projsubnav_footer .container {
 
 footer#projsubnav_footer > .container > ul {
   display: flex !important;
+  flex-direction: row !important;
   flex-wrap: wrap !important;
-  gap: 2rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0 2.5rem !important;
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -446,13 +449,20 @@ footer#projsubnav_footer > .container > ul {
 }
 
 footer#projsubnav_footer > .container > ul > li {
-  display: block !important;
-  flex: 1 1 150px !important;
-  min-width: 150px !important;
-  max-width: 200px !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
   list-style: none !important;
   float: none !important;
   padding: 0 !important;
+  margin: 0 !important;
+}
+
+footer#projsubnav_footer > .container > ul > li a {
+  display: inline-block !important;
+  white-space: nowrap !important;
 }
 
 footer#projsubnav_footer a {
@@ -491,6 +501,11 @@ footer#projsubnav_footer ul.level1 li {
 footer#projsubnav_footer ul.level1 a {
   font-size: 0.95rem !important;
   font-weight: 400 !important;
+}
+
+/* Hide notch spans in footer */
+footer#projsubnav_footer .notch {
+  display: none !important;
 }
 
 /* Dark mode footer nav */
