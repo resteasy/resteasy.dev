@@ -8,27 +8,60 @@ paginate:
     link: blogs/page:page
 ---
 
+<div class="blog-list-container">
 {#for post in site.collections.posts.paginated(page.paginator)}
-<div class="post-preview">
-    <a href="{post.url.absolute}">
-        <h3 class="post-title">{post.title}</h3>
-        {#if post.data.containsKey('subtitle')}
-        <h5 class="post-subtitle">{post.data.subtitle}</h5>
-        {/if}
-    </a>
-    <p class="post-meta">Posted by {post.data.author ?: "The RESTEasy Team"} on {post.date.format("MMMM dd, YYYY")}</p>
-</div>
-<hr>
+    <article class="blog-post-card card mb-4">
+        <div class="card-body">
+            <a href="{post.url.absolute}" class="text-decoration-none">
+                <h3 class="card-title post-title">{post.title}</h3>
+                {#if post.data.containsKey('subtitle')}
+                <h5 class="post-subtitle text-muted">{post.data.subtitle}</h5>
+                {/if}
+            </a>
+            <div class="post-meta">
+                <i class="fas fa-user"></i> {post.data.author ?: "The RESTEasy Team"}
+                <span class="mx-2">•</span>
+                <i class="fas fa-calendar"></i> {post.date.format("MMMM dd, YYYY")}
+            </div>
+            <a href="{post.url.absolute}" class="btn btn-sm btn-outline-primary mt-3">
+                Read More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </article>
 {/for}
+</div>
 
-<!-- Pager -->
-<p align="center">
+<!-- Pagination -->
 {#if page.paginator.total > 1}
-    {#if page.paginator.previous}
-        <a href="{page.paginator.previous}">&larr; Newer Posts</a>
-    {/if}
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    {#if page.paginator.next}
-        <a href="{page.paginator.next}">Older Posts &rarr;</a>
-    {/if}
+<nav aria-label="Blog pagination" class="mt-4">
+    <ul class="pagination justify-content-center">
+        {#if page.paginator.previous}
+        <li class="page-item">
+            <a class="page-link" href="{page.paginator.previous}">
+                <i class="fas fa-arrow-left"></i> Newer Posts
+            </a>
+        </li>
+        {#else}
+        <li class="page-item disabled">
+            <span class="page-link">
+                <i class="fas fa-arrow-left"></i> Newer Posts
+            </span>
+        </li>
+        {/if}
+
+        {#if page.paginator.next}
+        <li class="page-item">
+            <a class="page-link" href="{page.paginator.next}">
+                Older Posts <i class="fas fa-arrow-right"></i>
+            </a>
+        </li>
+        {#else}
+        <li class="page-item disabled">
+            <span class="page-link">
+                Older Posts <i class="fas fa-arrow-right"></i>
+            </span>
+        </li>
+        {/if}
+    </ul>
+</nav>
 {/if}
