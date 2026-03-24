@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "MicroProfile REST Client 1.4; Examination of a MicroProfile REST Client Application"
-subtitle:   ""
 date:       2020-06-01
 author:     Rebecca Searls
 aliases:    [/2020/06/14/blog-microprofile-config-outOfBox/]

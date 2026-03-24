@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy release week"
-subtitle:   ""
 date:       2018-08-09 18:48:00 
 author:     Alessio Soldano
 ---

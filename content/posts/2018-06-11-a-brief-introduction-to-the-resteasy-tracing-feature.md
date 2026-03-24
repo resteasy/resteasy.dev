@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "A brief introduction to the RESTEasy Tracing Feature"
-subtitle:   ""
 date:       2018-06-11 23:53:00
 author:     Weinan Li
 ---

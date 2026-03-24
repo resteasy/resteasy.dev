@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Using Springdoc-openapi with resteasy-spring-boot"
-subtitle:   ""
 date:       2024-11-15
 author:     Wei Nan Li
 ---

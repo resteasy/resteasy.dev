@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy Spring Boot starter has moved"
-subtitle:   ""
 date:       2018-05-23 09:10:00
 author:     Alessio Soldano
 ---

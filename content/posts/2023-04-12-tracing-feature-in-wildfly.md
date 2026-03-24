@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Using The RESTEasy Tracing Feature In WildFly"
-subtitle:   ""
 date:       2023-04-19
 author:     Wei Nan Li
 ---

@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Asynchronous, reactive, rxjava and beyond!"
-subtitle:   ""
 date:       2018-06-04 09:02:51 
 author:     Stephane Epardaud
 ---

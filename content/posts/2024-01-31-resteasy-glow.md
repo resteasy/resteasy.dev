@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Using WildFly Glow to provision a WildFly server for a RESTEasy based project"
-subtitle: ""
 date: 2024-01-31
 author: Wei Nan Li
 ---

@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy Overview and Roadmap"
-subtitle:   ""
 date:       2023-12-06 11:11:11
 author:     James R. Perkins
 ---

@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy in a Foundation"
-subtitle:   ""
 date:       2025-02-19 11:11:11
 author:     James R. Perkins
 ---

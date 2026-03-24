@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 3.1.1.Final is out"
-subtitle:   ""
 date:       2017-02-27 05:52:00
 author:     Alessio Soldano
 ---

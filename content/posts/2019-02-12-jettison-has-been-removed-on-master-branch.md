@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Jettison has been removed on master branch"
-subtitle:   ""
 date:       2019-02-12 09:01:00
 author:     Weinan Li
 ---

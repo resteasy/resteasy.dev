@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Trim WildFly To Run Restful Service With WildFly Galleon "
-subtitle:   ""
 date:       2020-06-19
 author:     Jim Ma
 ---

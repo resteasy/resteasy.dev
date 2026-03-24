@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "gRPC and WildFly - Part II: Exposing Jakarta RESTFul Web Services to gRPC"
-subtitle:   ""
 date:       2023-06-11
 author:     Ron Sigal
 ---

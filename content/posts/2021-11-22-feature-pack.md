@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Using The RESTEasy Galleon Feature Pack In WildFly"
-subtitle:   ""
 date:       2021-11-22
 author:     Wei Nan Li
 ---

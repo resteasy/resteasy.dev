@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "How to use RESTEasy in a Spring Boot application"
-subtitle:   ""
 date:       2017-08-09 14:01:33 
 author:     Fábio Carvalho
 ---

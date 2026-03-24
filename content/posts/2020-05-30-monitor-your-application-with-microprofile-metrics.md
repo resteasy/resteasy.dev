@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Monitor your application with MicroProfile Metrics"
-subtitle:   ""
 date:       2020-05-30
 author:     Jim Ma
 ---

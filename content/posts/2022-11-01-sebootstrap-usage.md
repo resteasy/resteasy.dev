@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "An Introduction to the RESTEasy SeBootstrap Usage"
-subtitle:   ""
 date:       2022-11-01
 author:     Wei Nan Li
 ---

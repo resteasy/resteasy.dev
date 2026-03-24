@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Deploy resteasy-spring-boot project into WildFly Java EE Full & Web Distribution"
-subtitle:   ""
 date:       2020-04-27
 author:     Wei Nan Li
 ---

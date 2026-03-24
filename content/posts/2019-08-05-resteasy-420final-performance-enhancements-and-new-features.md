@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 4.2.0.Final: performance enhancements and new features"
-subtitle:   ""
 date:       2019-08-05 04:01:00 
 author:     Alessio Soldano
 ---

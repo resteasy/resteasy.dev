@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "resteasy-grpc: Handling Collections"
-subtitle: ""
 date: 2025-02-14
 author: Ron Sigal
 ---

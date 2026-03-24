@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Using RESTEasy Tracing Feature With Feature Pack In WildFly"
-subtitle:   ""
 date:       2021-12-13
 author:     Wei Nan Li
 ---

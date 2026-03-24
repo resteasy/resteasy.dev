@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Summer releases and now on JAX-RS 2.1!"
-subtitle:   ""
 date:       2017-07-26 08:10:00
 author:     Alessio Soldano
 ---
