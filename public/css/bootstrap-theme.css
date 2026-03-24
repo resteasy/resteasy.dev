@@ -885,6 +885,50 @@ table tbody tr:last-child td,
 }
 
 /* ============================================
+   BLOG POST PAGE - Share Buttons
+   ============================================ */
+.share-page {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-left: 1rem !important;
+}
+
+.share-page a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.25rem !important;
+  transition: all 0.15s ease !important;
+  border-radius: 0.25rem !important;
+}
+
+.share-page a:hover {
+  background-color: var(--resteasy-bg-light) !important;
+  transform: translateY(-1px) !important;
+}
+
+.share-page .svg-icon {
+  width: 20px !important;
+  height: 20px !important;
+  opacity: 0.7 !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.share-page a:hover .svg-icon {
+  opacity: 1 !important;
+}
+
+/* Invert share icons in dark mode */
+[data-bs-theme="dark"] .share-page .svg-icon {
+  filter: invert(1) brightness(0.9) !important;
+}
+
+[data-bs-theme="dark"] .share-page a:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ============================================
    BOOKS PAGE - Book Cards
    ============================================ */
 .books-intro {
