@@ -885,6 +885,124 @@ table tbody tr:last-child td,
 }
 
 /* ============================================
+   DOWNLOADS PAGE - Tables and Sections
+   ============================================ */
+/* Section headers for download groups */
+#main h3 {
+  color: var(--resteasy-primary-dark) !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 2px solid var(--resteasy-primary) !important;
+}
+
+#main h3:first-of-type {
+  margin-top: 0 !important;
+}
+
+/* Download table specific styling */
+.simpletablestyle {
+  margin-bottom: 3rem !important;
+  background: white !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.simpletablestyle thead tr.header {
+  background: linear-gradient(135deg, var(--resteasy-primary) 0%, var(--resteasy-primary-light) 100%) !important;
+}
+
+.simpletablestyle thead tr.header th {
+  color: white !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  padding: 1rem !important;
+}
+
+.simpletablestyle tbody td {
+  padding: 1rem !important;
+  vertical-align: middle !important;
+}
+
+.simpletablestyle a.td-download {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.4rem 0.875rem !important;
+  background: var(--resteasy-primary) !important;
+  color: white !important;
+  border-radius: 0.375rem !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.simpletablestyle a.td-download:hover {
+  background: var(--resteasy-primary-dark) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.simpletablestyle td a:not(.td-download) {
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.simpletablestyle td a:not(.td-download):hover {
+  color: var(--resteasy-accent) !important;
+  text-decoration: underline !important;
+}
+
+/* Dark mode for downloads page */
+[data-bs-theme="dark"] #main h3 {
+  color: #e6edf3 !important;
+  border-bottom-color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle {
+  background-color: #0d1117 !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle thead tr.header {
+  background: linear-gradient(135deg, var(--resteasy-primary-dark) 0%, var(--resteasy-primary) 100%) !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle tbody tr:nth-child(odd) {
+  background-color: #0d1117 !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle tbody tr:nth-child(even) {
+  background-color: #161b22 !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle tbody tr:hover {
+  background-color: #1c2632 !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle a.td-download {
+  background: var(--resteasy-accent) !important;
+  color: #0d1117 !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle a.td-download:hover {
+  background: var(--resteasy-accent-light) !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle td a:not(.td-download) {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .simpletablestyle td a:not(.td-download):hover {
+  color: var(--resteasy-accent-light) !important;
+}
+
+/* ============================================
    BLOG LISTING PAGE - Blog Cards
    ============================================ */
 .blog-list-container {
