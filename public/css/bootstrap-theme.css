@@ -18,6 +18,10 @@
   --resteasy-bg-accent: #e8f2f7;      /* Light blue-gray */
   --resteasy-border: #d1dce3;         /* Cool border */
   --resteasy-text-muted: #5a6c7d;     /* Muted slate text */
+
+  /* Layout & Typography */
+  --color-text: #212529;              /* Default text color */
+  --max-width-content: 1200px;        /* Maximum content width */
 }
 
 /* ============================================
