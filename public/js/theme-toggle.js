@@ -147,8 +147,6 @@
         item.classList.add('current');
       } else if (section === 'blogs' && (currentPath.startsWith('/blogs') || currentPath.startsWith('/posts'))) {
         item.classList.add('current');
-      } else if (section === 'build' && currentPath.startsWith('/build')) {
-        item.classList.add('current');
       }
     });
   });
