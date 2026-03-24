@@ -74,6 +74,54 @@
 })();
 
 /**
+ * Mobile Navigation Toggle
+ * Handles hamburger menu collapse on mobile devices
+ */
+(function() {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (toggler && navbarCollapse) {
+      toggler.addEventListener('click', () => {
+        const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          navbarCollapse.classList.remove('show');
+          toggler.setAttribute('aria-expanded', 'false');
+        } else {
+          navbarCollapse.classList.add('show');
+          toggler.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close menu when clicking a link (mobile)
+      const navLinks = navbarCollapse.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            navbarCollapse.classList.remove('show');
+            toggler.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          if (!toggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+            navbarCollapse.classList.remove('show');
+            toggler.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+  });
+})();
+
+/**
  * Active Navigation Highlighting
  * Highlights the current navigation item based on the URL
  */

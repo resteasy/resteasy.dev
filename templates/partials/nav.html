@@ -8,38 +8,43 @@
             </div>
             <div id="proj_nav" class="">
                 <div class="container">
-                <ul class="sf-menu">
-                    <li class="open" data-nav="overview">
-                        <span class="notch">&nbsp;</span>
-                        <a href="{site.url.absolute}" class="menu-title">Overview</a>
-                    </li>
-                    <li class="open" data-nav="downloads">
-                        <span class="notch">&nbsp;</span>
-                        <a href="{site.url('/downloads').absolute}" class="menu-title">Downloads</a>
-                    </li>
-                    <li class="open" data-nav="docs">
-                        <span class="notch">&nbsp;</span>
-                        <a href="{site.url('/docs').absolute}" class="menu-title">Documentation</a>
-                    </li>
-                    <li class="open" data-nav="community">
-                        <span class="notch">&nbsp;</span>
-                        <a href="{site.url('/community').absolute}" class="menu-title">Community</a>
-                    </li>
-                    <li class="open" data-nav="blogs">
-                        <span class="notch">&nbsp;</span>
-                        <a href="{site.url('/blogs').absolute}" class="menu-title">Blog</a>
-                    </li>
-                    <li id="buildmenu" class="open" data-nav="build">
-                        <span class="notch">&nbsp;</span>
-                        <a href="{site.url('/build').absolute}" class="menu-title">Build</a>
-                    </li>
-                    <li>
-                        <button id="theme-toggle" type="button" aria-label="Toggle theme">
-                            <i class="fas fa-moon"></i>
-                            <span class="theme-toggle-text">Dark</span>
-                        </button>
-                    </li>
-                </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="sf-menu">
+                            <li class="open" data-nav="overview">
+                                <span class="notch">&nbsp;</span>
+                                <a href="{site.url.absolute}" class="menu-title">Overview</a>
+                            </li>
+                            <li class="open" data-nav="downloads">
+                                <span class="notch">&nbsp;</span>
+                                <a href="{site.url('/downloads').absolute}" class="menu-title">Downloads</a>
+                            </li>
+                            <li class="open" data-nav="docs">
+                                <span class="notch">&nbsp;</span>
+                                <a href="{site.url('/docs').absolute}" class="menu-title">Documentation</a>
+                            </li>
+                            <li class="open" data-nav="community">
+                                <span class="notch">&nbsp;</span>
+                                <a href="{site.url('/community').absolute}" class="menu-title">Community</a>
+                            </li>
+                            <li class="open" data-nav="blogs">
+                                <span class="notch">&nbsp;</span>
+                                <a href="{site.url('/blogs').absolute}" class="menu-title">Blog</a>
+                            </li>
+                            <li id="buildmenu" class="open" data-nav="build">
+                                <span class="notch">&nbsp;</span>
+                                <a href="{site.url('/build').absolute}" class="menu-title">Build</a>
+                            </li>
+                            <li>
+                                <button id="theme-toggle" type="button" aria-label="Toggle theme">
+                                    <i class="fas fa-moon"></i>
+                                    <span class="theme-toggle-text">Dark</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div><!-- end container -->
             </div>
         </div>
