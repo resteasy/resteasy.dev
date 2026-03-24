@@ -708,6 +708,58 @@ table tbody tr:last-child td,
 }
 
 /* ============================================
+   COMMUNITY PAGE - Bootstrap Cards
+   ============================================ */
+.community-card {
+  border: 1px solid var(--resteasy-border) !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.community-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px) !important;
+  border-color: var(--resteasy-primary) !important;
+}
+
+.community-card .card-title {
+  color: var(--resteasy-primary-dark) !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+.community-card .card-title i {
+  margin-right: 0.5rem !important;
+}
+
+.community-card .card-text {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: var(--color-text, #212529) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Dark mode for community cards */
+[data-bs-theme="dark"] .community-card {
+  background-color: #161b22 !important;
+  border-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] .community-card:hover {
+  background-color: #1c2632 !important;
+  border-color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .community-card .card-title {
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] .community-card .card-text {
+  color: #c9d1d9 !important;
+}
+
+/* ============================================
    BREADCRUMBS & RIGHT COLUMN
    ============================================ */
 #breadcrumb {

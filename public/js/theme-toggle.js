@@ -95,6 +95,8 @@
         item.classList.add('current');
       } else if (section === 'docs' && currentPath.startsWith('/docs')) {
         item.classList.add('current');
+      } else if (section === 'community' && currentPath.startsWith('/community')) {
+        item.classList.add('current');
       } else if (section === 'blogs' && (currentPath.startsWith('/blogs') || currentPath.startsWith('/posts'))) {
         item.classList.add('current');
       } else if (section === 'build' && currentPath.startsWith('/build')) {
