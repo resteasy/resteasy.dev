@@ -885,6 +885,141 @@ table tbody tr:last-child td,
 }
 
 /* ============================================
+   BOOKS PAGE - Book Cards
+   ============================================ */
+.books-intro {
+  max-width: 800px !important;
+  margin: 0 auto 2rem !important;
+  text-align: center !important;
+}
+
+.books-intro .lead {
+  font-size: 1.125rem !important;
+  color: var(--resteasy-text-muted) !important;
+  line-height: 1.7 !important;
+}
+
+.book-card {
+  border: 1px solid var(--resteasy-border) !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  overflow: hidden !important;
+}
+
+.book-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-4px) !important;
+  border-color: var(--resteasy-primary) !important;
+}
+
+.book-card .book-cover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  padding: 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 300px !important;
+}
+
+.book-card .book-cover img {
+  max-width: 180px !important;
+  height: auto !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0.25rem !important;
+}
+
+.book-card .card-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.book-card .card-title a {
+  color: var(--resteasy-primary-dark) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.book-card .card-title a:hover {
+  color: var(--resteasy-accent) !important;
+}
+
+.book-card .book-author {
+  color: var(--resteasy-text-muted) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+}
+
+.book-card .book-author i {
+  color: var(--resteasy-primary) !important;
+  margin-right: 0.25rem !important;
+}
+
+.book-card .card-text {
+  font-size: 0.9375rem !important;
+  line-height: 1.6 !important;
+  color: var(--color-text, #212529) !important;
+}
+
+.book-card .card-text a {
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+}
+
+.book-card .card-text a:hover {
+  color: var(--resteasy-accent) !important;
+  text-decoration: underline !important;
+}
+
+/* Dark mode for books page */
+[data-bs-theme="dark"] .books-intro .lead {
+  color: #8b949e !important;
+}
+
+[data-bs-theme="dark"] .book-card {
+  background-color: #161b22 !important;
+  border-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] .book-card:hover {
+  background-color: #1c2632 !important;
+  border-color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .book-card .book-cover {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%) !important;
+}
+
+[data-bs-theme="dark"] .book-card .card-title a {
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] .book-card .card-title a:hover {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .book-card .book-author {
+  color: #8b949e !important;
+}
+
+[data-bs-theme="dark"] .book-card .book-author i {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .book-card .card-text {
+  color: #c9d1d9 !important;
+}
+
+[data-bs-theme="dark"] .book-card .card-text a {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .book-card .card-text a:hover {
+  color: var(--resteasy-accent-light) !important;
+}
+
+/* ============================================
    DOWNLOADS PAGE - Tables and Sections
    ============================================ */
 /* Section headers for download groups */
