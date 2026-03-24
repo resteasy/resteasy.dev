@@ -35,7 +35,7 @@ Welcome to the RESTEasy community! We're a friendly group of developers building
         <p class="card-text">
           Found a bug or have a feature request? Report issues and track development progress on our JIRA issue tracker.
         </p>
-        <a href="https://issues.redhat.com/projects/RESTEASY" class="btn btn-outline-primary">
+        <a href="https://redhat.atlassian.net/projects/RESTEASY" class="btn btn-outline-primary">
           View Issues <i class="fas fa-arrow-right"></i>
         </a>
       </div>
