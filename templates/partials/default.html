@@ -1,15 +1,5 @@
         <main id="main">
             <div class="container py-4">
-                <div id="breadcrumb">
-               <span>
-                      <a href="{site.url('/').absolute}">RESTEasy</a>
-                        &gt;
-                      <a href="{page.url.absolute}">{page.title}</a>
-                      {#if page.title == 'Blogs' }
-                      <a href="/feed.xml"><image src="/img/blog/feed-icon.png"/></a>
-                      {/if}
-               </span>
-             </div><!-- end breadcrumb -->
                 {#insert /}
             </div><!-- end container -->
         </main><!-- end main -->
