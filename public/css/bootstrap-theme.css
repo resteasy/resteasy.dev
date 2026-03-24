@@ -692,7 +692,7 @@ footer#projsubnav_footer .notch {
 /* ============================================
    RESPONSIVE
    ============================================ */
-
+@media (max-width: 768px) {
   #proj_checklist ul {
     grid-template-columns: 1fr !important;
   }
