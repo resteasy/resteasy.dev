@@ -1,0 +1,87 @@
+name: PR Preview
+
+on:
+  workflow_run:
+    workflows: ["Test site build"]
+    types: [completed]
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  deploy-preview:
+    if: >
+      github.event_name == 'workflow_run'
+      && github.event.workflow_run.conclusion == 'success'
+      && github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      actions: read
+    steps:
+      - name: Download generated site
+        uses: actions/download-artifact@v5
+        with:
+          name: generated-site
+          path: ./site
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download PR number
+        uses: actions/download-artifact@v5
+        with:
+          name: pr-number
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Read PR number
+        id: pr
+        run: echo "number=$(cat pr-number.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Install Surge
+        run: npm install -g surge
+
+      - name: Deploy to Surge
+        run: surge ./site ${{ env.PREVIEW_URL }} --token ${{ secrets.SURGE_TOKEN }}
+        env:
+          PREVIEW_URL: pr-${{ steps.pr.outputs.number }}-resteasy-dev.surge.sh
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = ${{ steps.pr.outputs.number }};
+            const previewUrl = `https://pr-${prNumber}-resteasy-dev.surge.sh`;
+            const body = `A preview of this PR is available at ${previewUrl}`;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+            const existing = comments.find(c =>
+              c.user.login === 'github-actions[bot]' && c.body.includes('A preview of this PR is available at')
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: body,
+              });
+            }
+
+  teardown-preview:
+    if: github.event_name == 'pull_request_target' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Surge
+        run: npm install -g surge
+
+      - name: Teardown preview
+        run: surge teardown pr-${{ github.event.number }}-resteasy-dev.surge.sh --token ${{ secrets.SURGE_TOKEN }}
