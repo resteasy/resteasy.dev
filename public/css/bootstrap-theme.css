@@ -708,6 +708,183 @@ table tbody tr:last-child td,
 }
 
 /* ============================================
+   DOCUMENTATION PAGE - Release Cards
+   ============================================ */
+.release-container {
+  margin-top: 2rem !important;
+}
+
+.release {
+  background: white !important;
+  border: 1px solid var(--resteasy-border) !important;
+  border-radius: 0.5rem !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+.release:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-2px) !important;
+  border-color: var(--resteasy-primary) !important;
+}
+
+.release-title {
+  color: var(--resteasy-primary-dark) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.25rem !important;
+}
+
+.release-title small {
+  color: var(--resteasy-text-muted) !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+}
+
+.release .spec {
+  background: var(--resteasy-bg-accent) !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0.375rem !important;
+  margin-bottom: 1rem !important;
+  font-size: 0.95rem !important;
+}
+
+.release .spec strong {
+  color: var(--resteasy-primary-dark) !important;
+  margin-right: 0.5rem !important;
+}
+
+.release .spec a {
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.release .spec a:hover {
+  color: var(--resteasy-accent) !important;
+  text-decoration: underline !important;
+}
+
+.release ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0.5rem 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+}
+
+.release ul li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.release ul li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.5rem 1rem !important;
+  background: white !important;
+  border: 1px solid var(--resteasy-border) !important;
+  border-radius: 0.375rem !important;
+  color: var(--resteasy-primary) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 0.9375rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.release ul li a:hover {
+  background: var(--resteasy-bg-light) !important;
+  border-color: var(--resteasy-primary) !important;
+  color: var(--resteasy-primary-dark) !important;
+  transform: translateY(-1px) !important;
+}
+
+.release-body {
+  margin-bottom: 1rem !important;
+}
+
+.release > div:last-child {
+  padding-top: 0.5rem !important;
+  border-top: 1px solid var(--resteasy-border) !important;
+  margin-top: 0.5rem !important;
+}
+
+.release > div:last-child a {
+  color: var(--resteasy-text-muted) !important;
+  font-size: 0.875rem !important;
+  text-decoration: none !important;
+}
+
+.release > div:last-child a:hover {
+  color: var(--resteasy-primary) !important;
+  text-decoration: underline !important;
+}
+
+/* Dark mode for release cards */
+[data-bs-theme="dark"] .release {
+  background-color: #161b22 !important;
+  border-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] .release:hover {
+  background-color: #1c2632 !important;
+  border-color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .release-title {
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] .release-title small {
+  color: #8b949e !important;
+}
+
+[data-bs-theme="dark"] .release .spec {
+  background-color: #0d1117 !important;
+  border: 1px solid var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] .release .spec strong {
+  color: #e6edf3 !important;
+}
+
+[data-bs-theme="dark"] .release .spec a {
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .release .spec a:hover {
+  color: var(--resteasy-accent-light) !important;
+}
+
+[data-bs-theme="dark"] .release ul li a {
+  background-color: #0d1117 !important;
+  border-color: var(--resteasy-border) !important;
+  color: var(--resteasy-accent) !important;
+}
+
+[data-bs-theme="dark"] .release ul li a:hover {
+  background-color: #161b22 !important;
+  border-color: var(--resteasy-accent) !important;
+  color: var(--resteasy-accent-light) !important;
+}
+
+[data-bs-theme="dark"] .release > div:last-child {
+  border-top-color: var(--resteasy-border) !important;
+}
+
+[data-bs-theme="dark"] .release > div:last-child a {
+  color: #8b949e !important;
+}
+
+[data-bs-theme="dark"] .release > div:last-child a:hover {
+  color: var(--resteasy-accent) !important;
+}
+
+/* ============================================
    COMMUNITY PAGE - Bootstrap Cards
    ============================================ */
 .community-card {
