@@ -354,6 +354,19 @@ body#project {
   height: auto !important;
 }
 
+/* Logo switching for light/dark mode */
+.commonhaus-logo .logo-dark {
+  display: none !important;
+}
+
+[data-bs-theme="dark"] .commonhaus-logo .logo-light {
+  display: none !important;
+}
+
+[data-bs-theme="dark"] .commonhaus-logo .logo-dark {
+  display: block !important;
+}
+
 .commonhaus-footer .commonhaus-legal {
   grid-column: initial !important;
   grid-row: initial !important;
