@@ -115,6 +115,13 @@ body#project {
   margin-bottom: 0.25rem !important;
 }
 
+/* Truncate banner logo on mobile instead of scaling */
+@media (max-width: 768px) {
+  #banner {
+    overflow: hidden !important;
+  }
+}
+
 #projectname {
   all: unset !important;
   display: block !important;
@@ -123,14 +130,6 @@ body#project {
   color: var(--resteasy-primary-dark) !important;
   margin: 0.25rem 0 0.125rem 0 !important;
   letter-spacing: -0.02em !important;
-}
-
-#tagline {
-  all: unset !important;
-  display: block !important;
-  font-size: 0.95rem !important;
-  color: var(--resteasy-text-muted) !important;
-  margin: 0 !important;
 }
 
 /* ============================================
@@ -946,19 +945,19 @@ table tbody tr:last-child td,
   margin-bottom: 1rem !important;
 }
 
-.release > div:last-child {
+.release > div.older-releases {
   padding-top: 0.5rem !important;
   border-top: 1px solid var(--resteasy-border) !important;
   margin-top: 0.5rem !important;
 }
 
-.release > div:last-child a {
+.release > div.older-releases a {
   color: var(--resteasy-text-muted) !important;
   font-size: 0.875rem !important;
   text-decoration: none !important;
 }
 
-.release > div:last-child a:hover {
+.release > div.older-releases a:hover {
   color: var(--resteasy-primary) !important;
   text-decoration: underline !important;
 }
@@ -1011,15 +1010,15 @@ table tbody tr:last-child td,
   color: var(--resteasy-accent-light) !important;
 }
 
-[data-bs-theme="dark"] .release > div:last-child {
+[data-bs-theme="dark"] .release > div.older-releases {
   border-top-color: var(--resteasy-border) !important;
 }
 
-[data-bs-theme="dark"] .release > div:last-child a {
+[data-bs-theme="dark"] .release > div.older-releases a {
   color: #8b949e !important;
 }
 
-[data-bs-theme="dark"] .release > div:last-child a:hover {
+[data-bs-theme="dark"] .release > div.older-releases a:hover {
   color: var(--resteasy-accent) !important;
 }
 
@@ -1296,7 +1295,7 @@ table tbody tr:last-child td,
 }
 
 [data-bs-theme="dark"] .simpletablestyle tbody tr:nth-child(even) {
-  background-color: #161b22 !important;
+  background-color: #30363d !important;
 }
 
 [data-bs-theme="dark"] .simpletablestyle tbody tr:hover {
@@ -1552,7 +1551,7 @@ table tbody tr:last-child td,
   margin: 0 !important;
   line-height: 1.6 !important;
   position: relative !important;
-  min-height: 1.6em !important;
+  min-height: 5em !important;
 }
 
 #proj_checklist ul li::before,
@@ -1752,7 +1751,6 @@ table tbody tr:last-child td,
 [data-bs-theme="dark"] .simpletablestyle td,
 [data-bs-theme="dark"] .wikimarkup td,
 [data-bs-theme="dark"] .directory-listing td {
-  background-color: #0d1117 !important;
   color: #c9d1d9 !important;
   border-color: var(--resteasy-border) !important;
 }
@@ -1775,7 +1773,7 @@ table tbody tr:last-child td,
 [data-bs-theme="dark"] table tr:nth-child(even),
 [data-bs-theme="dark"] .wikimarkup tr:nth-child(2n),
 [data-bs-theme="dark"] .directory-listing tr:nth-child(even) {
-  background-color: #21262d !important;
+  background-color: #30363d !important;
   padding-left: 6px !important;
 }
 

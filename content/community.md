@@ -19,7 +19,7 @@ Welcome to the RESTEasy community! We're a friendly group of developers building
         <p class="card-text">
           Ask questions, share ideas, and connect with other RESTEasy users and developers. Our GitHub Discussions is the best place to get help and engage with the community.
         </p>
-        <a href="https://github.com/resteasy/resteasy/discussions" class="btn btn-primary">
+        <a href="https://github.com/resteasy/resteasy/discussions" class="btn btn-outline-primary">
           Join Discussions <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -129,7 +129,7 @@ Welcome to the RESTEasy community! We're a friendly group of developers building
 
 ## Governance
 
-<div class="alert alert-info d-flex align-items-center" role="alert">
+<div class="alert alert-info d-flex align-items-center mb-3" role="alert">
   <i class="fas fa-info-circle fa-2x me-3"></i>
   <div>
     <h4 class="alert-heading">Commonhaus Foundation</h4>
@@ -140,8 +140,13 @@ Welcome to the RESTEasy community! We're a friendly group of developers building
   </div>
 </div>
 
-## Release Notes
-
-Stay up to date with the latest changes, improvements, and bug fixes:
-
-- [Release Notes Archive](https://issues.redhat.com/jira/secure/ConfigureReleaseNote.jspa?projectId=12310560)
+<div class="alert alert-secondary d-flex align-items-center" role="alert">
+  <i class="fas fa-gavel fa-2x me-3"></i>
+  <div>
+    <h4 class="alert-heading">Project Governance</h4>
+    <p class="mb-0">
+      RESTEasy follows a transparent governance model. Review our <a href="https://github.com/resteasy/.github/blob/main/GOVERNANCE.md" target="_blank" class="alert-link">Governance Document</a>
+      to learn about project leadership, decision-making processes, and how you can get involved.
+    </p>
+  </div>
+</div>
