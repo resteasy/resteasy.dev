@@ -354,6 +354,26 @@ body#project {
   height: auto !important;
 }
 
+/* ============================================
+   COMMONHAUS FOOTER SECTION
+   ============================================ */
+.commonhaus-footer {
+  display: block !important;
+  padding: 2rem 0 !important;
+  text-align: center !important;
+}
+
+.commonhaus-footer .commonhaus-logo {
+  margin-bottom: 1.5rem !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+.commonhaus-footer .commonhaus-logo img {
+  height: 30px !important;
+  width: auto !important;
+}
+
 /* Logo switching for light/dark mode */
 .commonhaus-logo .logo-dark {
   display: none !important;
@@ -365,6 +385,19 @@ body#project {
 
 [data-bs-theme="dark"] .commonhaus-logo .logo-dark {
   display: block !important;
+}
+
+.commonhaus-footer .commonhaus-legal {
+  font-size: 0.75rem !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  line-height: 1.75 !important;
+  color: #6c757d !important;
+}
+
+[data-bs-theme="dark"] .commonhaus-footer .commonhaus-legal {
+  color: #8b949e !important;
 }
 
 .commonhaus-footer .commonhaus-legal {
