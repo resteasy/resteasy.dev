@@ -19,7 +19,7 @@ jobs:
       actions: read
     steps:
       - name: Download generated site
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           name: generated-site
           path: ./site
@@ -27,7 +27,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download PR number
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           name: pr-number
           run-id: ${{ github.event.workflow_run.id }}
