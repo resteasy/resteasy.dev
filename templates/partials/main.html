@@ -1,10 +1,6 @@
-       <div id="wrapper-2">
-            <div id="wrap-content">
-                <div id="wrapper-3">
-                    <div id="main-wrapper">
-                        <div id="main">
-                            <!-- content title -->
-                            <h3>RESTEasy</h3>
+        <main id="main">
+            <div class="container py-4">
+                <h2 class="mb-3">RESTEasy</h2>
                             <div class="proj_define">RESTEasy is a <a href="https://commonhaus.org">Commonhaus</a> project that provides various frameworks to
                                 help you build RESTful Web Services and RESTful Java applications. It is an implementation of the
                                 <a href="https://jakarta.ee/specifications/restful-ws/">Jakarta RESTful Web Services</a>, an Eclipse
@@ -15,9 +11,10 @@
                             <p>RESTEasy can run in any Servlet container, but tighter integration with <a href="https://wildfly.org/">WildFly</a>
                                Application Server and <a href="https://quarkus.io/">Quarkus</a> is also available to make the
                                user experience nicer in those environments.</p>
-                            <div id="proj_checklist"><h3>Features</h3>
+                            <div id="proj_checklist">
+                                <h3>Features</h3>
                                 <ul>
-                                    <li>Implements Jakarta RESTful Web Services (JAX-RS)</li>
+                                    <li>Implements Jakarta RESTful Web Services</li>
                                     <li>Portable to Tomcat and many other application servers</li>
                                     <li>Embeddable server implementation for JUnit testing</li>
                                     <li>Enhanced client framework</li>
@@ -34,13 +31,13 @@
                                         wrappers for maps, arrays, lists, and sets of JAXB Objects.
                                     </li>
                                     <li>GZIP content-encoding</li>
-                                    <li>Asynchronous HTTP abstractions for Servlet 3</li>
+                                    <li>Asynchronous HTTP abstractions for Jakarta Servlet</li>
                                     <li>Reactive support</li>
                                     <li>Asynchronous Job Service.</li>
                                     <li>Rich interceptor model.</li>
-                                    <li>OAuth2 and Distributed SSO with JBoss AS7</li>
+                                    <li>OAuth2 and Distributed SSO with WildFly</li>
                                     <li>Digital Signature and encryption support with S/MIME and DOSETA</li>
-                                    <li>EJB, Seam, Guice, Spring, Spring MVC and Spring Boot integration</li>
+                                    <li>EJB, Guice, Spring, Spring MVC and Spring Boot integration</li>
                                 </ul>
                             </div>
                             {#insert /}
@@ -48,5 +45,5 @@
                             <div class="grid__item width-12-12 home-section">
                                 {#include partials/news-list.html /}
                             </div>
-                        </div><!-- end main -->
-                    </div>
+            </div><!-- end container -->
+        </main><!-- end main -->

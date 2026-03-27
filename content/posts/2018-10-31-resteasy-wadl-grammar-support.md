@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy WADL Grammar Support"
-subtitle:   ""
 date:       2018-10-31 04:42:00
 author:     Weinan Li
 ---

@@ -1,29 +1,33 @@
-<div class="grid-wrapper news-list-blocks">
-    <div class="grid__item width-12-12">
-        <h3>Latest News</h3>
-    </div>
-    {#for post in site.collections.posts.subList(0,10)}
-    <div class="grid__item width-3-12">
-        <div class="grid__item">
-            <h4>
-                <a href="{post.url.absolute}">
-                {post.title}
-                </a>
-            </h4>
+<div class="news-list-blocks mb-5">
+    <h3 class="mb-4">Latest News</h3>
+    <div class="row g-4">
+        {#for post in site.collections.posts.subList(0,10)}
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title h5">
+                        <a href="{post.url.absolute}" class="text-decoration-none">
+                            {post.title}
+                        </a>
+                    </h4>
+                    <p class="byline text-muted small">
+                        By {post.data.author ?: "The RESTEasy Team"} | {post.date.format("MMMM dd, YYYY")}
+                    </p>
+                    <p class="card-text">
+                        {#if post.data.containsKey('synopsis')}
+                        {post.data.synopsis.stripHtml()}
+                        {#else}
+                        {site.pageContent(post).stripHtml.wordLimit(75).raw}
+                        {/if}
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="{post.url.absolute}" class="btn btn-sm btn-outline-primary">
+                        {#if post.data.link.contains("youtube")}Watch Video &raquo;{#else}Read More &raquo;{/if}
+                    </a>
+                </div>
+            </div>
         </div>
-        <p class="byline">
-            By {post.data.author ?: "The RESTEasy Team"} | {post.date.format("MMMM dd, YYYY")}
-        </p>
-        <p>
-            {#if post.data.containsKey('synopsis')}
-            {post.data.synopsis.stripHtml()}
-            {#else}
-            {site.pageContent(post).stripHtml.wordLimit(75).raw}
-        </p>
-        {/if}
-        <a href="{post.url.absolute}">
-        {#if post.data.link.contains("youtube")}Watch Video >{#else}Read More >{/if}
-        </a>
+        {/for}
     </div>
-    {/for}
 </div>

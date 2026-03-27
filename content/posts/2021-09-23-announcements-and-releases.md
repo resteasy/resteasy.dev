@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy Announcements and Plans"
-subtitle:   ""
 date:       2021-09-23 11:11:11
 author:     James R. Perkins
 ---

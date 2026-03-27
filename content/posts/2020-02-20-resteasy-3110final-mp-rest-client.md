@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy 3.11.0.Final: MicroProfile REST Client 1.4; Client memory management"
-subtitle:   ""
 date:       2020-02-20 00:45:00
 author:     Ron Sigal
 ---

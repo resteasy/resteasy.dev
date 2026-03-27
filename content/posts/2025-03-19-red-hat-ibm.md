@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy and Red Hat's Middleware Strategy"
-subtitle:   ""
 date:       2025-03-19 11:11:11
 author:     James R. Perkins
 ---

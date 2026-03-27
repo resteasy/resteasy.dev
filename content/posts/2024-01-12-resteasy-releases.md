@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Q1 2024 RESTEasy Quarterly Releases"
-subtitle:   ""
 date:       2024-01-12 11:11:11
 author:     James R. Perkins
 ---

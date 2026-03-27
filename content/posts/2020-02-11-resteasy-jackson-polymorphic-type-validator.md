@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy default white-list based PolymorphicTypeValidator extension"
-subtitle:   ""
 date:       2020-02-11 01:00:00
 author:     Alessio Soldano
 ---

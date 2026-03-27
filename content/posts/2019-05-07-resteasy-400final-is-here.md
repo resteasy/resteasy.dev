@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 4.0.0.Final is here!"
-subtitle:   ""
 date:       2019-05-07 17:07:06 
 author:     Alessio Soldano
 ---

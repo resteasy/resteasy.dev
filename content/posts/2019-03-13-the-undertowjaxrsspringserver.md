@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "The UndertowJaxrsSpringServer"
-subtitle:   ""
 date:       2019-03-13 12:48:00
 author:     Weinan Li
 ---

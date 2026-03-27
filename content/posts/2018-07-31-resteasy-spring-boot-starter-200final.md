@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy Spring Boot starter 2.0.0.Final"
-subtitle:   ""
 date:       2018-07-31 10:18:00
 author:     Alessio Soldano
 ---

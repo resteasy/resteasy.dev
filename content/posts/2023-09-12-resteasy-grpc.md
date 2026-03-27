@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Using the resteasy-grpc feature together with the WildFly gRPC subsystem"
-subtitle:   ""
 date:       2023-09-12
 author:     Wei Nan Li
 ---

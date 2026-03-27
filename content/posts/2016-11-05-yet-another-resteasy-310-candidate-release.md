@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Yet another RESTEasy 3.1.0 candidate release..."
-subtitle:   ""
 date:       2016-11-05 09:56:00 
 author:     Alessio Soldano
 ---

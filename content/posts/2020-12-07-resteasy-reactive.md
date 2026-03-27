@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Introducing RESTEasy Reactive"
-subtitle:   ""
 date:       2020-12-07 14:30:00
 author:     Alessio Soldano
 ---

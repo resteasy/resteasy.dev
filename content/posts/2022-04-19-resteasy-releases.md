@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy Releases"
-subtitle:   ""
 date:       2022-04-19 11:11:11
 author:     James R. Perkins
 ---

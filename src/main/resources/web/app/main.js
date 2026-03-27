@@ -5,4 +5,4 @@ import 'highlight.js/styles/agate.css';
 installLineNumbers(hljs, window, document);
 
 hljs.highlightAll();
-hljs.initLineNumbersOnLoad();
+// hljs.initLineNumbersOnLoad(); // Disabled - line numbers removed for cleaner code blocks

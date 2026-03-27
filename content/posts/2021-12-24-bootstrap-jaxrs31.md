@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Java SE Bootstrap API In Jakarta REST 3.1"
-subtitle:   ""
 date:       2021-12-24
 author:     Jim Ma
 ---

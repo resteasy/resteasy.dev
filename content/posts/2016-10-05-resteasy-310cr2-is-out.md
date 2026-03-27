@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 3.1.0.CR2 is out"
-subtitle:   ""
 date:       2016-10-05 09:46:00 
 author:     Alessio Soldano
 ---

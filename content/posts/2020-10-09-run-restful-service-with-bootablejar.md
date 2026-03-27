@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Restful service with bootable jar"
-subtitle:   ""
 date:       2020-10-21
 author:     Jim Ma
 ---

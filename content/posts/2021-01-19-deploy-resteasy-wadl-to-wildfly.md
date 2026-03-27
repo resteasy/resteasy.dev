@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy WADL module deployment on Wildfly"
-subtitle:   ""
 date:       2021-01-18
 author:     Wei Nan
 ---

@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Asynchronous injection in RESTEasy"
-subtitle:   ""
 date:       2018-07-19 05:05:10
 author:     Stephane Epardaud
 ---

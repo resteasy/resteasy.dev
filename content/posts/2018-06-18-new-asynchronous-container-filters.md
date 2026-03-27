@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "New: Asynchronous container filters"
-subtitle:   ""
 date:       2018-06-18 00:03:55
 author:     Stephane Epardaud
 ---

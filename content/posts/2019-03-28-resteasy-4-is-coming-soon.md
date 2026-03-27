@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 4 is coming soon"
-subtitle:   ""
 date:       2019-03-28 04:25:34
 author:     Alessio Soldano
 ---

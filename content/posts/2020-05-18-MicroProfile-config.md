@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy 3.12.0.Final: MicroProfile Config"
-subtitle:   ""
 date:       2020-05-18 18:17:00
 aliases:    [2020/05/18/MicroProfile-config/]
 ---

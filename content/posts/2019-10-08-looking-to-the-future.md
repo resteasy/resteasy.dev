@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Looking to the future..."
-subtitle:   ""
 date:       2019-10-08 19:43:00
 author:     Alessio Soldano
 ---

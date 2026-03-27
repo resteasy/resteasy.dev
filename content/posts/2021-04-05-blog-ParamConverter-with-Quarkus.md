@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "JAX-RS ParamConverter with Quarkus"
-subtitle:   ""
 date:       2021-04-05
 author:     Rebecca Searls
 aliases:    [/2021/04/05/blog-ParamConverter-with-Quarkus/]

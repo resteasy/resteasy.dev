@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Untangling Reactive Streams' Gordian Knot, Wiring Subscriber, Publisher and Subscription"
-subtitle:   ""
 date:       2020-11-23
 author:     Rebecca Searls
 aliases:    [/2020/11/23/blog-Untangling-Reactive-Streams/]

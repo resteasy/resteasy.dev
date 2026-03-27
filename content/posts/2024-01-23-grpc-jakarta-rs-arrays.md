@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "resteasy-grpc: Handling arrays"
-subtitle: ""
 date: 2024-01-23
 author: Ron Sigal
 ---

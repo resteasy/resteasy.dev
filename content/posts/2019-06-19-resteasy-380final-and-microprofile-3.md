@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 3.8.0.Final and MicroProfile 3"
-subtitle:   ""
 date:       2019-06-19 11:13:00
 author:     Alessio Soldano
 ---

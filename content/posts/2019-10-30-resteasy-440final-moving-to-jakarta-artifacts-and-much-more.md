@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 4.4.0.Final: moving to Jakarta artifacts and much more"
-subtitle:   ""
 date:       2019-10-30 08:07:00
 author:     Alessio Soldano
 ---

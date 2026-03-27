@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "New RESTEasy blog"
-subtitle:   ""
 date:       2016-09-13 09:16:00
 author:     Alessio Soldano
 ---

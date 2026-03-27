@@ -2,7 +2,6 @@
 layout:     post
 title:      "MicroProfile Config 1.3; Examination of The Out-Of-The-Box
 ConfigSources for a RESTEasy Application"
-subtitle:   ""
 date:       2020-06-14
 author:     Rebecca Searls
 ---

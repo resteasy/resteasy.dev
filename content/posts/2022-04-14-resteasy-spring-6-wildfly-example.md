@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy Spring And RESTEasy Spring Boot EE9 Deployment With WildFly Preview"
-subtitle:   ""
 date:       2022-04-14
 author:     Wei Nan Li
 ---

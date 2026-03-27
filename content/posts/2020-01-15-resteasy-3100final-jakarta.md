@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "RESTEasy 3.10.0.Final: Jakarta artifacts, new configuration parameter"
-subtitle:   ""
 date:       2020-01-15 19:04:00
 author:     Ron Sigal
 ---

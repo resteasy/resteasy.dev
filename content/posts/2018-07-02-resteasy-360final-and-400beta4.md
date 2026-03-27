@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 3.6.0.Final and 4.0.0.Beta4"
-subtitle:   ""
 date:       2018-07-02 08:56:00 
 author:     Alessio Soldano
 ---

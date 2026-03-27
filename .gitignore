@@ -8,5 +8,8 @@ target
 *.iml
 .vscode
 
+node_modules
+
 ## OS related
 *.DS_Store
+node_modules/

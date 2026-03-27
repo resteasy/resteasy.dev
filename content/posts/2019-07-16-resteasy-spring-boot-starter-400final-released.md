@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy Spring Boot Starter 4.0.0.Final released"
-subtitle:   ""
 date:       2019-07-16 09:38:00
 author:     Weinan Li
 ---

@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Time for a couple of bug fix releases"
-subtitle:   ""
 date:       2018-04-18 16:29:00
 author:     Alessio Soldano
 ---

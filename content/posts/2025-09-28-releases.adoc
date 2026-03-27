@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "RESTEasy 6.2.14.Final and 7.0.0.Final Releases"
-subtitle: ""
 date: 2025-09-28
 author: James R. Perkins
 ---

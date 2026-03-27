@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "Separating RESTEasy Spring And Microprofile Components Into Independent Subprojects."
-subtitle:   ""
 date:       2021-07-29
 author:     Wei Nan Li
 ---

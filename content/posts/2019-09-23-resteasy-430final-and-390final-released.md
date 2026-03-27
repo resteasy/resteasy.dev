@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy 4.3.0.Final and 3.9.0.Final released"
-subtitle:   ""
 date:       2019-09-23 19:10:00
 author:     Ronald Sigal
 ---

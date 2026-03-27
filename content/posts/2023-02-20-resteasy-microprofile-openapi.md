@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Using MicroProfile OpenAPI With RESTEasy"
-subtitle:   ""
 date:       2023-02-20
 author:     Wei Nan Li
 ---

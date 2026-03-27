@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:       "RESTEasy Tracing Feature Now Supports JSON formatted information"
-subtitle:   ""
 date:       2018-09-05 05:01:00 
 author:     Weinan Li
 ---

@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Q3 2023 RESTEasy Quarterly Releases"
-subtitle:   ""
 date:       2023-08-21 11:11:11
 author:     James R. Perkins
 ---

@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Supporting HTTP Engine Registration In RESTEasy Client and RESTEasy MicroProfile Client"
-subtitle:   ""
 date:       2021-11-03
 author:     Wei Nan Li
 ---
