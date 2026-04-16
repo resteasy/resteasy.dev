@@ -1,8 +1,12 @@
 /**
- * RESTEasy Theme Switcher
- * Toggles between light and dark modes using Bootstrap's data-bs-theme
+ * RESTEasy Site JavaScript
+ * Main JavaScript file containing theme switcher, navigation, and interactive features
  */
 
+/**
+ * Theme Switcher
+ * Toggles between light and dark modes using Bootstrap's data-bs-theme
+ */
 (function() {
   'use strict';
 
@@ -147,6 +151,58 @@
         item.classList.add('current');
       } else if (section === 'blogs' && (currentPath.startsWith('/blogs') || currentPath.startsWith('/posts'))) {
         item.classList.add('current');
+      }
+    });
+  });
+})();
+
+/**
+ * Clickable News Cards
+ * Makes entire news/blog cards clickable while maintaining link accessibility
+ */
+(function() {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select all news/blog cards
+    const cards = document.querySelectorAll('.news-list-blocks .card, .blog-post-card');
+
+    cards.forEach(card => {
+      // Find the main link (either in title or "Read More")
+      const link = card.querySelector('.card-title a, .post-title a, a[href*="/posts/"]');
+
+      if (link) {
+        // Make the card clickable
+        card.style.cursor = 'pointer';
+
+        card.addEventListener('click', (e) => {
+          // Don't trigger if clicking on an actual link (let the link handle it)
+          if (e.target.tagName === 'A') {
+            return;
+          }
+
+          // Respect modifier keys (cmd/ctrl click for new tab, etc.)
+          if (e.metaKey || e.ctrlKey) {
+            window.open(link.href, '_blank');
+          } else {
+            window.location.href = link.href;
+          }
+        });
+
+        // Improve accessibility - make cards keyboard navigable
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'article');
+
+        // Handle keyboard navigation (Enter key)
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            if (e.metaKey || e.ctrlKey) {
+              window.open(link.href, '_blank');
+            } else {
+              window.location.href = link.href;
+            }
+          }
+        });
       }
     });
   });
