@@ -1,0 +1,121 @@
+---
+layout: post
+title: "RESTEasy 6.2.16.Final and 7.0.2.Final Releases"
+date: 2026-04-15
+author: James R. Perkins
+---
+
+Today we would like to announce the release of RESTEasy link:/downloads#6216final[6.2.16.Final] and RESTEasy
+link:/downloads#702final[7.0.2.Final]. Both releases consist mostly of bug fixes and component upgrades.
+
+One big change to both 6.2.16.Final and 7.0.2.Final was better support for https://redhat.atlassian.net/browse/RESTEASY-3693[CDI].
+Previously, Jakarta REST resources required a public no-arg constructor, even when managed by CDI. This release relaxes that
+requirement, allowing CDI to fully handle resource creation. This means your resources can now use constructor injection
+without needing to maintain an additional no-arg constructor.
+
+== 7.0.2.Final
+
+RESTEasy 7.0.2.Final is a https://jakarta.ee/specifications/restful-ws/4.0/[Jakarta REST 4.0] implementation. This
+release includes mostly bug fixes and component upgrades.
+
+One notable upgrade in this release is the migration to Jackson 2.21 LTS. This is a long-term support version of Jackson,
+which provides better stability and extended support for users who need a more stable JSON processing foundation.
+
+Among the bug fixes, this release addresses an https://redhat.atlassian.net/browse/RESTEASY-3691[IllegalAccessError] that
+could occur when posting large entities via the Apache HTTP client engine, and fixes for Server-Sent Events (SSE) handling
+in Vert.x environments.
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3687[RESTEASY-3687] Bump org.jboss.logging:jboss-logging from 3.6.1.Final to 3.6.2.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3688[RESTEASY-3688] Bump version.weld from 6.0.3.Final to 6.0.4.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3690[RESTEASY-3690] Bump the fasterxml-dependencies group across 1 directory with 2 updates
+* https://redhat.atlassian.net/browse/RESTEASY-3696[RESTEASY-3696] Bump version.org.glassfish.jaxb from 4.0.6 to 4.0.7
+* https://redhat.atlassian.net/browse/RESTEASY-3699[RESTEASY-3699] Bump org.jboss.logging:jboss-logging from 3.6.2.Final to 3.6.3.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3700[RESTEASY-3700] Bump org.jboss.arquillian:arquillian-bom from 1.10.0.Final to 1.10.1.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3701[RESTEASY-3701] Bump org.wildfly:wildfly-channel-maven-plugin from 1.0.30 to 1.0.31
+* https://redhat.atlassian.net/browse/RESTEASY-3702[RESTEASY-3702] Bump version.io.undertow from 2.3.20.Final to 2.3.23.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3704[RESTEASY-3704] Bump org.wildfly.security:wildfly-elytron-ssl from 2.6.7.Final to 2.6.8.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3705[RESTEASY-3705] Bump org.eclipse.jetty:jetty-server from 12.0.15 to 12.0.32 in /resteasy-dependencies-bom
+* https://redhat.atlassian.net/browse/RESTEASY-3707[RESTEASY-3707] Upgrade Jackson to 2.21.1 LTS
+* https://redhat.atlassian.net/browse/RESTEASY-3709[RESTEASY-3709] Bump org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-bom from 3.3.4 to 3.3.5
+* https://redhat.atlassian.net/browse/RESTEASY-3710[RESTEASY-3710] Bump version.io.undertow from 2.3.23.Final to 2.3.24.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3711[RESTEASY-3711] Bump com.fasterxml.jackson:jackson-bom from 2.21.1 to 2.21.2 in the fasterxml-dependencies group
+* https://redhat.atlassian.net/browse/RESTEASY-3719[RESTEASY-3719] Bump org.wildfly:wildfly-channel-maven-plugin from 1.0.31 to 1.0.32
+* https://redhat.atlassian.net/browse/RESTEASY-3720[RESTEASY-3720] Bump org.apache.httpcomponents:httpasyncclient from 4.1.4 to 4.1.5
+
+=== Enhancement
+
+* https://redhat.atlassian.net/browse/RESTEASY-3596[RESTEASY-3596] Contextual scheduled executor service causes inadvertent Thread + classloader leak
+* https://redhat.atlassian.net/browse/RESTEASY-3693[RESTEASY-3693] Relax Constructor Requirements for CDI-Managed Jakarta REST Components
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3359[RESTEASY-3359] SseEventSink close does not update the request for Vert.x
+* https://redhat.atlassian.net/browse/RESTEASY-3683[RESTEASY-3683] EJB's should be allowed to have annotated interface methods as well as implementation methods
+* https://redhat.atlassian.net/browse/RESTEASY-3685[RESTEASY-3685] Few test fails with Semeru (IBM) JDK
+* https://redhat.atlassian.net/browse/RESTEASY-3691[RESTEASY-3691] IllegalAccessError when POSTing entity larger than in-memory threshold via ManualClosingApacheHttpClient43Engine
+
+=== Task
+
+* https://redhat.atlassian.net/browse/RESTEASY-3660[RESTEASY-3660] Deprecate the resteasy.patch.filter.legacy context parameter
+* https://redhat.atlassian.net/browse/RESTEASY-3686[RESTEASY-3686] Delete HeaderEmptyHostTest to unit test due to Undertow security hardening https://redhat.atlassian.net/browse/UNDERTOW-2656[UNDERTOW-2656] and lack of core framework relevance
+* https://redhat.atlassian.net/browse/RESTEASY-3698[RESTEASY-3698] Remove the BASE \+ i for the ID patterns in the messages and message loggers
+* https://redhat.atlassian.net/browse/RESTEASY-3708[RESTEASY-3708] Refactor the `FakeHttpServer` in the unit tests to no use the `com.sun.net.httpserver.HttpServer`
+
+Full releases notes can be found at https://github.com/resteasy/resteasy/releases/tag/7.0.2.Final.
+
+== 6.2.16.Final
+
+RESTEasy 6.2.16.Final is a https://jakarta.ee/specifications/restful-ws/3.1/[Jakarta REST 3.1] implementation. This
+release includes mostly bug fixes and component upgrades.
+
+While this should not affect you as a user, it should be noted that in https://redhat.atlassian.net/browse/RESTEASY-3712[RESTEASY-3712]
+we upgrade to a new minor of JBoss Logging. This was done for better support in modular environments. We did, however,
+keep backwards compatibility so using JBoss Logging 3.5.x should also work.
+
+Similar to 7.0.2.Final, this release addresses an https://redhat.atlassian.net/browse/RESTEASY-3691[IllegalAccessError]
+when posting large entities, fixes for Server-Sent Events (SSE) in Vert.x environments, and resolves a
+https://redhat.atlassian.net/browse/RESTEASY-3697[SecurityException] in SSE when the security manager is enabled.
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3689[RESTEASY-3689] Bump version.weld from 5.1.6.Final to 5.1.7.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3696[RESTEASY-3696] Bump version.org.glassfish.jaxb from 4.0.6 to 4.0.7
+* https://redhat.atlassian.net/browse/RESTEASY-3700[RESTEASY-3700] Bump org.jboss.arquillian:arquillian-bom from 1.10.0.Final to 1.10.1.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3701[RESTEASY-3701] Bump org.wildfly:wildfly-channel-maven-plugin from 1.0.30 to 1.0.31
+* https://redhat.atlassian.net/browse/RESTEASY-3702[RESTEASY-3702] Bump version.io.undertow from 2.3.20.Final to 2.3.23.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3703[RESTEASY-3703] Bump version.io.netty.netty4 from 4.1.128.Final to 4.1.131.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3704[RESTEASY-3704] Bump org.wildfly.security:wildfly-elytron-ssl from 2.6.7.Final to 2.6.8.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3706[RESTEASY-3706] Bump com.fasterxml.jackson:jackson-bom from 2.18.5 to 2.18.6 in the fasterxml-dependencies group
+* https://redhat.atlassian.net/browse/RESTEASY-3709[RESTEASY-3709] Bump org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-bom from 3.3.4 to 3.3.5
+* https://redhat.atlassian.net/browse/RESTEASY-3710[RESTEASY-3710] Bump version.io.undertow from 2.3.23.Final to 2.3.24.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3712[RESTEASY-3712] Upgrade the JBoss Logging dependency to 3.6.3.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3718[RESTEASY-3718] Bump version.io.netty.netty4 from 4.1.131.Final to 4.1.132.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3719[RESTEASY-3719] Bump org.wildfly:wildfly-channel-maven-plugin from 1.0.31 to 1.0.32
+
+=== Enhancement
+
+* https://redhat.atlassian.net/browse/RESTEASY-3596[RESTEASY-3596] Contextual scheduled executor service causes inadvertent Thread + classloader leak
+* https://redhat.atlassian.net/browse/RESTEASY-3693[RESTEASY-3693] Relax Constructor Requirements for CDI-Managed Jakarta REST Components
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3359[RESTEASY-3359] SseEventSink close does not update the request for Vert.x
+* https://redhat.atlassian.net/browse/RESTEASY-3683[RESTEASY-3683] EJB's should be allowed to have annotated interface methods as well as implementation methods
+* https://redhat.atlassian.net/browse/RESTEASY-3685[RESTEASY-3685] Few test fails with Semeru (IBM) JDK
+* https://redhat.atlassian.net/browse/RESTEASY-3691[RESTEASY-3691] IllegalAccessError when POSTing entity larger than in-memory threshold via ManualClosingApacheHttpClient43Engine
+* https://redhat.atlassian.net/browse/RESTEASY-3697[RESTEASY-3697] The SseEventOutputImpl will throw a security exception if the security manager is enabled when the stream is closed
+
+=== Task
+
+* https://redhat.atlassian.net/browse/RESTEASY-3660[RESTEASY-3660] Deprecate the resteasy.patch.filter.legacy context parameter
+* https://redhat.atlassian.net/browse/RESTEASY-3686[RESTEASY-3686] Delete HeaderEmptyHostTest to unit test due to Undertow security hardening https://redhat.atlassian.net/browse/UNDERTOW-2656[UNDERTOW-2656] and lack of core framework relevance
+* https://redhat.atlassian.net/browse/RESTEASY-3698[RESTEASY-3698] Remove the BASE \+ i for the ID patterns in the messages and message loggers
+* https://redhat.atlassian.net/browse/RESTEASY-3708[RESTEASY-3708] Refactor the `FakeHttpServer` in the unit tests to no use the `com.sun.net.httpserver.HttpServer`
+
+Full releases notes can be found at https://github.com/resteasy/resteasy/releases/tag/6.2.16.Final.
+
+== Finally
+
+As always, https://github.com/resteasy/resteasy/discussions/[feedback] is welcome. Stay safe, and, depending on where you are, stay warm or be cool.

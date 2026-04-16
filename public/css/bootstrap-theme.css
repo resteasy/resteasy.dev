@@ -80,6 +80,18 @@ h4 {
   margin-top: 0 !important;
 }
 
+/* ============================================
+   LINKS - Modern hover behavior
+   ============================================ */
+a {
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
 /* Dark mode heading colors */
 [data-bs-theme="dark"] h1 {
   color: #e6edf3 !important;
@@ -1680,9 +1692,12 @@ table tbody tr:last-child td,
   color: #e6edf3 !important;
 }
 
-[data-bs-theme="dark"] p,
-[data-bs-theme="dark"] a {
+[data-bs-theme="dark"] p {
   color: #c9d1d9 !important;
+}
+
+[data-bs-theme="dark"] a {
+  color: var(--resteasy-accent) !important;
 }
 
 [data-bs-theme="dark"] a:hover {
