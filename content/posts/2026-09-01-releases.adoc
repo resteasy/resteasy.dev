@@ -1,0 +1,60 @@
+---
+layout: post
+title: "RESTEasy 6.2.18.Final and 7.0.4.Final Releases"
+date: 2026-09-01
+author: James R. Perkins
+---
+
+Today we would like to announce the release of RESTEasy link:/downloads#6218final[6.2.18.Final] and RESTEasy
+link:/downloads#704final[7.0.4.Final]. These are small releases, but we would encourage all users to upgrade as both
+address a security vulnerability.
+
+Both releases fix https://redhat.atlassian.net/browse/RESTEASY-3785[RESTEASY-3785], an XML External Entity (XXE)
+vulnerability in `SourceProvider` tracked as
+https://github.com/resteasy/resteasy/security/advisories/GHSA-339g-695r-wx4w[CVE-2026-17615] (CVSS 7.5, High). The
+provider parsed XML without disabling external entity resolution, which could allow an unauthenticated remote attacker
+to read arbitrary files on the server and to perform blind XXE and SSRF attacks against internal resources. Anyone
+running an affected version (6.2.17.Final or 7.0.3.Final and earlier) should upgrade to 6.2.18.Final or 7.0.4.Final.
+While it is ranked High, the vulnerability only affects endpoints that accept a `javax.xml.transform.Source` entity parameter.
+
+== 7.0.4.Final
+
+RESTEasy 7.0.4.Final is a https://jakarta.ee/specifications/restful-ws/4.0/[Jakarta REST 4.0] implementation. This
+release includes a security fix, a bug fix, and component upgrades.
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3785[RESTEASY-3785] CVE-2026-17615 resteasy-core: RESTeasy SourceProvider remote unauthenticated file read
+* https://redhat.atlassian.net/browse/RESTEASY-3751[RESTEASY-3751] EntityOutputStream should use a concurrent lock instead of synchronizing on a object
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3787[RESTEASY-3787] Bump com.fasterxml.jackson:jackson-bom from 2.21.5 to 2.21.6 in the fasterxml-dependencies group across 1 directory
+* https://redhat.atlassian.net/browse/RESTEASY-3792[RESTEASY-3792] Bump jakarta.json.bind:jakarta.json.bind-api from 3.0.2 to 3.0.3 in the jakarta-json-dependencies group
+
+=== Task
+
+* https://redhat.atlassian.net/browse/RESTEASY-3791[RESTEASY-3791] Add additional test to the resteasy-embedded-server-tests
+
+Full release notes can be found at https://github.com/resteasy/resteasy/releases/tag/v7.0.4.Final.
+
+== 6.2.18.Final
+
+RESTEasy 6.2.18.Final is a https://jakarta.ee/specifications/restful-ws/3.1/[Jakarta REST 3.1] implementation. This
+release includes a security fix and component upgrades.
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3785[RESTEASY-3785] CVE-2026-17615 resteasy-core: RESTeasy SourceProvider remote unauthenticated file read
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3786[RESTEASY-3786] Bump version.io.netty.netty4 from 4.1.136.Final to 4.1.137.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3788[RESTEASY-3788] Bump com.fasterxml.jackson:jackson-bom from 2.18.9 to 2.18.10 in the fasterxml-dependencies group across 1 directory
+* https://redhat.atlassian.net/browse/RESTEASY-3792[RESTEASY-3792] Bump jakarta.json.bind:jakarta.json.bind-api from 3.0.2 to 3.0.3 in the jakarta-json-dependencies group
+
+Full release notes can be found at https://github.com/resteasy/resteasy/releases/tag/v6.2.18.Final.
+
+== Finally
+
+As always, https://github.com/resteasy/resteasy/discussions/[feedback] is welcome. Stay safe, and, depending on where you are, stay warm or be cool.
