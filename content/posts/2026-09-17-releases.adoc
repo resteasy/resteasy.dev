@@ -1,0 +1,82 @@
+---
+layout: post
+title: "RESTEasy 6.2.19.Final and 7.0.5.Final Releases"
+date: 2026-09-17
+author: James R. Perkins
+---
+
+Today we would like to announce the release of RESTEasy link:/downloads#6219final[6.2.19.Final] and RESTEasy
+link:/downloads#705final[7.0.5.Final]. Both releases address two security vulnerabilities, and we would encourage all
+users to upgrade.
+
+The first is https://redhat.atlassian.net/browse/RESTEASY-3793[RESTEASY-3793], a decompression bomb denial of service
+in `IIOImageProvider` tracked as
+https://github.com/resteasy/resteasy/security/advisories/GHSA-m4pc-7gc7-9vw2[CVE-2026-89059] (CVSS 7.5, High). An
+`+image/*+` request body was decoded with no bound on the size of the resulting raster, so a small image declaring
+enormous dimensions could exhaust the heap. This release adds a `dev.resteasy.image.threshold` configuration property
+which estimates the size of the decoded image, including its thumbnails, and rejects anything larger with a 400 before
+decoding it. The default is `200MB` and a value of `-1` disables the validation. Note this is the estimated size of the
+decoded image in memory, not the size of the request body, and it is a per-image estimate rather than a limit on the
+memory used across concurrent requests. While it is ranked High, the vulnerability only affects endpoints which accept
+a `javax.imageio.IIOImage` entity parameter, for example a `POST` or `PUT` resource method reading an `+image/*+` request
+body.
+
+The second is https://redhat.atlassian.net/browse/RESTEASY-3796[RESTEASY-3796], a CORS misconfiguration in `CorsFilter`
+tracked as https://github.com/resteasy/resteasy/security/advisories/GHSA-972r-f3fv-whm3[CVE-2026-89058] (CVSS 7.4,
+High). When `+"*"+` was added to the allowed origins, the filter reflected the concrete request `Origin` back in
+`Access-Control-Allow-Origin` along with `Access-Control-Allow-Credentials: true`. This is the misconfiguration the
+CORS specification forbids for `+*+`, and it allowed any site to perform credentialed cross-origin reads of
+authenticated responses. While it is ranked High, the vulnerability only affects applications which register the
+`CorsFilter` and add `+"*"+` to the allowed origins. Applications which list their allowed origins explicitly are not
+affected.
+
+Fixing this required two changes in `CorsFilter` which are worth calling out, as both change the default behavior. The
+default value of `allowCredentials` is now `false` rather than `true`. In addition, when the allowed origins contain
+`+"*"+`, the filter now returns a literal `+*+` in `Access-Control-Allow-Origin`, does not add `Vary: Origin` and never
+sends `Access-Control-Allow-Credentials`. A warning is logged the first time credentials are ignored for a wildcard
+origin. Note the `allowCredentials` default applies to every user of the `CorsFilter`, including those who were never
+vulnerable, so if you relied on it being `true` you will now need to set it explicitly. If you need credentials on
+cross-origin requests, list the origins you trust rather than using a wildcard.
+
+== 7.0.5.Final
+
+RESTEasy 7.0.5.Final is a https://jakarta.ee/specifications/restful-ws/4.0/[Jakarta REST 4.0] implementation. This
+release includes two security fixes, two bug fixes and component upgrades.
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3793[RESTEASY-3793] RESTEasy IIOImageProvider Unbounded Image Decode (Decompression-Bomb DoS)
+* https://redhat.atlassian.net/browse/RESTEASY-3794[RESTEASY-3794] `resteasy-cdi` fails on the Java module path when resolving the `ResteasyCdiExtension` bean via a contextual reference
+* https://redhat.atlassian.net/browse/RESTEASY-3796[RESTEASY-3796] RESTEasy CorsFilter Reflects Arbitrary Origin with Credentials under Wildcard Config
+* https://redhat.atlassian.net/browse/RESTEASY-3797[RESTEASY-3797] Not all required Jakarta Servlet types have CDI producers causing failures when using @Context injection
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3798[RESTEASY-3798] Bump version.org.apache.james.apache-mime4j from 0.8.14 to 0.8.15
+* https://redhat.atlassian.net/browse/RESTEASY-3800[RESTEASY-3800] Bump version.org.bouncycastle from 1.85 to 1.86
+
+Full release notes can be found at https://github.com/resteasy/resteasy/releases/tag/v7.0.5.Final.
+
+== 6.2.19.Final
+
+RESTEasy 6.2.19.Final is a https://jakarta.ee/specifications/restful-ws/3.1/[Jakarta REST 3.1] implementation. This
+release includes two security fixes, two bug fixes and component upgrades.
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3793[RESTEASY-3793] RESTEasy IIOImageProvider Unbounded Image Decode (Decompression-Bomb DoS)
+* https://redhat.atlassian.net/browse/RESTEASY-3794[RESTEASY-3794] `resteasy-cdi` fails on the Java module path when resolving the `ResteasyCdiExtension` bean via a contextual reference
+* https://redhat.atlassian.net/browse/RESTEASY-3796[RESTEASY-3796] RESTEasy CorsFilter Reflects Arbitrary Origin with Credentials under Wildcard Config
+* https://redhat.atlassian.net/browse/RESTEASY-3797[RESTEASY-3797] Not all required Jakarta Servlet types have CDI producers causing failures when using @Context injection
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3798[RESTEASY-3798] Bump version.org.apache.james.apache-mime4j from 0.8.14 to 0.8.15
+* https://redhat.atlassian.net/browse/RESTEASY-3799[RESTEASY-3799] Bump version.io.netty.netty4 from 4.1.137.Final to 4.1.138.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3800[RESTEASY-3800] Bump version.org.bouncycastle from 1.85 to 1.86
+
+Full release notes can be found at https://github.com/resteasy/resteasy/releases/tag/v6.2.19.Final.
+
+== Finally
+
+As always, https://github.com/resteasy/resteasy/discussions/[feedback] is welcome. Stay safe, and, depending on where you are, stay warm or be cool.
