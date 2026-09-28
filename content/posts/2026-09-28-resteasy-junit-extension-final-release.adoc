@@ -1,0 +1,176 @@
+---
+layout: post
+title:  "RESTEasy JUnit Extension 1.0.0.Final is available"
+date:   2026-09-28
+tags:   announcement release
+author: James R. Perkins
+description: The first Final release (1.0.0.Final) of the RESTEasy JUnit Extension is now available.
+---
+
+The first Final release (1.0.0.Final) of the *RESTEasy JUnit Extension* is now available on Maven Central. The extension
+makes testing Jakarta REST applications with JUnit 5+ straightforward: it manages the server lifecycle for you, injects a
+ready-to-use client, and gets out of your way so you can focus on the assertions that matter.
+
+Although the project lives under the RESTEasy umbrella, it is not tied to RESTEasy. It builds on the standard
+`SeBootstrap` API introduced in https://jakarta.ee/specifications/restful-ws/3.1/[Jakarta REST 3.1], so it works with any
+compliant implementation.
+
+It is also what we use ourselves: RESTEasy's own testsuite is built on it, as are the RESTEasy Vert.x, Jetty, and
+Jackson provider projects.
+
+== What it does
+
+Writing an integration test for a REST endpoint usually means wiring up a server, starting it before your tests, finding
+a free port, pointing a client at it, and tearing it all down afterward. The RESTEasy JUnit Extension collapses all of
+that into a single annotation.
+
+Add the extension to your test dependencies:
+
+[source,xml]
+----
+<dependency>
+    <groupId>dev.resteasy.junit.extension</groupId>
+    <artifactId>resteasy-junit-extension</artifactId>
+    <version>1.0.0.Final</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- A Jakarta REST SeBootstrap implementation, for example RESTEasy -->
+<dependency>
+    <groupId>org.jboss.resteasy</groupId>
+    <artifactId>resteasy-undertow-cdi</artifactId>
+    <version>${version.resteasy}</version>
+    <scope>test</scope>
+</dependency>
+----
+
+Then annotate your test with `@RestBootstrap` and let the extension inject what you need:
+
+[source,java]
+----
+@RestBootstrap(HelloResource.class)
+public class HelloResourceTest {
+
+    @RestResource
+    private Client client;
+
+    @RestResource
+    private URI baseUri;
+
+    @Test
+    public void testHello() {
+        Response response = client.target(baseUri)
+                .path("/hello")
+                .request()
+                .get();
+
+        assertEquals(200, response.getStatus());
+        assertEquals("Hello, World!", response.readEntity(String.class));
+    }
+}
+----
+
+That's it. The extension starts a `SeBootstrap` instance with your resources, injects a configured client and the
+server's base URI, and shuts everything down once the tests complete.
+
+For simple cases, list one or more resource classes — provider classes work here too, since they go straight into
+`getClasses()`. When you need `@ApplicationPath`, custom application properties, or programmatic setup, use the
+`application` attribute instead:
+
+[source,java]
+----
+@RestBootstrap(application = MyApplication.class)
+----
+
+Set exactly one of the two — the extension rejects both or neither.
+
+== A few of the highlights
+
+*Inject what the test needs, where it needs it.* `@RestResource` supplies a `Client`, `WebTarget`, `URI`, `UriBuilder`,
+or the `SeBootstrap.Configuration` — on static fields, instance fields, constructors, and lifecycle or test method
+parameters. Injecting into the test method itself keeps the whole test in one place:
+
+[source,java]
+----
+@Test
+public void greet(@RestResource @RequestPath("/rest") final WebTarget target) {
+    final Response response = target.path("world").request().get();
+    assertEquals(200, response.getStatus());
+}
+----
+
+*Targets that already point where you are going.* `@RequestPath` qualifies a `WebTarget` or `URI` with the path under
+test, so individual requests stop repeating the same prefix:
+
+[source,java]
+----
+@RestResource
+@RequestPath("/users")
+private WebTarget usersTarget;
+----
+
+*Register a filter without writing a provider class.* `@RestClientConfig` takes provider classes directly, so adding a
+logging filter or a custom message body reader is one line at the injection point:
+
+[source,java]
+----
+@RestResource
+@RestClientConfig(providers = { LoggingFilter.class, AuthFilter.class })
+private Client client;
+----
+
+Each is registered via `ClientBuilder.register(Class)`, so it needs a public no-arg constructor. Anything needing
+constructor arguments or extra setup goes through a `RestClientBuilderProvider` instead.
+
+*HTTPS tests without a keystore.* Add `@SelfSignedCert` alongside `@RestBootstrap` and the extension generates the
+certificates, starts the server on HTTPS, configures the injected client to trust it, and cleans everything up
+afterwards. The certificates are generated once per JVM and shared by every test class that asks for them, so turning
+on HTTPS does not cost you anything per class. Those classes are also tagged `ssl-test`, so CI can run or skip them as
+a group with `-Dgroups=ssl-test` or `-DexcludedGroups=ssl-test`. Mutual TLS is supported through the
+`sslClientAuthentication` attribute.
+
+[source,java]
+----
+@SelfSignedCert
+@RestBootstrap(MyResource.class)
+public class SslTest {
+
+    @RestResource
+    private Client client; // already configured for HTTPS
+
+    @Test
+    public void testHttps() {
+        // ...
+    }
+}
+----
+
+If you are driving the server with something other than a Jakarta REST client, `@SslCert` injects the generated
+`SelfSignedCertificate` so you can hand its `clientSslContext()` to, say, a `java.net.http.HttpClient`.
+
+*Tests that survive CI.* By default the server binds a random available port, so tests don't fight each other on a
+shared build machine. When you do need a fixed value, the protocol, host, port, and root path are all JUnit
+configuration parameters under `dev.resteasy.junit.extension.`, settable in `junit-platform.properties` or on the
+command line:
+
+[source,bash]
+----
+mvn test -Ddev.resteasy.junit.extension.port=8085
+----
+
+*Room to grow.* Client behaviour can be customized inline with `@RestClientConfig` or globally with a
+`RestClientBuilderProvider`; server configuration through a `ConfigurationProvider`; and `RestResourceProducer` lets you
+inject your own types — a `DataSource`, a temporary file, whatever the test needs — so the same injection style covers
+the rest of your fixtures.
+
+The annotations all live in the
+https://docs.resteasy.dev/resteasy-junit-extension/apidocs/dev.resteasy.junit.extension/dev/resteasy/junit/extension/annotations/package-summary.html[`dev.resteasy.junit.extension.annotations`]
+package.
+
+== Learn more
+
+The full documentation, including advanced features, extension points, and best practices, is available at
+https://docs.resteasy.dev/resteasy-junit-extension/[docs.resteasy.dev/resteasy-junit-extension]. The source and issue
+tracker live at https://github.com/resteasy/resteasy-junit-extension[github.com/resteasy/resteasy-junit-extension].
+
+Give it a try and let us know what you think — feedback and contributions are always welcome.
