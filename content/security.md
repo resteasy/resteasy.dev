@@ -13,23 +13,28 @@ We aim to take immediate action to address serious security-related problems tha
 
 ## Reporting Security Issues
 
-When reporting a security vulnerability it is important to not accidentally broadcast to the world that the issue exists, 
-as this makes it easier for people to exploit it. The software industry uses the term [embargo](https://www.redhat.com/en/blog/security-embargoes-red-hat) 
-to describe the time a security issue is known internally until it is public knowledge.
+When reporting a security vulnerability, it is important not to accidentally broadcast to the world that the issue exists,
+as this makes it easier for people to exploit it. The software industry uses the term
+[embargo](https://www.redhat.com/en/blog/security-embargoes-red-hat) to describe the time a security issue is known
+internally until it is public knowledge.
 
-Our preferred way of reporting security issues in RESTEasy and its related projects is listed below.
+Do not open a public issue, send a public pull request, or disclose any information about the suspected vulnerability
+publicly, **including in your own publicly visible git repository**.
 
-### Email the mailing list
+### Preferred Method: GitHub Private Vulnerability Reporting
 
-The list at [resteasy-security@redhat.com](mailto:resteasy-security@redhat.com) is the preferred mechanism for outside
-users to report security issues. A member of the RESTEasy team will open the required issues.
+The preferred way to report security issues is to use GitHub's Private Vulnerability Reporting feature.
 
-### Other considerations
+1. Navigate to the [RESTEasy Advisories page](https://github.com/resteasy/resteasy/security/advisories).
+2. Click **Report a vulnerability**.
+3. Fill out the provided form with as much detail as possible, including steps to reproduce.
 
-If you would like to work with us on a fix for the security vulnerability, please include your GitHub username in the 
-above email, and we will provide you access to a temporary private fork where we can collaborate on a fix without it 
-being disclosed publicly, **including in your own publicly visible git repository**.
+This creates a secure, private channel between you and the RESTEasy maintainers. If you would like to collaborate on a
+fix, this method allows us to seamlessly invite you to a temporary private fork where we can safely work on the code together.
 
-Do not open a public issue, send a pull request, or disclose any information about the suspected vulnerability publicly, 
-**including in your own publicly visible git repository**. If you discover any publicly disclosed security 
-vulnerabilities, please notify us immediately through [resteasy-security@redhat.com](mailto:resteasy-security@redhat.com).
+### Alternative Method: Email
+
+If you are unable to use GitHub to report the issue, you may email [resteasy-security@redhat.com](mailto:resteasy-security@redhat.com).
+If you wish to collaborate on a fix via this method, please include your GitHub username in the email so we can grant you access to a secure workspace.
+
+If you discover any publicly disclosed security vulnerabilities, please notify us immediately through the GitHub reporting tool or via email.
