@@ -1,0 +1,145 @@
+---
+layout: post
+title: "RESTEasy 6.2.20.Final, 7.0.6.Final and 8.0.0.Alpha1 Releases"
+date: 2026-11-09
+author: James R. Perkins
+---
+
+Today we would like to announce the release of RESTEasy link:/downloads#800alpha1[8.0.0.Alpha1],
+link:/downloads#706final[7.0.6.Final] and link:/downloads#6220final[6.2.20.Final]. 7.0.6.Final and 6.2.20.Final address
+a security vulnerability, and we would encourage all users of those streams to upgrade.
+
+We are excited that 8.0.0.Alpha1 is the first release of RESTEasy 8.0, which targets
+https://jakarta.ee/specifications/restful-ws/5.0/[Jakarta REST 5.0]. Jakarta REST 5.0 is currently at its M1 milestone
+and is slated for Jakarta EE 12. Both the specification and this release are early, so expect changes along the way. The
+biggest change is the CDI integration in https://redhat.atlassian.net/browse/RESTEASY-3807[RESTEASY-3807]. Jakarta REST
+5.0 requires CDI, so resources, providers and `Application` subclasses are now CDI beans, and CDI injects the Jakarta REST
+context types. `@Context` is implemented as a CDI qualifier, as proposed for the specification. This release also
+requires Java 21 and moves to Jakarta EL 6.0 and Expressly.
+
+https://redhat.atlassian.net/browse/RESTEASY-3823[RESTEASY-3823] is an information disclosure in the default exception
+mapper tracked as https://github.com/resteasy/resteasy/security/advisories/GHSA-j2p5-4ph4-86cx[CVE-2026-120971] (CVSS
+5.3, Medium). For an unhandled exception, the mapper wrote the exception's message to the body of the 500 response, which
+could expose internal details to clients. The vulnerability affects 6.2.19.Final and lower, and 7.0.5.Final and lower. It
+applies when an exception other than a `WebApplicationException` reaches the default exception mapper, meaning no
+application `ExceptionMapper` covers the exception type and `dev.resteasy.exception.mapper` is not set to `false`.
+
+The fix changes behavior for everyone, not only for those who were exposed. Unhandled exceptions now return a 500 with
+no entity, so clients which read the message from the response body will get an empty body. Applications which want to
+return a message need to register their own `ExceptionMapper`.
+
+Both 7.0.6.Final and 6.2.20.Final also remove the enhanced CDI integration added by
+https://redhat.atlassian.net/browse/RESTEASY-3755[RESTEASY-3755], in
+https://redhat.atlassian.net/browse/RESTEASY-3822[RESTEASY-3822]. This removes CDI injection of `+@*Param+` values and of
+`@Context` members through CDI, along with the `dev.resteasy.cdi.enhanced.enabled` property. It was added in error in
+7.0.3.Final and 6.2.17.Final, and it caused issues which can only be fixed by the new integration in RESTEasy 8.0. On 7.0
+it was enabled by default, while on 6.2 only applications which set the property to `true` are affected.
+
+== 8.0.0.Alpha1
+
+RESTEasy 8.0.0.Alpha1 is an early https://jakarta.ee/specifications/restful-ws/5.0/[Jakarta REST 5.0] implementation,
+built against the `5.0.0-M1` API. This release includes the Jakarta REST 5.0 CDI integration, implementations of the new
+Jakarta REST 5.0 API methods such as `getHeaderString(String, String)` and the Java 21 baseline.
+
+=== Enhancement
+
+* https://redhat.atlassian.net/browse/RESTEASY-3313[RESTEASY-3313] ContextualExecutor worker submitting to itself still invokes classpath scan
+* https://redhat.atlassian.net/browse/RESTEASY-3807[RESTEASY-3807] Jakarta REST 5.0 CDI Integration
+* https://redhat.atlassian.net/browse/RESTEASY-3829[RESTEASY-3829] Implement getHeaderString(String, String) for Jakarta REST 5.0
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3802[RESTEASY-3802] The resteasy-undertow-cdi integration does not provide a RestasyConfiguration in the context
+* https://redhat.atlassian.net/browse/RESTEASY-3803[RESTEASY-3803] WebTarget's resolveTemplates fails with PatternSyntaxException
+* https://redhat.atlassian.net/browse/RESTEASY-3806[RESTEASY-3806] UriBuilder.resolveTemplates() throws NullPointerException instead of IllegalArgumentException for null-key checks on null-hostile maps (e.g. Map.of())
+* https://redhat.atlassian.net/browse/RESTEASY-3816[RESTEASY-3816] RegisterBuiltin client provider factory cache can leak deployment class loaders
+* https://redhat.atlassian.net/browse/RESTEASY-3823[RESTEASY-3823] Default Exception Mapper Discloses Internal Exception Messages
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3804[RESTEASY-3804] Bump com.fasterxml.jackson:jackson-bom from 2.21.6 to 2.21.7 in the fasterxml-dependencies group across 1 directory
+* https://redhat.atlassian.net/browse/RESTEASY-3805[RESTEASY-3805] Bump org.wildfly.security:wildfly-elytron-ssl from 2.6.10.Final to 2.6.12.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3810[RESTEASY-3810] Bump commons-codec:commons-codec from 1.22.1 to 1.23.0
+* https://redhat.atlassian.net/browse/RESTEASY-3812[RESTEASY-3812] Bump jakarta.json.bind:jakarta.json.bind-api from 3.0.3 to 3.0.4 in the jakarta-json-dependencies group
+* https://redhat.atlassian.net/browse/RESTEASY-3813[RESTEASY-3813] Bump the fasterxml-dependencies group across 1 directory with 2 updates
+* https://redhat.atlassian.net/browse/RESTEASY-3815[RESTEASY-3815] Bump org.hibernate.validator:hibernate-validator from 9.0.1.Final to 9.0.2.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3826[RESTEASY-3826] Bump version.io.undertow from 2.3.26.Final to 2.3.27.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3827[RESTEASY-3827] Bump version.org.hibernate.validator from 9.0.2.Final to 9.0.3.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3828[RESTEASY-3828] Bump com.google.guava:guava from 33.4.8-jre to 33.7.1-jre in /resteasy-dependencies-bom
+* https://redhat.atlassian.net/browse/RESTEASY-3831[RESTEASY-3831] Bump com.google.guava:guava from 33.7.1-jre to 33.7.2-jre in the guava-dependencies group
+
+=== Task
+
+* https://redhat.atlassian.net/browse/RESTEASY-3825[RESTEASY-3825] Bump minimum Java version to 21
+
+Full release notes can be found at https://github.com/resteasy/resteasy/releases/tag/v8.0.0.Alpha1.
+
+== 7.0.6.Final
+
+RESTEasy 7.0.6.Final is a https://jakarta.ee/specifications/restful-ws/4.0/[Jakarta REST 4.0] implementation. This
+release includes a security fix, the removal of the enhanced CDI integration, CDI resource lookup fixes, `UriBuilder` and
+`WebTarget` template fixes, a class loader leak fix and component upgrades.
+
+=== Enhancement
+
+* https://redhat.atlassian.net/browse/RESTEASY-3313[RESTEASY-3313] ContextualExecutor worker submitting to itself still invokes classpath scan
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3802[RESTEASY-3802] The resteasy-undertow-cdi integration does not provide a RestasyConfiguration in the context
+* https://redhat.atlassian.net/browse/RESTEASY-3803[RESTEASY-3803] WebTarget's resolveTemplates fails with PatternSyntaxException
+* https://redhat.atlassian.net/browse/RESTEASY-3806[RESTEASY-3806] UriBuilder.resolveTemplates() throws NullPointerException instead of IllegalArgumentException for null-key checks on null-hostile maps (e.g. Map.of())
+* https://redhat.atlassian.net/browse/RESTEASY-3816[RESTEASY-3816] RegisterBuiltin client provider factory cache can leak deployment class loaders
+* https://redhat.atlassian.net/browse/RESTEASY-3817[RESTEASY-3817] Push and restore the Configuration for a client invocation
+* https://redhat.atlassian.net/browse/RESTEASY-3819[RESTEASY-3819] CDI resource lookup fails for resource subclasses and ignores enabled alternatives
+* https://redhat.atlassian.net/browse/RESTEASY-3821[RESTEASY-3821] ResourceContext.getResource() fails for a CDI bean with only an @Inject constructor
+* https://redhat.atlassian.net/browse/RESTEASY-3822[RESTEASY-3822] Revert the enhanced CDI integration added by RESTEASY-3755
+* https://redhat.atlassian.net/browse/RESTEASY-3823[RESTEASY-3823] Default Exception Mapper Discloses Internal Exception Messages
+* https://redhat.atlassian.net/browse/RESTEASY-3824[RESTEASY-3824] A failed deployment start leaves its ResteasyProviderFactory as the global instance
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3804[RESTEASY-3804] Bump com.fasterxml.jackson:jackson-bom from 2.21.6 to 2.21.7 in the fasterxml-dependencies group across 1 directory
+* https://redhat.atlassian.net/browse/RESTEASY-3805[RESTEASY-3805] Bump org.wildfly.security:wildfly-elytron-ssl from 2.6.10.Final to 2.6.12.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3810[RESTEASY-3810] Bump commons-codec:commons-codec from 1.22.1 to 1.23.0
+* https://redhat.atlassian.net/browse/RESTEASY-3812[RESTEASY-3812] Bump jakarta.json.bind:jakarta.json.bind-api from 3.0.3 to 3.0.4 in the jakarta-json-dependencies group
+* https://redhat.atlassian.net/browse/RESTEASY-3813[RESTEASY-3813] Bump the fasterxml-dependencies group across 1 directory with 2 updates
+* https://redhat.atlassian.net/browse/RESTEASY-3815[RESTEASY-3815] Bump org.hibernate.validator:hibernate-validator from 9.0.1.Final to 9.0.2.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3826[RESTEASY-3826] Bump version.io.undertow from 2.3.26.Final to 2.3.27.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3827[RESTEASY-3827] Bump version.org.hibernate.validator from 9.0.2.Final to 9.0.3.Final
+
+Full release notes can be found at https://github.com/resteasy/resteasy/releases/tag/v7.0.6.Final.
+
+== 6.2.20.Final
+
+RESTEasy 6.2.20.Final is a https://jakarta.ee/specifications/restful-ws/3.1/[Jakarta REST 3.1] implementation. This
+release includes a security fix, the removal of the enhanced CDI integration, CDI resource lookup fixes and component
+upgrades.
+
+=== Bug
+
+* https://redhat.atlassian.net/browse/RESTEASY-3802[RESTEASY-3802] The resteasy-undertow-cdi integration does not provide a RestasyConfiguration in the context
+* https://redhat.atlassian.net/browse/RESTEASY-3817[RESTEASY-3817] Push and restore the Configuration for a client invocation
+* https://redhat.atlassian.net/browse/RESTEASY-3819[RESTEASY-3819] CDI resource lookup fails for resource subclasses and ignores enabled alternatives
+* https://redhat.atlassian.net/browse/RESTEASY-3821[RESTEASY-3821] ResourceContext.getResource() fails for a CDI bean with only an @Inject constructor
+* https://redhat.atlassian.net/browse/RESTEASY-3822[RESTEASY-3822] Revert the enhanced CDI integration added by RESTEASY-3755
+* https://redhat.atlassian.net/browse/RESTEASY-3823[RESTEASY-3823] Default Exception Mapper Discloses Internal Exception Messages
+* https://redhat.atlassian.net/browse/RESTEASY-3824[RESTEASY-3824] A failed deployment start leaves its ResteasyProviderFactory as the global instance
+
+=== Component Upgrade
+
+* https://redhat.atlassian.net/browse/RESTEASY-3801[RESTEASY-3801] Bump com.fasterxml.jackson:jackson-bom from 2.18.10 to 2.18.11 in the fasterxml-dependencies group across 1 directory
+* https://redhat.atlassian.net/browse/RESTEASY-3805[RESTEASY-3805] Bump org.wildfly.security:wildfly-elytron-ssl from 2.6.10.Final to 2.6.12.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3810[RESTEASY-3810] Bump commons-codec:commons-codec from 1.22.1 to 1.23.0
+* https://redhat.atlassian.net/browse/RESTEASY-3811[RESTEASY-3811] Bump version.io.netty.netty4 from 4.1.138.Final to 4.1.139.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3812[RESTEASY-3812] Bump jakarta.json.bind:jakarta.json.bind-api from 3.0.3 to 3.0.4 in the jakarta-json-dependencies group
+* https://redhat.atlassian.net/browse/RESTEASY-3813[RESTEASY-3813] Bump the fasterxml-dependencies group across 1 directory with 2 updates
+* https://redhat.atlassian.net/browse/RESTEASY-3814[RESTEASY-3814] Bump org.hibernate.validator:hibernate-validator from 8.0.5.Final to 8.0.6.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3826[RESTEASY-3826] Bump version.io.undertow from 2.3.26.Final to 2.3.27.Final
+* https://redhat.atlassian.net/browse/RESTEASY-3830[RESTEASY-3830] Bump version.io.netty.netty4 from 4.1.139.Final to 4.1.140.Final
+
+Full release notes can be found at https://github.com/resteasy/resteasy/releases/tag/v6.2.20.Final.
+
+== Finally
+
+As always, https://github.com/resteasy/resteasy/discussions/[feedback] is welcome. Stay safe, and, depending on where you are, stay warm or be cool.

@@ -1,6 +1,43 @@
+- group: 8.0.x
+  supported: true
+  detail:
+    - version: 8.0.0.Alpha1
+      date: 2026-11-09
+      license: ASL v2
+      source: https://github.com/resteasy/resteasy/releases/download/v8.0.0.Alpha1/resteasy-8.0.0.Alpha1-src.zip
+      size: 32 MB
+      release_notes: https://github.com/resteasy/resteasy/releases/tag/v8.0.0.Alpha1
+      download_link: https://github.com/resteasy/resteasy/releases/download/v8.0.0.Alpha1/resteasy-8.0.0.Alpha1-all.zip
+      download_text: resteasy-8.0.0.Alpha1-all.zip
+      jakarta_rest_spec:
+        version: 5.0
+        link: https://jakarta.ee/specifications/restful-ws/5.0/jakarta-restful-ws-spec-5.0.html
+        java_doc: https://jakarta.ee/specifications/restful-ws/5.0/apidocs
+      documentation:
+        examples: https://github.com/resteasy/resteasy-examples/
+        link: https://docs.resteasy.dev/8.0/userguide/
+        pdf: https://docs.resteasy.dev/8.0/userguide/resteasy-reference-guide.pdf
+        java_doc: https://docs.resteasy.dev/8.0/javadocs/
 - group: 7.0.x
   supported: true
   detail:
+    - version: 7.0.6.Final
+      date: 2026-11-09
+      license: ASL v2
+      source: https://github.com/resteasy/resteasy/releases/download/v7.0.6.Final/resteasy-7.0.6.Final-src.zip
+      size: 30.6 MB
+      release_notes: https://github.com/resteasy/resteasy/releases/tag/v7.0.6.Final
+      download_link: https://github.com/resteasy/resteasy/releases/download/v7.0.6.Final/resteasy-7.0.6.Final-all.zip
+      download_text: resteasy-7.0.6.Final-all.zip
+      jakarta_rest_spec:
+        version: 4.0
+        link: https://jakarta.ee/specifications/restful-ws/4.0/jakarta-restful-ws-spec-4.0.html
+        java_doc: https://jakarta.ee/specifications/restful-ws/4.0/apidocs
+      documentation:
+        examples: https://github.com/resteasy/resteasy-examples/
+        link: https://docs.resteasy.dev/7.0/userguide/
+        pdf: https://docs.resteasy.dev/7.0/userguide/resteasy-reference-guide.pdf
+        java_doc: https://docs.resteasy.dev/7.0/javadocs/
     - version: 7.0.5.Final
       date: 2026-09-17
       license: ASL v2
@@ -106,6 +143,23 @@
 - group: 6.2.x
   supported: true
   detail:
+    - version: 6.2.20.Final
+      date: 2026-11-09
+      license: ASL v2
+      source: https://github.com/resteasy/resteasy/releases/download/v6.2.20.Final/resteasy-6.2.20.Final-src.zip
+      size: 35.8 MB
+      release_notes: https://github.com/resteasy/resteasy/releases/tag/v6.2.20.Final
+      download_link: https://github.com/resteasy/resteasy/releases/download/v6.2.20.Final/resteasy-6.2.20.Final-all.zip
+      download_text: resteasy-6.2.20.Final-all.zip
+      jakarta_rest_spec:
+        version: 3.1
+        link: https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1.html
+        java_doc: https://jakarta.ee/specifications/restful-ws/3.1/apidocs
+      documentation:
+        examples: https://github.com/resteasy/resteasy-examples/
+        link: https://docs.resteasy.dev/6.2/userguide/
+        pdf: https://docs.resteasy.dev/6.2/userguide/resteasy-reference-guide.pdf
+        java_doc: https://docs.resteasy.dev/6.2/javadocs/
     - version: 6.2.19.Final
       date: 2026-09-17
       license: ASL v2
